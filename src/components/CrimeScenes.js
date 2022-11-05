@@ -2,23 +2,25 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function CrimeScenes({ username, location }) {
+    const [pokemonURL, setPokemonURL] = useState([]);
+    const [selectedLocation, setSelectedLocation] = useState();
     const [pokemon, setPokemon] = useState([]);
-    const [selectedLocation, setSelectedLocation] = useState()
+
     console.log(location);
     useEffect(() => {
-        axios
-            // .get(`https://pokeapi.co/api/v2/pokemon`, {
-            .get(`https://data.police.uk/api/crimes-street/all-crime`, {
-                params: {
-                    lat: location[1],
-                    lng: location[2],
-                },
-            })
+        axios.get(`https://data.police.uk/api/crimes-street/all-crime`, {
+            params: {
+                lat: location[1],
+                lng: location[2],
+            },
+        })
             .then(function (res) {
                 const filtered = res.data
                 console.log(filtered)
             })
     }, [])
+
+
 
     // this function creates an array of 5 unique pokemon
     function randomPokemon() {
@@ -29,10 +31,21 @@ export default function CrimeScenes({ username, location }) {
                 return element === newNumber;
             }
             // when none of the existing array entries matches the random number push to array
-            (!tempArray.some(isNotUnique) && tempArray.push(newNumber))
+            (!tempArray.some(isNotUnique) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
         }
-        setPokemon(tempArray);
+        setPokemonURL(tempArray)
     }
+
+    useEffect(() => {
+        Promise.all(pokemonURL.map(async pokemon => {
+            const res = await fetch(pokemon);
+            const json = res.json();
+            return json;
+        })).then((data => {
+            setPokemon(data);
+        }))
+    }, [pokemonURL])
+
 
     return (
         <div className="CrimeScenes card">
