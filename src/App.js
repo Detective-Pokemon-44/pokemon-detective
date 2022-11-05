@@ -5,17 +5,16 @@ import axios from "axios"
 function App() {
   
   axios
-    .get(`https://data.police.uk/api/crimes-street/all-crime`, {
+    // .get(`https://pokeapi.co/api/v2/pokemon`, {
+      .get(`https://data.police.uk/api/crimes-street/all-crime`, {
       params: {
         // limit: 151,
         // London
-        // lat: "51.5072",
-        // lng: "-0.1276",
-
+        lat: "51.5072",
+        lng: "-0.1276",
         // // Manchester
         // lat: "53.4839",
         // lng: "-2.2446",
-
         // Liverpool
         // lat: "53.4084",
         // lng: "-2.9916",
@@ -55,3 +54,5 @@ function App() {
 }
 
 export default App;
+
+
