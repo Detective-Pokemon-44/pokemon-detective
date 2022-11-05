@@ -2,21 +2,27 @@ import door from '../assets/images/door.svg';
 
 export default function Location({setLocation}) {
     const locations = [
-        {
-            city: "London",
-            lat: "51.5072",
-            lng: "-0.1276"
-        },
-        {
-            city: "Yorkshire",
-            lat: "53.9191",
-            lng: "-1.0792"
-        },
-        {
-            city: "Worcestshire",
-            lat: "52.2545",
-            lng: "-2.2668"
-        }
+      {
+        city: "London",
+        lat: "51.5072",
+        lng: "-0.1276",
+      },
+      {
+        // bicycle-theft
+        // criminal-damage-arson
+        // violent-crime
+        city: "Birmingham",
+        lat: "52.4862",
+        lng: "-1.8904",
+      },
+      {
+        // criminal-damage-arson
+        // bicycle-theft
+        // burglary
+        city: "Liverpool",
+        lat: "53.4084",
+        lng: "-2.9916",
+      },
     ]
 
     function handleClick(location, lat, lng) {
