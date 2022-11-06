@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import {isNotUnique, randNum} from '../utils/functions';
 
 export default function CrimeScenes({ username, location }) {
     const [selectedLocation, setSelectedLocation] = useState();
@@ -13,6 +14,7 @@ export default function CrimeScenes({ username, location }) {
         return filteredArray[Math.floor(Math.random() * filteredArray.length)]
     }
 
+
     useEffect(() => {
         axios
             .get(`https://data.police.uk/api/crimes-street/all-crime`, {
@@ -22,12 +24,24 @@ export default function CrimeScenes({ username, location }) {
                 },
             })
             .then(function (res) {
+                let crimeArray = [];
+                let randomCrimeArray = [];
+                for (let crime in res.data) {
+                    (!isNotUnique(crimeArray, res.data[crime].category) && crimeArray.push(res.data[crime].category))
+                }
+                console.log(crimeArray);
+                while(randomCrimeArray.length < (crimeArray.length >= 5 ? 5 : crimeArray.length)) {
+                    let num = randNum(crimeArray.length, 0);
+                    (!isNotUnique(randomCrimeArray, crimeArray[num]) && randomCrimeArray.push(crimeArray[num]))
+                }
+                console.log(randomCrimeArray);
+
                 // show one random object from crime-category parameter
-                setCrimeSceneArray([
-                filter(res.data, "bicycle-theft"),
-                filter(res.data, "criminal-damage-arson"),
-                filter(res.data, "violent-crime")
-                ])
+                // setCrimeSceneArray([
+                // filter(res.data, "bicycle-theft"),
+                // filter(res.data, "criminal-damage-arson"),
+                // filter(res.data, "violent-crime")
+                // ])
             })
         },[location])
 
@@ -35,12 +49,9 @@ export default function CrimeScenes({ username, location }) {
     function randomPokemon() {
         let tempArray = [];
         while (tempArray.length < 5) {
-            let newNumber = Math.floor(Math.random() * 151 + 1);
-            function isNotUnique(element) {
-                return element === newNumber;
-            }
+            let newNumber = randNum(151, 1);
             // when none of the existing array entries matches the random number push to array
-            (!tempArray.some(isNotUnique) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
+            (!isNotUnique(tempArray, newNumber) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
         }
         setPokemonURL(tempArray)
     }
