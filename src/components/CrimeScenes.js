@@ -24,24 +24,33 @@ export default function CrimeScenes({ username, location }) {
                 },
             })
             .then(function (res) {
-                let crimeArray = [];
-                let randomCrimeArray = [];
+                let crimeTypes = [];
+                let randomCrimes = [];
+                let selectedCrimes = [];
+                // goes through res data to ID all unique crimes and push to array
                 for (let crime in res.data) {
-                    (!isNotUnique(crimeArray, res.data[crime].category) && crimeArray.push(res.data[crime].category))
+                    (!isNotUnique(crimeTypes, res.data[crime].category) && crimeTypes.push(res.data[crime].category))
                 }
-                console.log(crimeArray);
-                while(randomCrimeArray.length < (crimeArray.length >= 5 ? 5 : crimeArray.length)) {
-                    let num = randNum(crimeArray.length, 0);
-                    (!isNotUnique(randomCrimeArray, crimeArray[num]) && randomCrimeArray.push(crimeArray[num]))
-                }
-                console.log(randomCrimeArray);
 
-                // show one random object from crime-category parameter
-                // setCrimeSceneArray([
-                // filter(res.data, "bicycle-theft"),
-                // filter(res.data, "criminal-damage-arson"),
-                // filter(res.data, "violent-crime")
-                // ])
+                // creates an array of (up to) 5 random unique crimes depending on how many unique crimes in prev array
+                while(randomCrimes.length < (crimeTypes.length >= 5 ? 5 : crimeTypes.length)) {
+                    let num = randNum(crimeTypes.length, 0);
+                    (!isNotUnique(randomCrimes, crimeTypes[num]) && randomCrimes.push(crimeTypes[num]))
+                }
+
+                // for each unique crime in prev array, will select a random crime of the same category from the original res data
+                randomCrimes.forEach((crimeType) => {
+                    let crimePool = [];
+                    for (let crime in res.data) {
+                        if (res.data[crime].category === crimeType) {
+                            crimePool.push(res.data[crime]);
+                        }
+                    }
+                    selectedCrimes.push(crimePool[randNum(crimePool.length, 0)])
+                })
+                console.log(selectedCrimes);
+                // pushes 5 random unique crimes to state
+                setCrimeSceneArray(selectedCrimes);
             })
         },[location])
 
