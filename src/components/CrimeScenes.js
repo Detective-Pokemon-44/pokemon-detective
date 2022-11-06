@@ -50,10 +50,8 @@ export default function CrimeScenes({ username, location }) {
             // when none of the existing array entries matches the random number push to array
             (!isNotUnique(tempArray, newNumber) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
         }
-        setPokemonURL(tempArray)
+        setPokemonURL(tempArray);
     }
-    setPokemonURL(tempArray);
-  }
 
   // Function to convert the Pokemon URLs array into new array by making API call to access each URLs and get Pokemon Name and Type
   useEffect(() => {
