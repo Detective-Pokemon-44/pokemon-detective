@@ -6,21 +6,34 @@ export default function CrimeScenes({ username, location }) {
     const [selectedLocation, setSelectedLocation] = useState();
     const [pokemon, setPokemon] = useState([]);
 
-    console.log(location);
+    const [selectedLocation, setSelectedLocation] = useState();
+    const [crimeSceneArray, setCrimeSceneArray] = useState();
+
+    // this function filter the array with same category name with placeholder, and choose random object 
+    function filter(array, placeholder){
+        const filteredArray = array.filter(({category}) => category === placeholder)
+        return filteredArray[Math.floor(Math.random() * filteredArray.length)]
+    }
+
     useEffect(() => {
-        axios.get(`https://data.police.uk/api/crimes-street/all-crime`, {
+        axios
+            .get(`https://data.police.uk/api/crimes-street/all-crime`, {
             params: {
                 lat: location[1],
                 lng: location[2],
             },
-        })
-            .then(function (res) {
-                const filtered = res.data
-                console.log(filtered)
+
             })
-    }, [])
+            .then(function (res) {
 
-
+                // show one random object from crime-category parameter
+                setCrimeSceneArray([
+                filter(res.data, "bicycle-theft"),
+                filter(res.data, "criminal-damage-arson"),
+                filter(res.data, "violent-crime")
+                ])
+            })
+    },[location])
 
     // this function creates an array of 5 unique pokemon
     function randomPokemon() {
@@ -48,9 +61,18 @@ export default function CrimeScenes({ username, location }) {
 
 
     return (
-        <div className="CrimeScenes card">
-            <h2>Welcome to {location[0]}, {username}</h2>
-            <button onClick={randomPokemon}>Generate Pokemon</button>
-        </div>
+      <div className='CrimeScenes card'>
+        <h2>
+          Welcome to {location[0]}, {username}
+        </h2>
+        {crimeSceneArray && (
+          <ul className='CrimeScenes-category'>
+            {crimeSceneArray.map((individual) => {
+              return <li key={individual.id}>{individual.category}</li>
+            })}
+          </ul>
+        )}
+        <button onClick={randomPokemon}>Generate Pokemon</button>
+      </div>
     )
 }
