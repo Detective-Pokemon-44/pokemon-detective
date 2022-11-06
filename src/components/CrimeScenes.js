@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { isNotUnique, randNum } from '../utils/functions';
 
 export default function CrimeScenes({ username, location }) {
   const [selectedLocation, setSelectedLocation] = useState();
@@ -8,43 +8,49 @@ export default function CrimeScenes({ username, location }) {
   const [pokemonURL, setPokemonURL] = useState([]);
   const [pokemon, setPokemon] = useState([]);
 
-  // this function filter the array with same category name with placeholder, and choose random object
-  function filter(array, placeholder) {
-    const filteredArray = array.filter(
-      ({ category }) => category === placeholder
-    );
-    return filteredArray[Math.floor(Math.random() * filteredArray.length)];
-  }
+    useEffect(() => {
+        axios
+            .get(`https://data.police.uk/api/crimes-street/all-crime`, {
+                params: {
+                    lat: location[1],
+                    lng: location[2],
+                },
+            })
+            .then(function (res) {
+                let crimeTypes = [];
+                let randomCrimes = [];
+                let selectedCrimes = [];
+                // goes through res data to ID all unique crimes and push to array
+                for (let crime in res.data) {
+                    (!isNotUnique(crimeTypes, res.data[crime].category) && crimeTypes.push(res.data[crime].category));
+                }
+                // creates an array of (up to) 5 random unique crimes depending on how many unique crimes in prev array
+                while (randomCrimes.length < (crimeTypes.length >= 5 ? 5 : crimeTypes.length)) {
+                    let num = randNum(crimeTypes.length, 0);
+                    (!isNotUnique(randomCrimes, crimeTypes[num]) && randomCrimes.push(crimeTypes[num]));
+                }
+                // for each unique crime in prev array, will select a random crime of the same category from the original res data
+                randomCrimes.forEach((crimeType) => {
+                    let crimePool = [];
+                    for (let crime in res.data) {
+                        (res.data[crime].category === crimeType && crimePool.push(res.data[crime]));
+                    }
+                    selectedCrimes.push(crimePool[randNum(crimePool.length, 0)])
+                })
+                // pushes 5 random unique crimes to state
+                setCrimeSceneArray(selectedCrimes);
+            })
+    }, [location])
 
-  useEffect(() => {
-    axios
-      .get(`https://data.police.uk/api/crimes-street/all-crime`, {
-        params: {
-          lat: location[1],
-          lng: location[2],
-        },
-      })
-      .then(function (res) {
-        // show one random object from crime-category parameter
-        setCrimeSceneArray([
-          filter(res.data, "bicycle-theft"),
-          filter(res.data, "criminal-damage-arson"),
-          filter(res.data, "violent-crime"),
-        ]);
-      });
-  }, [location]);
-
-  // this function creates an array of 5 unique pokemon
-  function randomPokemon() {
-    let tempArray = [];
-    while (tempArray.length < 5) {
-      let newNumber = Math.floor(Math.random() * 151 + 1);
-      function isNotUnique(element) {
-        return element === newNumber;
-      }
-      // when none of the existing array entries matches the random number push to array
-      !tempArray.some(isNotUnique) &&
-        tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`);
+    // this function creates an array of 5 unique pokemon
+    function randomPokemon() {
+        let tempArray = [];
+        while (tempArray.length < 5) {
+            let newNumber = randNum(151, 1);
+            // when none of the existing array entries matches the random number push to array
+            (!isNotUnique(tempArray, newNumber) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
+        }
+        setPokemonURL(tempArray)
     }
     setPokemonURL(tempArray);
   }
