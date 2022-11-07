@@ -5,7 +5,6 @@ import PokemonList from './PokemonList';
 
 
 export default function CrimeScenes({ username, location }) {
-
   const [crimeSceneArray, setCrimeSceneArray] = useState();
   const [pokemonURL, setPokemonURL] = useState([]);
   const [pokemon, setPokemon] = useState([]);
@@ -43,7 +42,10 @@ export default function CrimeScenes({ username, location }) {
         }
         // for each unique crime in prev array, will select a random crime of the same category from the original res data
         randomCrimes.forEach((crimeType) => {
-          const crimePool = res.data.filter((crime) => crime.category === crimeType);
+          let crimePool = [];
+          for (let crime in res.data) {
+            (res.data[crime].category === crimeType && crimePool.push(res.data[crime]));
+          }
           selectedCrimes.push(crimePool[randNum(crimePool.length, 0)])
         })
         // pushes 5 random unique crimes to state
@@ -85,11 +87,10 @@ export default function CrimeScenes({ username, location }) {
       {crimeSceneArray && (
         <ul className="CrimeScenes-category">
           {crimeSceneArray.map((individual) => {
-            return <li key={individual.id} onClick={!crimeSelected ? () => { handleCrimeClick(individual) } : null}>{individual.category}</li>;
+            return <li key={individual.id} onClick={() => { handleCrimeClick(individual) }}>{individual.category}</li>;
           })}
         </ul>
       )}
-      {/* <button onClick={randomPokemon}>Generate Pokemon</button> */}
 
       {pokemon && <PokemonList pokemon={pokemon} />}
     </div>
