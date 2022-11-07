@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
-
+import gameLogic from "../utils/logic"
 
 export default function CrimeScenes({ username, location }) {
   const [crimeSceneArray, setCrimeSceneArray] = useState();
@@ -12,6 +12,7 @@ export default function CrimeScenes({ username, location }) {
 
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
+    gameLogic(pokemon[0], crimeSelected)
     alert(`you selected ${crime.category}`)
   }
   // const handlePokemonClick = (pokemon) => {
