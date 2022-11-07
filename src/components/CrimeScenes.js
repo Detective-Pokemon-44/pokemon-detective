@@ -36,6 +36,7 @@ export default function CrimeScenes({ username, location }) {
         for (let crime in res.data) {
           (!isNotUnique(crimeTypes, res.data[crime].category) && crimeTypes.push(res.data[crime].category));
         }
+        console.log(crimeTypes);
         // creates an array of (up to) 5 random unique crimes depending on how many unique crimes in prev array
         while (randomCrimes.length < (crimeTypes.length >= 5 ? 5 : crimeTypes.length)) {
           let num = randNum(crimeTypes.length, 0);
