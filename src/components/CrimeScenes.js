@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { isNotUnique, randNum } from '../utils/functions';
-
 import PokemonList from './PokemonList';
 
+
 export default function CrimeScenes({ username, location }) {
-  const [selectedLocation, setSelectedLocation] = useState();
   const [crimeSceneArray, setCrimeSceneArray] = useState();
   const [pokemonURL, setPokemonURL] = useState([]);
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
 
-
-
-
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
-
+    alert(`you selected ${crime.category}`)
   }
+  // const handlePokemonClick = (pokemon) => {
+  //   setPokemonSelected(pokemon);
+  //   alert(`you selected ${pokemon.name}`);
+  // }
 
   useEffect(() => {
     axios
@@ -50,6 +50,7 @@ export default function CrimeScenes({ username, location }) {
         })
         // pushes 5 random unique crimes to state
         setCrimeSceneArray(selectedCrimes);
+        randomPokemon();
       })
   }, [location])
 
@@ -74,7 +75,7 @@ export default function CrimeScenes({ username, location }) {
       })
     ).then((data) => {
       setPokemon(data);
-    });
+    })
   }, [pokemonURL]);
 
 
@@ -86,36 +87,13 @@ export default function CrimeScenes({ username, location }) {
       {crimeSceneArray && (
         <ul className="CrimeScenes-category">
           {crimeSceneArray.map((individual) => {
-            return <li key={individual.id}>{individual.category}</li>;
+            return <li key={individual.id} onClick={!crimeSelected ? () => { handleCrimeClick(individual) } : null}>{individual.category}</li>;
           })}
         </ul>
       )}
       {/* <button onClick={randomPokemon}>Generate Pokemon</button> */}
-      <button onClick={randomPokemon}>Generate Pokemon</button>
 
-      {pokemon && (
-        <ul>
-          {pokemon.map((pokemonInfo) => {
-            return (
-              <li key={pokemonInfo.id}>
-                <p>
-                  {pokemonInfo.name}
-                </p>
-
-                {pokemonInfo.types.map((pokemonPower) => {
-                  return (
-                    <p>
-                      {pokemonPower.type.name}
-                    </p>
-                  )
-                }
-                )}
-
-              </li>
-            )
-          })}
-        </ul>
-      )}
+      {pokemon && <PokemonList pokemon={pokemon} />}
     </div>
   );
 }
