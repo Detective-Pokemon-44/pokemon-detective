@@ -1,9 +1,8 @@
 import crimeObject from "./crimeObject"
 
-function gameLogic(pokemon, crime){
-    const types = pokemon.types.filter(({type}) => type.type)
+function gameLogic(pokemon, crime) {
+    const types = pokemon.types.map(({ type }) => type.name)
     console.log(types);
-    console.log(pokemon);
-    console.log(crime);
+
 }
 export default gameLogic;
