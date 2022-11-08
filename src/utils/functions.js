@@ -8,4 +8,8 @@ function randNum(max, min) {
     return Math.floor(Math.random() * max + min);
 }
 
-export { isNotUnique, randNum };
+function compareValue(arr, arr2) {
+  return arr.some((arrVal) => arr2.some((val) => arrVal === val))
+}
+
+export { isNotUnique, randNum, compareValue };

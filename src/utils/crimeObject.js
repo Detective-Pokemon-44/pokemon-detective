@@ -1,4 +1,4 @@
-const arrayOfCrimeType = [
+const crimeObject = [
   { "anti-social-behaviour": ["grass", "water", "ice"] },
   { "bicycle-theft": ["electric", "bug", "ice"] },
   { "burglary": ["dark", "ghost", "rock"] },
@@ -15,4 +15,4 @@ const arrayOfCrimeType = [
   { "other-crime": ["fire", "normal", "grass"] },
 ]
 
-export default arrayOfCrimeType
+export default crimeObject
