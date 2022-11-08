@@ -10,10 +10,10 @@ export default function CrimeScenes({ username, location }) {
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
- 
+
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
-    gameLogic(pokemon[0], crimeSelected, crimeSolved, setCrimeSolved)
+    gameLogic(pokemon[0], crimeSelected)
     alert(`you selected ${crime.category}`)
   }
   // const handlePokemonClick = (pokemon) => {
