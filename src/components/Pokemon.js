@@ -1,17 +1,21 @@
 import ReactModal from 'react-modal';
-import {useState} from 'react';
+import useToggleState from '../hooks/useToggleState';
 
 export default function Pokemon({ pokemonInfo }) {
-    const [modalOpen, toggleModalOpen] = useState(false);
+    const [modalState, toggleModal] = useToggleState();
     return (
         <>
-            <img className="Pokemon-image" src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)} onClick={() => toggleModalOpen(!modalOpen)} alt="Pokemon's image" />
+            <img className="Pokemon-image" src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)} onClick={toggleModal} alt="Pokemon's image" />
             <p><strong>{pokemonInfo.name}</strong></p>
             {pokemonInfo.types.map((pokemonPower) => <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
             )}
 
-            <ReactModal isOpen = {modalOpen} onRequestClose={() => toggleModalOpen(!modalOpen)}>
-                <p>I'm a modal</p> 
+            <ReactModal
+                isOpen={modalState}
+                className="Pokemon-modal"
+                onRequestClose={toggleModal}
+            >
+                <p>I am {pokemonInfo.name}</p>
             </ReactModal>
         </>
     )
