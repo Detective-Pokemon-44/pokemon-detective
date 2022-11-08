@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
-
+import gameLogic from "../utils/logic"
 
 export default function CrimeScenes({ username, location }) {
   const [crimeSceneArray, setCrimeSceneArray] = useState();
@@ -10,14 +10,12 @@ export default function CrimeScenes({ username, location }) {
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
 
+ 
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
+    gameLogic(pokemon[0], crime)
     alert(`you selected ${crime.category}`)
   }
-  // const handlePokemonClick = (pokemon) => {
-  //   setPokemonSelected(pokemon);
-  //   alert(`you selected ${pokemon.name}`);
-  // }
 
   useEffect(() => {
     axios
@@ -35,6 +33,7 @@ export default function CrimeScenes({ username, location }) {
         for (let crime in res.data) {
           (!isNotUnique(crimeTypes, res.data[crime].category) && crimeTypes.push(res.data[crime].category));
         }
+        console.log(crimeTypes);
         // creates an array of (up to) 5 random unique crimes depending on how many unique crimes in prev array
         while (randomCrimes.length < (crimeTypes.length >= 5 ? 5 : crimeTypes.length)) {
           let num = randNum(crimeTypes.length, 0);
@@ -87,7 +86,7 @@ export default function CrimeScenes({ username, location }) {
       {crimeSceneArray && (
         <ul className="CrimeScenes-category">
           {crimeSceneArray.map((individual) => {
-            return <li key={individual.id} onClick={() => { handleCrimeClick(individual) }}>{individual.category}</li>;
+            return <li key={individual.id} onClick={(e) => { handleCrimeClick(individual) }}>{individual.category}</li>;
           })}
         </ul>
       )}

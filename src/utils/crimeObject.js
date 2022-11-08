@@ -1,18 +1,20 @@
-const arrayOfCrimeType = [
-  { antiSocialBehaviour: ["Grass", "Water", "Ice"] },
-  { bicyclTheft: ["Electric", "Bug", "Ice"] },
-  { burglary: ["Dark", "Ghost", "Rock"] },
-  { criminalDamageArson: ["Fire", "Ground", "Steel"] },
-  { drugs: ["Ground", "Water", "Flying"] },
-  { otherTheft: ["Poison", "Electric", "Grass"] },
-  { possessionOfWeapons: ["Psychic", "Rock", "Fighting"] },
-  { publicOrder: ["Water", "Normal", "Bug"] },
-  { robbery: ["Ghost", "Dark", "Flying"] },
-  { shoplifting: ["Normal", "Steel", "Poison"] },
-  { theftFromThePerson: ["Electric", "Bug", "Ice"] },
-  { vehicleCrime: ["Electric", "Bug", "Fire"] },
-  { violentCrime: ["Psychic", "Fighting", "Dragon"] },
-  { otherCrime: ["Fire", "Normal", "Grass"] },
-]
+const crimeObject =
+{
+  "anti-social-behaviour": ["psychic", "water", "ice", "fairy"],
+  "bicycle-theft": ["electric", "bug", "normal", "rock"],
+  "burglary": ["dark", "ghost", "rock", "normal"],
+  "criminal-damage-arson": ["ice", "ground", "steel","water"],
+  "drugs": ["ground", "poison", "flying", "fairy"],
+  "other-theft": ["poison", "electric", "grass", "bug"],
+  "possession-of-weapons": ["psychic", "rock", "fighting", "dark"],
+  "public-order": ["water", "normal", "bug", "fairy"],
+  "robbery": ["ghost", "dark", "flying", "steel"],
+  "shoplifting": ["normal", "steel", "poison", "rock"],
+  "theft-from-the-person": ["electric", "bug", "ice", "dragon"],
+  "vehicle-crime": ["electric", "steel", "fire", "ground"],
+  "violent-crime": ["psychic", "fighting", "dragon", "fire"],
+  "other-crime": ["fire", "normal", "grass", "flying"]
+}
 
-export default arrayOfCrimeType
+
+export default crimeObject
