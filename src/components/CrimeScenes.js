@@ -60,7 +60,7 @@ export default function CrimeScenes({ username, location }) {
     while (tempArray.length < 5) {
       let newNumber = randNum(151, 1);
       // when none of the existing array entries matches the random number push to array
-      (!isNotUnique(tempArray, newNumber) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
+      (!isNotUnique(tempArray, `https://pokeapi.co/api/v2/pokemon/${newNumber}`) && tempArray.push(`https://pokeapi.co/api/v2/pokemon/${newNumber}`))
     }
     setPokemonURL(tempArray);
   }
