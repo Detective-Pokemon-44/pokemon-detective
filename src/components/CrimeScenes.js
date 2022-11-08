@@ -13,13 +13,9 @@ export default function CrimeScenes({ username, location }) {
  
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
-    gameLogic(pokemon[0], crimeSelected)
+    gameLogic(pokemon[0], crime)
     alert(`you selected ${crime.category}`)
   }
-  // const handlePokemonClick = (pokemon) => {
-  //   setPokemonSelected(pokemon);
-  //   alert(`you selected ${pokemon.name}`);
-  // }
 
   useEffect(() => {
     axios
