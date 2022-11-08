@@ -25,15 +25,15 @@ import { compareValue } from "./functions"
 // }
 
 async function gameLogic(pokemon, crime) {
+
     const types = pokemon.types.map(({ type }) => type.name);
     console.log(crime.category);
-    const checkValue = Object.getOwnPropertyDescriptor(crimeObject, crime.category);
-    console.log('checked value=', checkValue);
-    console.log('types=', checkValue)
+    const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crime.category);
+    console.log('crime values=', crimeValues.value);
+    console.log('types=', types)
     const solved = types.filter(type => {
-
+        console.log(crimeValues.value.includes(type))
     })
-    console.log(solved);
 
 }
 export default gameLogic;
