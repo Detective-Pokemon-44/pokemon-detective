@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
+import ModalContent from './ModalContent';
 
 
 export default function CrimeScenes({ username, location }) {
@@ -93,6 +94,8 @@ export default function CrimeScenes({ username, location }) {
       )}
 
       {pokemon && <PokemonList pokemon={pokemon} />}
+
+      <ModalContent />
     </div>
   );
 }
