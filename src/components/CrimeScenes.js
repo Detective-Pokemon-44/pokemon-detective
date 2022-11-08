@@ -95,7 +95,7 @@ export default function CrimeScenes({ username, location }) {
 
       {pokemon && <PokemonList pokemon={pokemon} />}
 
-      <ModalContent />
+      <ModalContent pokemon={pokemon} />
     </div>
   );
 }
