@@ -32,8 +32,15 @@ async function gameLogic(pokemon, crime) {
     console.log('crime values=', crimeValues.value);
     console.log('types=', types)
     const solved = types.filter(type => {
-        console.log(crimeValues.value.includes(type))
+        return crimeValues.value.includes(type)
     })
+    console.log("solved array", solved, "and the length is", solved.length);
+    if (solved.length > 0) {
+        alert("YOU DID IT!")
+    }
+    else {
+        alert("AWWWW TIME TO GO HOME!")
+    }
 
 }
 export default gameLogic;

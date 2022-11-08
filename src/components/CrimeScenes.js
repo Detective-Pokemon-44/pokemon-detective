@@ -90,7 +90,7 @@ export default function CrimeScenes({ username, location }) {
       {crimeSceneArray && (
         <ul className="CrimeScenes-category">
           {crimeSceneArray.map((individual) => {
-            return <li key={individual.id} onClick={() => { handleCrimeClick(individual) }}>{individual.category}</li>;
+            return <li key={individual.id} onClick={(e) => { handleCrimeClick(individual) }}>{individual.category}</li>;
           })}
         </ul>
       )}
