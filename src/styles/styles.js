@@ -1,0 +1,10 @@
+import './setup.scss';
+import './baseStyles.scss';
+import './Navbar.scss';
+import './Location.scss';
+import './Footer.scss';
+import './LandingPage.scss';
+import './Game.scss';
+import './CrimeScenes.scss';
+import './PokemonList.scss';
+import './Pokemon.scss';
