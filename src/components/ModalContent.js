@@ -1,11 +1,11 @@
-import Pokemon from "./Pokemon";
-
 export default function ModalContent({ pokemon, crimeSelected }) {
-  console.log(crimeSelected);
+
   return (
     <>
-      {crimeSelected !== null ? <h4>you selected a crime</h4> : "Select a Crime"}
-      <p> on a foggy day near...</p>
+      {crimeSelected !== null ? <h4>{crimeSelected.category}</h4> : <p>"Select a Crime"</p>}
+      
+      { crimeSelected !== null && <p>Crime's location: {crimeSelected.location.street.name}</p>}
+      
       <fieldset>
         <legend>Which Pokemon Detective can solve this mystery?</legend>
 
@@ -18,7 +18,6 @@ export default function ModalContent({ pokemon, crimeSelected }) {
                 id="pokemon1"
                 name="detective"
                 value="pokemon1"
-                // checked
               ></input>
             </div>
           );
