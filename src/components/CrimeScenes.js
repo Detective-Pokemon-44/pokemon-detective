@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
 import gameLogic from "../utils/logic"
+// import crimeObject from "../utils/crimeObject"
 
 import crimeAPICall from '../utils/crimeAPICall';
 
