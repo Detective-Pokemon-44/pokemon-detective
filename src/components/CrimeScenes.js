@@ -74,7 +74,6 @@ export default function CrimeScenes({ username, location }) {
       })
     ).then((data) => {
       setPokemon(data);
-      console.log(pokemon[0].name);
     })
   }, [pokemonURL]);
 
