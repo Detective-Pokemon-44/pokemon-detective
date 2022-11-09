@@ -1,14 +1,6 @@
-import Pokemon from './Pokemon';
-import PokemonModal from "./PokemonModal"
-import { useState } from "react"
+import Pokemon from "./Pokemon";
 
 export default function PokemonList({ pokemon }) {
-    const [isPokemonClicked, setIsPokemonClicked] = useState(false);
-    const [pokemonObject, setPokemonObject] = useState()
-    function showPokemonModal(pokemonObject){
-        setIsPokemonClicked(!isPokemonClicked)
-        setPokemonObject(pokemonObject)
-    }
 
     return (
       <>
@@ -18,18 +10,12 @@ export default function PokemonList({ pokemon }) {
               <li
                 key={pokemonInfo.id}
                 className='Pokemon'
-                onClick={() => showPokemonModal(pokemonInfo)}
               >
-                <Pokemon pokemonInfo={pokemonInfo} />
+                <Pokemon pokemonInfo={pokemonInfo}/>
               </li>
             )
           })}
         </ul>
-        {isPokemonClicked && (
-          <PokemonModal
-            pokemonObject={pokemonObject}
-          />
-        )}
       </>
     )
 }
