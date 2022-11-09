@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
+import ModalContent from "./ModalContent";
 import gameLogic from "../utils/logic"
 // import crimeObject from "../utils/crimeObject"
 
@@ -11,7 +12,6 @@ export default function CrimeScenes({ username, location }) {
     const [pokemonURL, setPokemonURL] = useState([]);
     const [pokemon, setPokemon] = useState([]);
     const [crimeSelected, setCrimeSelected] = useState(null);
-
 
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
@@ -68,6 +68,10 @@ export default function CrimeScenes({ username, location }) {
             )}
 
             {pokemon && <PokemonList pokemon={pokemon} />}
+            
+            {pokemon && (
+        <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} />
+      )}
         </div>
     );
 }
