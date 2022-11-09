@@ -1,0 +1,25 @@
+.Location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.Location-locationsContainer {
+    display: flex;
+    min-width: 250px;
+    width: 30vw;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Location-locationCard {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Location-locationImg {
+    width: 50px;
+}

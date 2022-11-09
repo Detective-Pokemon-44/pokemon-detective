@@ -1,11 +1,11 @@
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import Game from './Game';
 import Footer from './Footer';
 
 export default function DetectivePokemon() {
     return (
         <div>
-            <Navbar />
+            <NavBar />
             <Game />
             <Footer />
         </div>
