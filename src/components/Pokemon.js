@@ -15,6 +15,7 @@ export default function Pokemon({ pokemonInfo }) {
                 isOpen={modalState}
                 className="Pokemon-modal"
                 onRequestClose={toggleModal}
+                appElement={document.getElementById('root')}
             >
                 <img className="Pokemon-modalImage" src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)} alt="Pokemon's image" />
                 <h3>{capitalizeFirstLetter(pokemonInfo.name)}</h3>
