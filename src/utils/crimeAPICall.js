@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { isNotUnique, randNum } from './functions';
 
-export default function getCrimes(location) {
+export default function crimeAPICall(location, setTheCrime) {
     axios
         .get(`https://data.police.uk/api/crimes-street/all-crime`, {
             params: {
@@ -31,6 +31,6 @@ export default function getCrimes(location) {
                 selectedCrimes.push(crimePool[randNum(crimePool.length, 0)])
             })
             // pushes 5 random unique crimes to state
-            return(selectedCrimes);
+            setTheCrime(selectedCrimes);
         })
 }

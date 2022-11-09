@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
 import gameLogic from "../utils/logic"
 
-import getCrimes from '../utils/getCrimes';
+import crimeAPICall from '../utils/crimeAPICall';
 
 export default function CrimeScenes({ username, location }) {
     const [crimeSceneArray, setCrimeSceneArray] = useState();
@@ -19,21 +18,9 @@ export default function CrimeScenes({ username, location }) {
         alert(`you selected ${crime.category}`)
     }
 
-    useEffect(() => {
-        async function fetchData() {
-            // try {
-                let selectedCrimes = await getCrimes(location);
-                console.log(selectedCrimes);
-                setCrimeSceneArray(selectedCrimes);
-        //     } catch (error) {
-        //         console.error(error.message);
-        //     }
-        }
-
-        fetchData();
-
-
-    }, [location])
+    const setTheCrime = (crime) => {
+        setCrimeSceneArray(crime);
+    }
 
     // this function creates an array of 5 unique pokemon
     function randomPokemon() {
@@ -45,6 +32,12 @@ export default function CrimeScenes({ username, location }) {
         }
         setPokemonURL(tempArray);
     }
+
+    // on component load, initializes crime and pokemon array values
+    useEffect(() => {
+        crimeAPICall(location, setTheCrime);
+        randomPokemon();
+    }, [location])
 
     // Function to convert the Pokemon URLs array into new array by making API call to access each URLs and get Pokemon Name and Type
     useEffect(() => {
