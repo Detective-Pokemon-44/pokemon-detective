@@ -3,6 +3,7 @@ import axios from 'axios';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
 import gameLogic from "../utils/logic"
+// import crimeObject from "../utils/crimeObject"
 
 export default function CrimeScenes({ username, location }) {
   const [crimeSceneArray, setCrimeSceneArray] = useState();
