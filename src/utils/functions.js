@@ -8,8 +8,12 @@ function randNum(max, min) {
     return Math.floor(Math.random() * max + min);
 }
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function compareValue(arr, arr2) {
   return arr.some((arrVal) => arr2.some((val) => arrVal === val))
 }
 
-export { isNotUnique, randNum, compareValue };
+export { isNotUnique, randNum, capitalizeFirstLetter, compareValue };
