@@ -1,24 +1,26 @@
 import { useState, useEffect } from 'react';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
-import ModalContent from "./ModalContent";
-import gameLogic from "../utils/logic"
+import CrimeSceneModal from "./CrimeSceneModal";
+import useToggleState from '../hooks/useToggleState';
+import ReactModal from 'react-modal';
 import Score from "./Score"
 // import crimeObject from "../utils/crimeObject"
 
 import crimeAPICall from '../utils/crimeAPICall';
 
-export default function CrimeScenes({ username, location }) {
+export default function CrimeScenes({ username, location, handleLocation }) {
     const [crimeSceneArray, setCrimeSceneArray] = useState();
     const [pokemonURL, setPokemonURL] = useState([]);
     const [pokemon, setPokemon] = useState([]);
     const [crimeSelected, setCrimeSelected] = useState(null);
-    const [score, setScore] = useState(0);
+    const [modalState, toggleModal] = useToggleState();
+
 
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
-        gameLogic(pokemon[0], crime, setScore)
-        alert(`you selected ${crime.category}`)
+        toggleModal(true);
+
     }
 
     const setTheCrime = (crime) => {
@@ -42,6 +44,7 @@ export default function CrimeScenes({ username, location }) {
         randomPokemon();
     }, [location])
 
+
     // Function to convert the Pokemon URLs array into new array by making API call to access each URLs and get Pokemon Name and Type
     useEffect(() => {
         Promise.all(
@@ -54,7 +57,6 @@ export default function CrimeScenes({ username, location }) {
             setPokemon(data);
         })
     }, [pokemonURL]);
-
 
     return (
       <>
@@ -80,11 +82,18 @@ export default function CrimeScenes({ username, location }) {
             </ul>
           )}
 
-          {pokemon && <PokemonList pokemon={pokemon} />}
+            {pokemon && <PokemonList pokemon={pokemon} />}
 
-          {pokemon && (
-            <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} />
-          )}
+            {pokemon && (
+                <ReactModal
+                    isOpen={modalState}
+                    className='Pokemon-modal'
+                    onRequestClose={toggleModal}
+                    appElement={document.getElementById("root")}
+                >
+                    <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
+                </ReactModal>
+            )}
         </div>
         <Score username={username} score={score} />
       </>

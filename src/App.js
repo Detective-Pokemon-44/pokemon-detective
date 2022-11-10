@@ -1,5 +1,5 @@
 import DetectivePokemon from './components/DetectivePokemon';
-import './styles/styles.js'
+import './styles/styles.css'
 
 function App() {
 

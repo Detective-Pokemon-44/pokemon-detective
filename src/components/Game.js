@@ -16,14 +16,21 @@ export default function Game() {
     }
 
     return (
-      <div className='Game'>
-        {!username && !location && (
-          <LandingPage handleUsername={handleUsername}/>
-        )}
-        {username && !location && <Location setLocation={setLocation} />}
-        {username && location && (
-          <CrimeScenes username={username} location={location} />
-        )}
-      </div>
+        <div className="Game">
+            {(!username && !location) &&
+                <LandingPage
+                    handleUsername={handleUsername}
+                />}
+            {(username && !location) &&
+                <Location
+                    setLocation={setLocation}
+                />}
+            {(username && location) &&
+                <CrimeScenes
+                    username={username}
+                    location={location}
+                    handleLocation={handleLocation}
+                />}
+        </div>
     )
 }

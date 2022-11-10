@@ -1,20 +1,18 @@
 import ReactModal from 'react-modal';
 import useToggleState from '../hooks/useToggleState';
 import crimeObject from "../utils/crimeObject";
-import { capitalizeFirstLetter } from '../utils/functions';
+import { capitalizeFirstLetter, isNotUnique } from '../utils/functions';
 
-export default function Pokemon({ pokemonInfo, pokemonObject }) {
-    const [modalState, toggleModal] = useToggleState()
+export default function Pokemon({ pokemonInfo }) {
+  const [modalState, toggleModal] = useToggleState()
 
-    const arraysWithCrimeType = pokemonInfo.types.map((individualType) => {
-    let temp = []
-    // for loop helps to find crimeType value matching with pokemon type, and pushing into temp array to display
+  let crimeStrengths = []
+  pokemonInfo.types.map((individualType) => {
+    // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
     for (let key in crimeObject) {
-        crimeObject[key].includes(individualType.type.name) && temp.push(key)
+      (crimeObject[key].includes(individualType.type.name) && !isNotUnique(crimeStrengths, key) && crimeStrengths.push(key))
     }
-    return temp
-    })
-    const types = pokemonInfo.types.map(({ type }) => type.name)
+  })
 
   return (
     <>
@@ -49,13 +47,10 @@ export default function Pokemon({ pokemonInfo, pokemonObject }) {
               {pokemonPower.type.name.toUpperCase()}
             </p>
           ))}
-          {arraysWithCrimeType.map((individualType) => {
-            return <p>{individualType}</p>
-          })}
         </div>
         <p>
-          Due to its types, {capitalizeFirstLetter(pokemonInfo.name)} is good at
-          solving 'TYPE' crimes.
+          {capitalizeFirstLetter(pokemonInfo.name)} is good at
+          solving {crimeStrengths.map((individualType, i, arr) => (i + 1 === arr.length ? `and ${individualType.replaceAll("-", " ")}.` : `${individualType.replaceAll("-", " ")}, `))}
         </p>
       </ReactModal>
     </>
