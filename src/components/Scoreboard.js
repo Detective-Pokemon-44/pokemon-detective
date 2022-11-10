@@ -1,60 +1,43 @@
-import { useState, useEffect } from "react"
-import firebaseConfig from "../utils/firebase"
-import { getDatabase, push, ref, onValue, remove } from "firebase/database"
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import firebaseConfig from "../utils/firebase";
+import { getDatabase, ref, onValue } from "firebase/database";
 
-export default function Scoreboard({ scoreData }) {
-    console.log(scoreData);
-    // export default function Scoreboard() {
-    // Limit to 10 scores
+export default function Scoreboard() {
+  // export default function Scoreboard() {
+  // Limit to 10 scores
+  const [highScores, setHighScores] = useState([]);
+  const database = getDatabase(firebaseConfig)
+  const dbRef = ref(database, `container`)
 
-    const database = getDatabase(firebaseConfig)
-    
-    const dbRef = ref(database, `container`)
-    
-    const temp = []
+  useEffect(() => {
     onValue(dbRef, (res) => {
       const data = res.val()
-    //   console.log(data);
-    //   for (let key in data) {
-    //       temp.push({ key: key, nameScore: data[key] })
-    //     }
-
-    const filteredData = temp.sort(
-        (a, b) => b.nameScore.Score - a.nameScore.Score
-    )
-
+      let temp = [];
+      for (const item in data) {
+        temp.push(data[item]);
+      }
+      console.log(temp);
+      setHighScores(temp);
     })
+  }, [])
+
   return (
-    <>
-      <ul>
-        {/* {filteredData.map((individual) => {
-          return (
-            <li>
-              <p>
-                {individual.nameScore.Name} score{individual.nameScore.Score}
-              </p>
-            </li>
-          )
-        })} */}
-      </ul>
-    </>
+    <div className="Game">
+      <Link to="/"><button>Go Back</button></Link>
+      <div className="Scoreboard">
+        <h2>High Scores</h2>
+        <ul>
+          {highScores.map((highScore, i) => {
+            return (
+              <li key={i} className="Scoreboard-listItem">
+                <span>{highScore.Name} : </span>
+                <span>{highScore.Score}</span>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    </div>
   )
 }
-
-
-//   return (
-//   <>
-//   <ul>
-//     {scoreData.map((individual)=> {
-//         return (
-//           <li>
-//             <p>
-//               {individual.nameScore.Name} {individual.nameScore.Score} score
-//             </p>
-//           </li>
-//         )
-//     })}
-//   </ul>
-//   </>
-//   )
-// }

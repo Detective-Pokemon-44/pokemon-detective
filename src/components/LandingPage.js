@@ -1,7 +1,8 @@
 import useInputState from '../hooks/useInputState';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function LandingPage({ handleUsername }) {
+  const navigate = useNavigate();
   // realtime updates input value with built in reset function
   const [username, updateUsername, resetUsername] = useInputState("")
   // updates username w/user input then resets input field
@@ -24,7 +25,13 @@ export default function LandingPage({ handleUsername }) {
           <button type='submit' onClick={handleClick}>
             Start Game
           </button>
+          <button onClick={(e) => {
+            e.preventDefault();
+            navigate('/highscores')
+          }
+          }>High Scores</button>
         </form>
+
       </div>
     </>
   )
