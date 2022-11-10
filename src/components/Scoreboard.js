@@ -18,7 +18,10 @@ export default function Scoreboard() {
         temp.push(data[item]);
       }
       console.log(temp);
-      setHighScores(temp);
+      const filteredData = temp.sort(
+        (a, b) => b.Score - a.Score
+      )
+      setHighScores(filteredData);
     })
   }, [])
 
