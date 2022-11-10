@@ -15,7 +15,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
     const [pokemon, setPokemon] = useState([]);
     const [crimeSelected, setCrimeSelected] = useState(null);
     const [modalState, toggleModal] = useToggleState();
-
+    const [score, setScore] = useState(0);
 
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
