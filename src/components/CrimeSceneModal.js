@@ -41,12 +41,12 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, handleLocation
             <h4>{crimeSelected.category}</h4>
             <p>Crime's location: {crimeSelected.location.street.name}</p>
 
-            <fieldset onChange={handleButtonSwitch}>
+            <fieldset onChange={handleButtonSwitch} className="CrimeSceneModal-fieldset">
               <legend>Which Pokemon Detective can solve this mystery?</legend>
 
               {pokemon.map((pokemonInfo) => {
                 return (
-                  <div className="Pokemon-radio-option" key={pokemonInfo.id} >
+                  <div className="CrimeSceneModal-modal-container" key={pokemonInfo.id} >
                     <label htmlFor={pokemonInfo.name}><img className="CrimeScene-modalImage" src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)} alt={pokemon.name} /></label>
                     <input
                       type="radio"

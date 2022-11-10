@@ -35,12 +35,24 @@
     align-items: center;
 }
 
-.CrimeScene-modalImage {
+.CrimeSceneModal-fieldset {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.CrimeSceneModal-modal-container img {
     width: 40px;
 }
 
-.CrimeScene-modalTypes {
+.CrimeSceneModal {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+.CrimeSceneModal-modal-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
 }

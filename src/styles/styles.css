@@ -334,11 +334,20 @@ button {
           align-items: center;
 }
 
-.CrimeScene-modalImage {
+.CrimeSceneModal-fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.CrimeSceneModal-modal-container img {
   width: 40px;
 }
 
-.CrimeScene-modalTypes {
+.CrimeSceneModal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,6 +355,19 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 20px;
+}
+
+.CrimeSceneModal-modal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .PokemonList {
