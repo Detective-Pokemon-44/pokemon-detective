@@ -29,6 +29,7 @@ export default function Game() {
                 <CrimeScenes
                     username={username}
                     location={location}
+                    handleLocation={handleLocation}
                 />}
         </div>
     )
