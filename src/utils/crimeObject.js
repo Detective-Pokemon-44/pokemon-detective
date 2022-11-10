@@ -3,7 +3,7 @@ const crimeObject =
   "anti-social-behaviour": ["psychic", "water", "ice", "fairy"],
   "bicycle-theft": ["electric", "bug", "normal", "rock"],
   "burglary": ["dark", "ghost", "rock", "normal"],
-  "criminal-damage-arson": ["ice", "ground", "steel","water"],
+  "criminal-damage-arson": ["ice", "ground", "steel", "water"],
   "drugs": ["ground", "poison", "flying", "fairy"],
   "other-theft": ["poison", "electric", "grass", "bug"],
   "possession-of-weapons": ["psychic", "rock", "fighting", "dark"],
