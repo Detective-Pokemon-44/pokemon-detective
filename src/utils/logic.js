@@ -8,11 +8,9 @@ function gameLogic(pokemon, crime) {
         return crimeValues.value.includes(type)
     })
     if (solved.length > 0) {
-        alert("YOU DID IT!")
         return true
     }
     else {
-        alert("AWWWW TIME TO GO HOME!")
         return false
     }
 
