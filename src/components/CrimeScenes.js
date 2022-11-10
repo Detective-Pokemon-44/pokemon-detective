@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
 import ModalContent from "./ModalContent";
-import gameLogic from "../utils/logic"
 import useToggleState from '../hooks/useToggleState';
 import ReactModal from 'react-modal';
 // import crimeObject from "../utils/crimeObject"
@@ -15,11 +14,7 @@ export default function CrimeScenes({ username, location }) {
     const [pokemon, setPokemon] = useState([]);
     const [crimeSelected, setCrimeSelected] = useState(null);
     const [modalState, toggleModal] = useToggleState();
-    const [selectedPokemon, setSelectedPokemon] = useState(null);
 
-    const handlePokemonSelection = (pokemon) => {
-        setSelectedPokemon(pokemon)
-    }
 
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
@@ -48,8 +43,7 @@ export default function CrimeScenes({ username, location }) {
         randomPokemon();
     }, [location])
 
-    // call game logic on pokemon selection from modal
-    useEffect(() => { gameLogic(selectedPokemon, crimeSelected) }, [selectedPokemon])
+
     // Function to convert the Pokemon URLs array into new array by making API call to access each URLs and get Pokemon Name and Type
     useEffect(() => {
         Promise.all(
@@ -85,7 +79,7 @@ export default function CrimeScenes({ username, location }) {
                     onRequestClose={toggleModal}
                     appElement={document.getElementById("root")}
                 >
-                    <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} handlePokemonSelection={handlePokemonSelection} />
+                    <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} />
                 </ReactModal>
             )}
         </div>

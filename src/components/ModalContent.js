@@ -13,12 +13,15 @@ export default function ModalContent({ pokemon, crimeSelected }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const pokemonFoundById = pokemon.find(pokemon => pokemon.id);
+    console.log(pokemonFoundById)
     setSelectedPokemon(pokemonFoundById)
   }
 
   // call game logic on pokemon selection from modal
   useEffect(() => {
-    gameLogic(selectedPokemon, crimeSelected)
+    if (selectedPokemon !== null) {
+      gameLogic(selectedPokemon, crimeSelected)
+    }
 
   }, [selectedPokemon])
 

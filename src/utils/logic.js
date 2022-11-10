@@ -1,6 +1,6 @@
 import crimeObject from "./crimeObject"
 
-async function gameLogic(pokemon, crime) {
+function gameLogic(pokemon, crime) {
 
     const types = pokemon.types.map(({ type }) => type.name);
     const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crime.category);
