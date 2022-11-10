@@ -3,6 +3,7 @@ import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
 import ModalContent from "./ModalContent";
 import gameLogic from "../utils/logic"
+import Score from "./Score"
 // import crimeObject from "../utils/crimeObject"
 
 import crimeAPICall from '../utils/crimeAPICall';
@@ -12,10 +13,11 @@ export default function CrimeScenes({ username, location }) {
     const [pokemonURL, setPokemonURL] = useState([]);
     const [pokemon, setPokemon] = useState([]);
     const [crimeSelected, setCrimeSelected] = useState(null);
+    const [score, setScore] = useState(0);
 
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
-        gameLogic(pokemon[0], crime)
+        gameLogic(pokemon[0], crime, setScore)
         alert(`you selected ${crime.category}`)
     }
 
@@ -55,23 +57,36 @@ export default function CrimeScenes({ username, location }) {
 
 
     return (
-        <div className="CrimeScenes card">
-            <h2>
-                Welcome to {location[0]}, {username}
-            </h2>
-            {crimeSceneArray && (
-                <ul className="CrimeScenes-category">
-                    {crimeSceneArray && crimeSceneArray.map((individual) => {
-                        return <li key={individual.id} onClick={(e) => { handleCrimeClick(individual) }}>{individual.category}</li>;
-                    })}
-                </ul>
-            )}
+      <>
+        <div className='CrimeScenes card'>
+          <h2>
+            Welcome to {location[0]}, {username}
+          </h2>
+          {crimeSceneArray && (
+            <ul className='CrimeScenes-category'>
+              {crimeSceneArray &&
+                crimeSceneArray.map((individual) => {
+                  return (
+                    <li
+                      key={individual.id}
+                      onClick={(e) => {
+                        handleCrimeClick(individual)
+                      }}
+                    >
+                      {individual.category}
+                    </li>
+                  )
+                })}
+            </ul>
+          )}
 
-            {pokemon && <PokemonList pokemon={pokemon} />}
-            
-            {pokemon && (
-        <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} />
-      )}
+          {pokemon && <PokemonList pokemon={pokemon} />}
+
+          {pokemon && (
+            <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} />
+          )}
         </div>
-    );
+        <Score username={username} score={score} />
+      </>
+    )
 }
