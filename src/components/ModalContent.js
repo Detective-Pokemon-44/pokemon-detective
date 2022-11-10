@@ -1,25 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import gameLogic from "../utils/logic";
 
-export default function ModalContent({ pokemon, crimeSelected, handlePokemonSelection }) {
-  const [pokemonSelection, setPokemonSelection] = useState({});
+export default function ModalContent({ pokemon, crimeSelected }) {
+  const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
+
 
   const handleButtonSwitch = (e) => {
-    setPokemonSelection(parseInt(e.target.value));
-
+    setPokemonSelectionID(parseInt(e.target.value));
   }
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const foundPokemon = pokemon.find(pokemon => pokemon.id);
-    setPokemonSelection(foundPokemon);
-    handlePokemonSelection(foundPokemon);
+    const pokemonFoundById = pokemon.find(pokemon => pokemon.id);
+    setSelectedPokemon(pokemonFoundById)
   }
+
+  // call game logic on pokemon selection from modal
+  useEffect(() => {
+    gameLogic(selectedPokemon, crimeSelected)
+
+  }, [selectedPokemon])
+
   return (
-    <>{
-      !pokemonSelection ?
+    <>
+      {
         <form onSubmit={(e) => handleFormSubmit(e)}>
           <h4>{crimeSelected.category}</h4>
-
           <p>Crime's location: {crimeSelected.location.street.name}</p>
 
           <fieldset onChange={handleButtonSwitch}>
@@ -43,8 +50,7 @@ export default function ModalContent({ pokemon, crimeSelected, handlePokemonSele
             <button type="submit">Select Your Pokemon Detective</button>
           </div>
         </form>
-        : <h4></h4>
-    }
+      }
     </>
   );
 }

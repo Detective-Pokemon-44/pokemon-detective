@@ -9,9 +9,11 @@ async function gameLogic(pokemon, crime) {
     })
     if (solved.length > 0) {
         alert("YOU DID IT!")
+        return true
     }
     else {
         alert("AWWWW TIME TO GO HOME!")
+        return false
     }
 
 }
