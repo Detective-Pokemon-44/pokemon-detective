@@ -5,7 +5,7 @@ import { capitalizeFirstLetter, isNotUnique } from '../utils/functions';
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
-  
+
   let crimeStrengths = []
   pokemonInfo.types.map((individualType) => {
     // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
@@ -49,8 +49,8 @@ export default function Pokemon({ pokemonInfo }) {
           ))}
         </div>
         <p>
-          Due to its types, {capitalizeFirstLetter(pokemonInfo.name)} is good at
-          solving {crimeStrengths.map((individualType, i, arr) => (i+1 === arr.length ? `and ${individualType}.` : `${individualType}, `))}
+          {capitalizeFirstLetter(pokemonInfo.name)} is good at
+          solving {crimeStrengths.map((individualType, i, arr) => (i + 1 === arr.length ? `and ${individualType.replaceAll("-", " ")}.` : `${individualType.replaceAll("-", " ")}, `))}
         </p>
       </ReactModal>
     </>
