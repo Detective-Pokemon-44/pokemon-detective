@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { isNotUnique, randNum } from '../utils/functions';
 import PokemonList from './PokemonList';
-import ModalContent from "./ModalContent";
+import CrimeSceneModal from "./CrimeSceneModal";
 import useToggleState from '../hooks/useToggleState';
 import ReactModal from 'react-modal';
 // import crimeObject from "../utils/crimeObject"
 
 import crimeAPICall from '../utils/crimeAPICall';
 
-export default function CrimeScenes({ username, location }) {
+export default function CrimeScenes({ username, location, handleLocation }) {
     const [crimeSceneArray, setCrimeSceneArray] = useState();
     const [pokemonURL, setPokemonURL] = useState([]);
     const [pokemon, setPokemon] = useState([]);
@@ -79,7 +79,7 @@ export default function CrimeScenes({ username, location }) {
                     onRequestClose={toggleModal}
                     appElement={document.getElementById("root")}
                 >
-                    <ModalContent pokemon={pokemon} crimeSelected={crimeSelected} />
+                    <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
                 </ReactModal>
             )}
         </div>

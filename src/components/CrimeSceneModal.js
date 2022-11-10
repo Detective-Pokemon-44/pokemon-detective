@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import gameLogic from "../utils/logic";
 
-export default function ModalContent({ pokemon, crimeSelected }) {
+export default function CrimeSceneModal({ pokemon, crimeSelected, handleLocation }) {
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
@@ -58,9 +58,15 @@ export default function ModalContent({ pokemon, crimeSelected }) {
             </div>
           </form> :
           crimeSolved === true ?
-            <h4>YOU SOLVED THE CASE</h4>
+            <>
+              <h4>YOU SOLVED THE CASE</h4>
+              <button onClick={() => handleLocation(null)}> Take me Home</button>
+            </>
             :
-            <h4>YOU FAILED THE CASE</h4>
+            <>
+              <h4>YOU FAILED THE CASE</h4>
+              <button onClick={() => handleLocation(null)}> Take me Home</button>
+            </>
 
       }
     </>
