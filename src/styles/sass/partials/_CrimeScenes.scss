@@ -17,3 +17,30 @@
     align-items: center;
     text-align: center;
 }
+
+.CrimeScene-modal {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    outline: none;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CrimeScene-modalImage {
+    width: 40px;
+}
+
+.CrimeScene-modalTypes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

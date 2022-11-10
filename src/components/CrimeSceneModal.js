@@ -13,9 +13,14 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, handleLocation
 
   const handleFormSubmit = (e, pokemonId) => {
     e.preventDefault();
-    const pokemonFoundById = pokemon.find(pokemon => pokemon.id === pokemonId);
-    console.log(pokemonFoundById)
-    setSelectedPokemon(pokemonFoundById)
+    if (pokemonId) {
+      const pokemonFoundById = pokemon.find(pokemon => pokemon.id === pokemonId);
+      console.log(pokemonFoundById)
+      setSelectedPokemon(pokemonFoundById)
+    }
+    else {
+      alert('PICK SOMETHING');
+    }
   }
 
   // call game logic on pokemon selection from modal
@@ -41,8 +46,8 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, handleLocation
 
               {pokemon.map((pokemonInfo) => {
                 return (
-                  < div className="Pokemon-radio-option" key={pokemonInfo.id} >
-                    <label htmlFor={pokemonInfo.name}>{pokemonInfo.name}</label>
+                  <div className="Pokemon-radio-option" key={pokemonInfo.id} >
+                    <label htmlFor={pokemonInfo.name}><img className="CrimeScene-modalImage" src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)} alt={pokemon.name} /></label>
                     <input
                       type="radio"
                       id={pokemonInfo.name}
