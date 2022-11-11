@@ -23,6 +23,10 @@ export default function CrimeScenes({ username, location, handleLocation }) {
     toggleModal(true);
   }
 
+  const test =(id) => {
+    return {"--key-value": id}
+  }
+
   const setTheCrime = (crime) => {
     setCrimeSceneArray(crime);
   }
@@ -68,6 +72,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
           <ul className='CrimeScenes-category'>
             {crimeSceneArray &&
               crimeSceneArray.map((individual) => {
+                
                 return (
                   <li
                     key={individual.id}
@@ -75,7 +80,18 @@ export default function CrimeScenes({ username, location, handleLocation }) {
                       handleCrimeClick(individual)
                     }}
                   >
-                    {crimeObject[individual.category].alternate}
+                    <div className='container'>
+                      <div className='folder'>
+                        {individual.id}
+                      {/* <div className='folder' stylePseudo={`::before {content: ${individual.id}}`}> */}
+                      {/* <div className='folder' style={test(individual.id)}> */}
+                      {/* <div className="folder"> */}
+                        <div className='folder-inside'></div>
+                        <span className='folderName'>
+                          {crimeObject[individual.category].alternate}
+                        </span>
+                      </div>
+                    </div>
                   </li>
                 )
               })}
