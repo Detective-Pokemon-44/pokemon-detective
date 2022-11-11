@@ -182,6 +182,24 @@ button {
           box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
 }
 
+@font-face {
+  font-family: "Iceberg";
+  src: url("../assets/fonts/Iceberg-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../assets/fonts/Lato-Regular.ttf");
+  font-weight: 400;
+}
+h1, h2 {
+  font-family: "Iceberg";
+}
+
+p {
+  font-family: "Lato";
+}
+
 .Navbar {
   background-color: skyblue;
   height: 10vh;
