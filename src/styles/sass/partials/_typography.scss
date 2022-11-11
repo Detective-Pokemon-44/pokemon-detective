@@ -1,0 +1,21 @@
+@use './variables' as *;
+
+@font-face {
+    font-family: "Iceberg";
+    src: url("../assets/fonts/Iceberg-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../assets/fonts/Lato-Regular.ttf");
+    font-weight: 400;
+}
+
+h1, h2 {
+    font-family: $titleFont;
+}
+
+p {
+    font-family: $textFont;
+}
