@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
 import Score from "./Score";
 
@@ -43,7 +44,7 @@ export default function CrimeSceneModal({
     <>
       {!selectedPokemon && !crimeSolved ? (
         <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
-          <h4>{crimeSelected.category}</h4>
+          <h4>{crimeObject[crimeSelected.category].alternate}</h4>
           <p>Crime's location: {crimeSelected.location.street.name}</p>
 
           <fieldset
@@ -92,7 +93,7 @@ export default function CrimeSceneModal({
           <Score username={username} score={score} />
         </>
       )}
-      
+
     </>
   );
 }
