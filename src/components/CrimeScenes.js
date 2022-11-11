@@ -20,7 +20,6 @@ export default function CrimeScenes({ username, location, handleLocation }) {
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
         toggleModal(true);
-
     }
 
     const setTheCrime = (crime) => {
@@ -91,7 +90,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
                     onRequestClose={toggleModal}
                     appElement={document.getElementById("root")}
                 >
-                    <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
+                    <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} username={username} score={score} setScore={setScore} />
                 </ReactModal>
             )}
         </div>

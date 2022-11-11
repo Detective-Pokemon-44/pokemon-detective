@@ -17,10 +17,9 @@ export default function Scoreboard() {
       for (const item in data) {
         temp.push(data[item]);
       }
-      console.log(temp);
-      const filteredData = temp.sort(
-        (a, b) => b.Score - a.Score
-      )
+      const filteredData = temp
+      .sort((a, b) => b.Score - a.Score)
+      .slice(0, 20) 
       setHighScores(filteredData);
     })
   }, [])
@@ -44,3 +43,4 @@ export default function Scoreboard() {
     </div>
   )
 }
+
