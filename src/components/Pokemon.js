@@ -10,10 +10,9 @@ export default function Pokemon({ pokemonInfo }) {
   pokemonInfo.types.map((individualType) => {
     // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
     for (let key in crimeObject) {
-      (crimeObject[key].includes(individualType.type.name) && !isNotUnique(crimeStrengths, key) && crimeStrengths.push(key))
+      (crimeObject[key].weaknesses.includes(individualType.type.name) && !isNotUnique(crimeStrengths, key) && crimeStrengths.push(key))
     }
   })
-
   return (
     <>
       <img
@@ -50,7 +49,7 @@ export default function Pokemon({ pokemonInfo }) {
         </div>
         <p>
           {capitalizeFirstLetter(pokemonInfo.name)} is good at
-          solving {crimeStrengths.map((individualType, i, arr) => (i + 1 === arr.length ? `and ${individualType.replaceAll("-", " ")}.` : `${individualType.replaceAll("-", " ")}, `))}
+          solving {crimeStrengths.map((individualType, i, arr) => (i + 1 === arr.length ? `and ${crimeObject[individualType].alternate.replaceAll("-", " ")}.` : `${crimeObject[individualType].alternate.replaceAll("-", " ")}, `))}
         </p>
       </ReactModal>
     </>

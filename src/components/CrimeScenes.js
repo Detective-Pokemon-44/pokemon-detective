@@ -75,15 +75,13 @@ export default function CrimeScenes({ username, location, handleLocation }) {
                       handleCrimeClick(individual)
                     }}
                   >
-                    {individual.category}
+                    {crimeObject[individual.category].alternate}
                   </li>
                 )
               })}
           </ul>
         )}
-
         {pokemon && <PokemonList pokemon={pokemon} />}
-
         {pokemon && (
           <ReactModal
             isOpen={modalState}
