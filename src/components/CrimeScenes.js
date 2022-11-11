@@ -4,6 +4,7 @@ import PokemonList from './PokemonList';
 import CrimeSceneModal from "./CrimeSceneModal";
 import useToggleState from '../hooks/useToggleState';
 import ReactModal from 'react-modal';
+import Score from "./Score"
 // import crimeObject from "../utils/crimeObject"
 
 import crimeAPICall from '../utils/crimeAPICall';
@@ -14,12 +15,11 @@ export default function CrimeScenes({ username, location, handleLocation }) {
     const [pokemon, setPokemon] = useState([]);
     const [crimeSelected, setCrimeSelected] = useState(null);
     const [modalState, toggleModal] = useToggleState();
-
+    const [score, setScore] = useState(0);
 
     const handleCrimeClick = (crime) => {
         setCrimeSelected(crime);
         toggleModal(true);
-
     }
 
     const setTheCrime = (crime) => {
@@ -58,17 +58,28 @@ export default function CrimeScenes({ username, location, handleLocation }) {
     }, [pokemonURL]);
 
     return (
-        <div className="CrimeScenes card">
-            <h2>
-                Welcome to {location[0]}, {username}
-            </h2>
-            {crimeSceneArray && (
-                <ul className="CrimeScenes-category">
-                    {crimeSceneArray && crimeSceneArray.map((individual) => {
-                        return <li key={individual.id} onClick={(e) => { handleCrimeClick(individual) }}>{individual.category}</li>;
-                    })}
-                </ul>
-            )}
+      <>
+        <div className='CrimeScenes card'>
+          <h2>
+            Welcome to {location[0]}, {username}
+          </h2>
+          {crimeSceneArray && (
+            <ul className='CrimeScenes-category'>
+              {crimeSceneArray &&
+                crimeSceneArray.map((individual) => {
+                  return (
+                    <li
+                      key={individual.id}
+                      onClick={(e) => {
+                        handleCrimeClick(individual)
+                      }}
+                    >
+                      {individual.category}
+                    </li>
+                  )
+                })}
+            </ul>
+          )}
 
             {pokemon && <PokemonList pokemon={pokemon} />}
 
@@ -79,9 +90,11 @@ export default function CrimeScenes({ username, location, handleLocation }) {
                     onRequestClose={toggleModal}
                     appElement={document.getElementById("root")}
                 >
-                    <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
+                    <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} username={username} score={score} setScore={setScore} />
                 </ReactModal>
             )}
         </div>
-    );
+        <Score username={username} score={score} />
+      </>
+    )
 }
