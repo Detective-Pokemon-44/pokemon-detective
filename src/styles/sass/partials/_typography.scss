@@ -16,6 +16,10 @@ h1, h2 {
     font-family: $titleFont;
 }
 
+h1 {
+    font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
+}
+
 p {
     font-family: $textFont;
 }

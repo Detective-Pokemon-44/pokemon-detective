@@ -1,5 +1,8 @@
+@use './variables' as *;
+
 .Navbar {
-    background-color: skyblue;
+    background-color: $primaryColor;
+    color: $lightColor;
     height: 10vh;
     padding-left: 10%;
     margin: auto;

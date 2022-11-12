@@ -166,6 +166,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+}
+
 .card {
   padding: 50px;
   background-color: lavender;
@@ -174,12 +182,23 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
           box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
 }
 
-button {
-  border: none;
-  padding: 0.5rem;
-  border-radius: 15px;
-  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+.main {
+  background-color: #D5C29B;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+a {
+  color: #FFC120;
+  text-decoration: none;
 }
 
 @font-face {
@@ -196,12 +215,17 @@ h1, h2 {
   font-family: "Iceberg";
 }
 
+h1 {
+  font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
+}
+
 p {
   font-family: "Lato";
 }
 
 .Navbar {
-  background-color: skyblue;
+  background-color: #7D210A;
+  color: #D5C29B;
   height: 10vh;
   padding-left: 10%;
   margin: auto;
@@ -259,7 +283,8 @@ p {
 }
 
 .Footer {
-  background-color: lightgreen;
+  background-color: #7D210A;
+  color: #D5C29B;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -270,6 +295,10 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.Footer-text {
+  font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
 }
 
 .LandingPage-form {
@@ -284,20 +313,6 @@ p {
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
-}
-
-.Game {
-  background-color: salmon;
-  height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .CrimeScenes {
