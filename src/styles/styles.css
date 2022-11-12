@@ -513,22 +513,44 @@ p {
           justify-content: space-between;
 }
 
+.CrimeSceneModal-container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .CrimeSceneModal-input {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
   margin: 0;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid black;
+  width: 2em;
+  height: 2em;
+  border: 0.1em solid black;
   border-radius: 50%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-bottom: 20px;
 }
 .CrimeSceneModal-input:checked {
   background-image: url(../assets/images/Pokeball.svg);
 }
+.CrimeSceneModal-input:hover {
+  cursor: pointer;
+}
+.CrimeSceneModal-input:focus {
+  cursor: pointer;
+}
 
 .CrimeSceneModal-image {
-  width: 40px;
+  width: 75px;
+  max-height: 6em;
+}
+.CrimeSceneModal-image:hover {
+  cursor: pointer;
+}
+.CrimeSceneModal-image:focus {
+  cursor: pointer;
 }
 
 .CrimeSceneModal-modal {
