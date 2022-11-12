@@ -39,13 +39,21 @@ export default function CrimeSceneModal({
       setCrimeSolved(trueOrFalse);
     }
   }, [selectedPokemon]);
-
+  console.log((crimeSelected.location.street.name).length)
   return (
     <>
       {!selectedPokemon && !crimeSolved ? (
         <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
           <h4>{crimeObject[crimeSelected.category].alternate}</h4>
-          <p>Crime's location: {crimeSelected.location.street.name}</p>
+          <h5>The Break Down</h5>
+          <p>{crimeObject[crimeSelected.category].backstory}</p>
+          <p>Crime's location:
+            {
+              crimeSelected.location.street.name.length <= 11 ?
+                ` No Information for ya ${username}` :
+                ' ' + (crimeSelected.location.street.name).substring(11)
+            }
+          </p>
 
           <fieldset
             onChange={handleButtonSwitch}
