@@ -1,5 +1,5 @@
 import firebaseConfig from "../utils/firebase"
-import { getDatabase, push, ref} from "firebase/database"
+import { getDatabase, push, ref } from "firebase/database"
 import { useNavigate } from "react-router-dom"
 
 export default function Score({ username, score }) {
@@ -9,7 +9,7 @@ export default function Score({ username, score }) {
     event.preventDefault()
     const database = getDatabase(firebaseConfig)
     const dbRef = ref(database, `container`)
-    push(dbRef, {Name: username, Score: score})
+    push(dbRef, { Name: username, Score: score })
   }
 
   return (
@@ -20,7 +20,7 @@ export default function Score({ username, score }) {
           saveName(e);
           navigate('/highscores')
         }}>Submit score and quite game</button>
-        <p>{username}, {score}</p>
+        <p>Name: {username},Score: {score}</p>
       </div>
     </>
   )

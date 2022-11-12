@@ -192,7 +192,10 @@ button {
   src: url("../assets/fonts/Lato-Regular.ttf");
   font-weight: 400;
 }
-h1, h2 {
+h1,
+h2,
+h4,
+h5 {
   font-family: "Iceberg";
 }
 
@@ -458,6 +461,15 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.CrimeSceneModal-container-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .CrimeSceneModal-input {

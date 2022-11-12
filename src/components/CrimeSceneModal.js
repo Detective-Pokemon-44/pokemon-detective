@@ -50,7 +50,7 @@ export default function CrimeSceneModal({
           <p>Crime's location:
             {
               crimeSelected.location.street.name.length <= 11 ?
-                ` No Information for ya ${username}` :
+                ` Sorry got nothing for ya ${username}` :
                 ' ' + (crimeSelected.location.street.name).substring(11)
             }
           </p>
@@ -85,19 +85,21 @@ export default function CrimeSceneModal({
               );
             })}
           </fieldset>
-          <div className="Pokemon-radio-submit-button">
+          <div className="CrimeSceneModal-container-button">
             <button type="submit">Select Your Pokemon Detective</button>
           </div>
         </form>
       ) : crimeSolved === true ? (
         <>
-          <h4>YOU SOLVED THE CASE</h4>
+          <h4>You solved it</h4>
+          <p>{crimeObject[crimeSelected.category].solved}</p>
           <button onClick={() => handleLocation(null)}> Take me Home</button>
           <Score username={username} score={score} />
         </>
       ) : (
         <>
-          <h4>YOU FAILED THE CASE</h4>
+          <h4>You Failed it</h4>
+          <p>{crimeObject[crimeSelected.category].failed}</p>
           <button onClick={() => handleLocation(null)}> Take me Home</button>
           <Score username={username} score={score} />
         </>
