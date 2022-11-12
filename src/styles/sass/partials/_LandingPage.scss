@@ -1,6 +1,23 @@
+@use './variables' as *;
+
+.LandingPage {
+    color: $lightColor;
+    background-color: $primaryColor;
+}
+
 .LandingPage-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+}
+
+.LandingPage-formUsername {
+    color: beige;
+    font-family: $textFont;
+}
+
+.LandingPage-formButtonContainer {
+    display: flex;
     gap: 20px;
 }

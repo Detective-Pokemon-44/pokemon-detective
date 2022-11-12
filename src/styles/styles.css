@@ -224,7 +224,7 @@ p {
 }
 
 .Navbar {
-  background-color: #7D210A;
+  background-color: #5E1800;
   color: #D5C29B;
   height: 10vh;
   padding-left: 10%;
@@ -283,7 +283,7 @@ p {
 }
 
 .Footer {
-  background-color: #7D210A;
+  background-color: #5E1800;
   color: #D5C29B;
   height: 10vh;
   display: -webkit-box;
@@ -301,6 +301,11 @@ p {
   font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
 }
 
+.LandingPage {
+  color: #D5C29B;
+  background-color: #7D210A;
+}
+
 .LandingPage-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,6 +317,18 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20px;
+}
+
+.LandingPage-formUsername {
+  color: beige;
+  font-family: "Lato";
+}
+
+.LandingPage-formButtonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: 20px;
 }
 
