@@ -85,7 +85,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
         {pokemon && (
           <ReactModal
             isOpen={modalState}
-            className='Pokemon-modal'
+            className='CrimeSceneModal-modal'
             onRequestClose={toggleModal}
             appElement={document.getElementById("root")}
           >

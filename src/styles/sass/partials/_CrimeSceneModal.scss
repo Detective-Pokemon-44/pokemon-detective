@@ -1,4 +1,4 @@
-.CrimeScene-modal {
+.CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
     height: 400px;
@@ -20,18 +20,32 @@
     justify-content: space-between;
 }
 
+.CrimeSceneModal-input {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid black;
+    border-radius: 50%;
 
-.CrimeSceneModal-modal-container img {
+    &:checked {
+        background-image: url(../assets/images/Pokeball.svg);
+    }
+}
+
+
+.CrimeSceneModal-image {
     width: 40px;
 }
 
-.CrimeSceneModal {
+.CrimeSceneModal-modal {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.CrimeSceneModal-modal-container {
+.CrimeSceneModal-container {
     display: flex;
     align-items: center;
     flex-direction: column-reverse;

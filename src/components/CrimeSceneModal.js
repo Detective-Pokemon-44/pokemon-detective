@@ -56,12 +56,12 @@ export default function CrimeSceneModal({
             {pokemon.map((pokemonInfo) => {
               return (
                 <div
-                  className="CrimeSceneModal-modal-container"
+                  className="CrimeSceneModal-container"
                   key={pokemonInfo.id}
                 >
                   <label htmlFor={pokemonInfo.name}>
                     <img
-                      className="CrimeScene-modalImage"
+                      className="CrimeSceneModal-image"
                       src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
                       alt={pokemon.name}
                     />
@@ -71,6 +71,7 @@ export default function CrimeSceneModal({
                     id={pokemonInfo.name}
                     name="pokemon"
                     value={pokemonInfo.id}
+                    className="CrimeSceneModal-input"
                   ></input>
                 </div>
               );
