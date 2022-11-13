@@ -166,6 +166,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+}
+
 .card {
   padding: 50px;
   background-color: lavender;
@@ -174,12 +182,16 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
           box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
 }
 
-button {
-  border: none;
-  padding: 0.5rem;
-  border-radius: 15px;
-  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
 }
 
 @font-face {
@@ -199,12 +211,37 @@ h5 {
   font-family: "Iceberg";
 }
 
+h1 {
+  font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
+}
+
 p {
   font-family: "Lato";
+  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+  color: #5E1800;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 0.8667rem + 2.3704vw, 3rem);
+}
+
+h4 {
+  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+}
+
+a {
+  font-size: clamp(1rem, 0.8333rem + 0.7407vw, 1.5rem);
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
 .Navbar {
-  background-color: skyblue;
+  background-color: #5E1800;
+  color: #D5C29B;
   height: 10vh;
   padding-left: 10%;
   margin: auto;
@@ -262,7 +299,8 @@ p {
 }
 
 .Footer {
-  background-color: lightgreen;
+  background-color: #5E1800;
+  color: #D5C29B;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,6 +311,34 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.Footer-text {
+  font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
+}
+
+.LandingPage {
+  color: #D5C29B;
+  background-color: #7D210A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+
+.LandingPage-imgContainer {
+  width: 80%;
+}
+
+.LandingPage-imgContainer img {
+  width: 100%;
 }
 
 .LandingPage-form {
@@ -289,18 +355,16 @@ p {
   gap: 20px;
 }
 
-.Game {
-  background-color: salmon;
-  height: 80vh;
+.LandingPage-formUsername {
+  color: beige;
+  font-family: "Lato";
+}
+
+.LandingPage-formButtonContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  gap: 20px;
 }
 
 .CrimeScenes {
@@ -423,6 +487,7 @@ p {
   gap: 10px;
 }
 
+
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
@@ -482,6 +547,7 @@ p {
 .CrimeSceneModal-textContainer {
   background-color: #E9990B;
   padding: 2%;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -489,64 +555,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
-  margin-top: 2%;
-  -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
-}
 
-.CrimeSceneModal-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  margin: 0;
-  width: 2em;
-  height: 2em;
-  border: 0.1em solid black;
-  border-radius: 50%;
-  -ms-flex-item-align: center;
-      align-self: center;
-  margin-bottom: 20px;
-}
-.CrimeSceneModal-input:checked {
-  background-image: url(../assets/images/Pokeball.svg);
-  -webkit-filter: sepia(80%);
-          filter: sepia(80%);
-}
-.CrimeSceneModal-input:hover {
-  cursor: pointer;
-}
-.CrimeSceneModal-input:focus {
-  cursor: pointer;
-}
-
-.CrimeSceneModal-image {
-  width: 75px;
-  max-height: 6em;
-  -webkit-filter: sepia(20%);
-          filter: sepia(20%);
-}
-.CrimeSceneModal-image:hover {
-  cursor: pointer;
-}
-.CrimeSceneModal-image:focus {
-  cursor: pointer;
-}
-
-.CrimeSceneModal-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-
-.CrimeSceneModal-resultsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -557,30 +566,5 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 30px;
-  padding: 10px;
-}
 
-.CrimeSceneModal-resultsContainer button {
-  margin: 15px;
-}
-
-.appear {
-  opacity: 0;
-}
-
-.appear-active {
-  opacity: 1;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
-}
-
-.transitions-exit {
-  opacity: 1;
-}
-
-.transitions-exit-active {
-  opacity: 0;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
 }
