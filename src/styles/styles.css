@@ -166,6 +166,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+}
+
 .card {
   padding: 50px;
   background-color: lavender;
@@ -174,11 +182,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
           box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
 }
 
-.button {
-  width: 120px;
-  height: 50px;
-  background-color: #7D210A;
-  border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,25 +191,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  cursor: pointer;
-  -webkit-box-shadow: 2px 2px 15px #926C57;
-          box-shadow: 2px 2px 15px #926C57;
-}
-.button a {
-  color: #D5C29B;
-}
-.button:hover, .button:focus {
-  background-color: #E9990B;
-}
-.button:hover a, .button:focus a {
-  color: #7D210A;
-}
 
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 @font-face {
@@ -221,6 +206,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 h1, h2 {
   font-family: "Iceberg";
+}
+
+h1 {
+  font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
 }
 
 p {
@@ -248,7 +237,8 @@ a {
 }
 
 .Navbar {
-  background-color: skyblue;
+  background-color: #5E1800;
+  color: #D5C29B;
   height: 10vh;
   padding-left: 10%;
   margin: auto;
@@ -306,7 +296,8 @@ a {
 }
 
 .Footer {
-  background-color: lightgreen;
+  background-color: #5E1800;
+  color: #D5C29B;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -317,6 +308,34 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.Footer-text {
+  font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
+}
+
+.LandingPage {
+  color: #D5C29B;
+  background-color: #7D210A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+
+.LandingPage-imgContainer {
+  width: 80%;
+}
+
+.LandingPage-imgContainer img {
+  width: 100%;
 }
 
 .LandingPage-form {
@@ -333,18 +352,16 @@ a {
   gap: 20px;
 }
 
-.Game {
-  background-color: salmon;
-  height: 80vh;
+.LandingPage-formUsername {
+  color: beige;
+  font-family: "Lato";
+}
+
+.LandingPage-formButtonContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  gap: 20px;
 }
 
 .CrimeScenes {

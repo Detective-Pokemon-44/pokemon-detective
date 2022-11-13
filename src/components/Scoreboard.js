@@ -25,7 +25,7 @@ export default function Scoreboard() {
   }, [])
 
   return (
-    <div className="Game">
+    <div className="main">
       <Link to="/"><button>Go Back</button></Link>
       <div className="Scoreboard">
         <h2>High Scores</h2>

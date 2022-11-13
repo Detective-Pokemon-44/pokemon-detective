@@ -1,10 +1,24 @@
-@use "./variables" as *;
+@use './variables' as *;
+
 
 .card {
     padding: 50px;
     background-color: lavender;
     border-radius: 15px;
     box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.main {
+    background-color: $lightColor;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: $secondaryColor;
+    text-decoration: none;
 }
 
 .button {
