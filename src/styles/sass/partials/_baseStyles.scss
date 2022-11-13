@@ -21,7 +21,7 @@ a {
     text-decoration: none;
 }
 
-.button {
+button {
     width: 120px;
     height: 50px;
     background-color: $primaryDarkColor;
@@ -32,12 +32,15 @@ a {
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 2px 2px 15px $primaryColor;
+
     a {
         color: $lightColor;
     }
+
     &:hover,
     &:focus {
         background-color: $secondaryDarkColor;
+
         a {
             color: $primaryDarkColor
         }
