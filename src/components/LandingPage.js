@@ -1,6 +1,7 @@
 import useInputState from '../hooks/useInputState';
-import { useNavigate } from 'react-router-dom';
-import pokemonLogo from '../assets/images/pokemon-detective-low-resolution-logo-white-on-transparent-background.png'
+import { useNavigate, Link } from 'react-router-dom';
+import pokemonLogo from '../assets/images/pokemon-detective-low-resolution-logo-white-on-transparent-background.png';
+import aboutIcon from '../assets/images/circle-info-solid.svg';
 
 export default function LandingPage({ handleUsername }) {
   const navigate = useNavigate();
@@ -17,6 +18,11 @@ export default function LandingPage({ handleUsername }) {
   return (
     <>
       <div className='LandingPage card'>
+        <div className="LandingPage-aboutContainer">
+          <Link to="/about">
+          <img src={aboutIcon} className="LandingPage-aboutIcon" />
+          </Link>
+        </div>
         <div className="LandingPage-imgContainer">
           <img src={pokemonLogo} alt="logo" />
         </div>
