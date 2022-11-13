@@ -366,6 +366,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   gap: 50px;
+  padding: 20px 0 50px;
 }
 
 .LandingPage-imgContainer {
@@ -400,6 +401,17 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+
+.LandingPage-aboutContainer {
+  padding: 0 20px;
+  margin-left: auto;
+}
+
+.LandingPage-aboutIcon {
+  width: 40px;
+  -webkit-filter: invert(100%) sepia(0%) saturate(17%) hue-rotate(338deg) brightness(104%) contrast(107%);
+          filter: invert(100%) sepia(0%) saturate(17%) hue-rotate(338deg) brightness(104%) contrast(107%);
 }
 
 .CrimeScenes {
