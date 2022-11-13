@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import LandingPage from './LandingPage';
 import Location from './Location';
 import CrimeScenes from './CrimeScenes';
+
+
 
 export default function Game() {
     const [username, setUsername] = useState();
@@ -15,12 +17,14 @@ export default function Game() {
         setLocation(location)
     }
 
+
     return (
-        <div className="Game">
+        <div className="main">
             {(!username && !location) &&
                 <LandingPage
                     handleUsername={handleUsername}
-                />}
+                />
+            }
             {(username && !location) &&
                 <Location
                     setLocation={setLocation}
@@ -29,7 +33,9 @@ export default function Game() {
                 <CrimeScenes
                     username={username}
                     location={location}
-                />}
-        </div>
+                    handleLocation={handleLocation}
+                />
+            }
+        </div >
     )
 }

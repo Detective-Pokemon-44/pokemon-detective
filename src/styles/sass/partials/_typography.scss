@@ -1,0 +1,48 @@
+@use './variables' as *;
+
+@font-face {
+    font-family: "Iceberg";
+    src: url("../assets/fonts/Iceberg-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("../assets/fonts/Lato-Regular.ttf");
+    font-weight: 400;
+}
+
+h1,
+h2,
+h4,
+h5 {
+    font-family: $titleFont;
+}
+
+h1 {
+    font-size: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);
+}
+
+p {
+    font-family: $textFont;
+    font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+    color: $darkColor
+}
+
+h2 {
+    font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 0.8667rem + 2.3704vw, 3rem);
+}
+
+h4 {
+    font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+}
+
+a {
+    font-size: clamp(1rem, 0.8333rem + 0.7407vw, 1.5rem);
+    text-decoration: none;
+    padding: 0.5rem;
+}

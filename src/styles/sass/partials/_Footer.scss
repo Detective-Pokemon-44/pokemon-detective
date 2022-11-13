@@ -1,0 +1,14 @@
+@use './variables' as *;
+
+.Footer {
+    background-color: $primaryDarkColor;
+    color: $lightColor;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Footer-text {
+    font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem);
+}

@@ -1,17 +1,20 @@
 import crimeObject from "./crimeObject"
 
-async function gameLogic(pokemon, crime) {
+function gameLogic(pokemon, crime, setScore) {
 
     const types = pokemon.types.map(({ type }) => type.name);
     const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crime.category);
+    console.log(crimeValues);
     const solved = types.filter(type => {
-        return crimeValues.value.includes(type)
+        return crimeValues.value.weaknesses.includes(type)
     })
     if (solved.length > 0) {
-        alert("YOU DID IT!")
+        setScore((prevScore) => prevScore + 1)
+        return true
+
     }
     else {
-        alert("AWWWW TIME TO GO HOME!")
+        return false
     }
 
 }

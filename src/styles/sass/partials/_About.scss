@@ -1,0 +1,101 @@
+@use "./variables" as *;
+// import { badge } from `../assets/images/badge.png`;
+
+.About-page {
+    margin: 0 auto;
+    background-color: $lightColor;
+    min-height: 85vh;
+    padding-bottom: 4rem;
+    h2 {
+        font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+
+    }
+    p {
+        font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+        color: $darkColor
+    }
+}
+
+.About-header {
+    padding: 2rem;
+}
+
+.About-description {
+    display: flex;
+    gap: 5rem;
+    padding: 10px 25px;
+}
+
+.pikachu-detective {
+    width: 300px;
+    border-radius: 15px;
+}
+.Creators-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - 20px);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.creator1,
+.creator2,
+.creator3,
+.creator4 {
+    width: calc(100% / 2);  
+}
+
+.badge-container {
+    background-image: url("../assets/images/badge.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 480px;
+    height: 600px;
+}
+
+.badge-photo {
+    width: 300px;
+    height:300px;
+    position: relative
+}
+
+.detective-photo {
+    border-radius: 5px;
+    width: 190px;
+    position: absolute;
+    top: 115px;
+    left: 65px;
+    z-index: 5;
+}
+.badge-description {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    p {
+        color:aliceblue;
+        line-height: 0rem;
+    }
+}
+
+.detective-name {
+    font-style: italic;
+}
+
+.medias {
+    display: flex;
+    gap: 2rem
+}
+
+.Button-about {
+    box-shadow: none;
+    margin-top: 2px;
+}
+
+
+

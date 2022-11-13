@@ -4,12 +4,12 @@ export default function PokemonList({ pokemon }) {
 
     return (
       <>
-        <ul className='PokemonList'>
+        <ul className='pokemonList'>
           {pokemon.map((pokemonInfo) => {
             return (
               <li
                 key={pokemonInfo.id}
-                className='Pokemon'
+                className='Pokemon shape-section'
               >
                 <Pokemon pokemonInfo={pokemonInfo}/>
               </li>

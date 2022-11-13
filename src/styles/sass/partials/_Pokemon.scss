@@ -1,0 +1,83 @@
+@use './variables' as *;
+// .Pokemon {
+//     background-color: #fff;
+//     border-radius: 15px;
+//     box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+//     min-width: 150px;
+//     width: 30%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+
+.Pokemon-image {
+    width: 65%;
+    height: 90%;
+    // height: 100%;
+    // padding: 10px
+}
+
+.Pokemon-modal {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    top: calc(50% - 300px);
+    left: calc(50% - 200px);
+    border: 20px solid #ffe50a;
+    background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
+    overflow: auto;
+    outline: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
+}
+.Pokemon-imageContainer{
+    background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.75);
+}
+.Pokemon-modalImage {
+    width: 60%;
+}
+.Pokemon-name{
+    width: 90%;
+    text-align: start;
+}
+.Pokemon-modalTypes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    width: 90%;
+    border-bottom: 2px solid black;
+}
+.Pokemon-pokeball{
+    width: 10%;
+    img{
+        width: 100%;
+    }
+}
+.Pokemon-typeName{
+    // margin-right: 40%;
+    font-weight: bold;
+}
+.Pokemon-hint{
+    width: 90%;
+}
+.Pokemon-info{
+    background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+    width: 80%;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

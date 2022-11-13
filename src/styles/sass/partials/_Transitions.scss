@@ -1,0 +1,17 @@
+.appear {
+    opacity: 0;
+}
+
+.appear-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+.transitions-exit {
+    opacity: 1;
+}
+
+.transitions-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+}
