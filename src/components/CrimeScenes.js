@@ -8,6 +8,7 @@ import ReactModal from 'react-modal';
 import Score from "./Score"
 import { CSSTransition } from 'react-transition-group';
 // import crimeObject from "../utils/crimeObject"
+import CrimeEvent from './CrimeEvent';
 
 import crimeAPICall from '../utils/crimeAPICall';
 
@@ -20,9 +21,15 @@ export default function CrimeScenes({ username, location, handleLocation }) {
   const [score, setScore] = useState(0);
 
 
+
+
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
     toggleModal(true);
+  }
+
+  const test = (id) => {
+    return { "--key-value": id }
   }
 
   const setTheCrime = (crime) => {
@@ -70,15 +77,16 @@ export default function CrimeScenes({ username, location, handleLocation }) {
         {crimeSceneArray && (
           <ul className='CrimeScenes-category'>
             {crimeSceneArray &&
-              crimeSceneArray.map((individual) => {
+              crimeSceneArray.map((individual, i) => {
+
                 return (
                   <li
-                    key={individual.id}
+                    key={individual.id} 
                     onClick={(e) => {
                       handleCrimeClick(individual)
                     }}
                   >
-                    {crimeObject[individual.category].alternate}
+                    <CrimeEvent individual={individual} i={i}/>
                   </li>
                 )
               })}
