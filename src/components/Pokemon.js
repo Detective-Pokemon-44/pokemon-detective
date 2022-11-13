@@ -5,7 +5,7 @@ import { capitalizeFirstLetter, isNotUnique } from '../utils/functions';
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
-
+  console.log(pokemonInfo)
   let crimeStrengths = []
   pokemonInfo.types.map((individualType) => {
     // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
@@ -15,18 +15,24 @@ export default function Pokemon({ pokemonInfo }) {
   })
   return (
     <>
-      <img
-        className='Pokemon-image'
-        src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
-        onClick={toggleModal}
-        alt={pokemonInfo.name}
-      />
-      <p>
-        <strong>{capitalizeFirstLetter(pokemonInfo.name)}</strong>
-      </p>
-      {pokemonInfo.types.map((pokemonPower) => (
-        <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
-      ))}
+      <div className='diamond-shape' onClick={toggleModal}>
+        <div className='item-count'>
+          <img
+            className='Pokemon-image'
+            src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
+            alt={pokemonInfo.name}
+          />
+          {/* {pokemonInfo.types.map((pokemonPower) => (
+            <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
+          ))} */}
+          <div className='Pokemon-hover'>
+            <p className='Pokemon-name'>
+              <strong>{capitalizeFirstLetter(pokemonInfo.name)}</strong>
+            </p>
+            <p className='Pokemon-detail'>Pokemon Detail</p>
+          </div>
+        </div>
+      </div>
 
       <ReactModal
         isOpen={modalState}
@@ -34,22 +40,45 @@ export default function Pokemon({ pokemonInfo }) {
         onRequestClose={toggleModal}
         appElement={document.getElementById("root")}
       >
-        <img
-          className='Pokemon-modalImage'
-          src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
-          alt={pokemonInfo.name}
-        />
-        <h3>{capitalizeFirstLetter(pokemonInfo.name)}</h3>
+        <h2 className='Pokemon-name'>
+          {capitalizeFirstLetter(pokemonInfo.name)}
+        </h2>
+        <div className='Pokemon-imageContainer'>
+          <img
+            className='Pokemon-modalImage'
+            src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
+            alt={pokemonInfo.name}
+          />
+        </div>
+        <div className='Pokemon-info'>
+          <p>
+            Experience: {pokemonInfo.base_experience}, Height:{" "}
+            {pokemonInfo.height}′, Weight: {pokemonInfo.weight} lbs
+          </p>
+        </div>
         <div className='Pokemon-modalTypes'>
+          <div className="Pokemon-pokeball">
+            <img src={require(`../assets/svgPokemon/pokemonball.png`)} alt="" srcset="" />
+          </div>
           {pokemonInfo.types.map((pokemonPower) => (
-            <p key={pokemonPower.type.name}>
+            <p key={pokemonPower.type.name} className="Pokemon-typeName">
               {pokemonPower.type.name.toUpperCase()}
             </p>
           ))}
         </div>
-        <p>
-          {capitalizeFirstLetter(pokemonInfo.name)} is good at
-          solving {crimeStrengths.map((individualType, i, arr) => (i + 1 === arr.length ? `and ${crimeObject[individualType].alternate.replaceAll("-", " ")}.` : `${crimeObject[individualType].alternate.replaceAll("-", " ")}, `))}
+        <p className="Pokemon-hint">
+          {capitalizeFirstLetter(pokemonInfo.name)} is good at solving{" "}
+          {crimeStrengths.map((individualType, i, arr) =>
+            i + 1 === arr.length
+              ? `and ${crimeObject[individualType].alternate.replaceAll(
+                  "-",
+                  " "
+                )}.`
+              : `${crimeObject[individualType].alternate.replaceAll(
+                  "-",
+                  " "
+                )}, `
+          )}
         </p>
       </ReactModal>
     </>

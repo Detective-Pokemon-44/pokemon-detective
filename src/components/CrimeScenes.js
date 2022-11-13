@@ -74,7 +74,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
         {crimeSceneArray && (
           <ul className='CrimeScenes-category'>
             {crimeSceneArray &&
-              crimeSceneArray.map((individual) => {
+              crimeSceneArray.map((individual, i) => {
 
                 return (
                   <li
@@ -83,7 +83,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
                       handleCrimeClick(individual)
                     }}
                   >
-                    <CrimeEvent individual={individual} />
+                    <CrimeEvent individual={individual} i={i}/>
                   </li>
                 )
               })}
