@@ -14,13 +14,13 @@ export default function Score({ username, score }) {
 
   return (
     <>
-      <div className='score-container'>
+      <div className='Score-container'>
         {/* Button will save user's name and score to firebase to display into High Score page, and quit the game */}
+        <p><b>Name:</b>{" " + username}</p>    <p><b>Score: </b>{" " + score}</p>
         <button onClick={(e) => {
           saveName(e);
           navigate('/highscores')
-        }}>Submit score and quite game</button>
-        <p>Name: {username},Score: {score}</p>
+        }}>Submit score and quit game</button>
       </div>
     </>
   )

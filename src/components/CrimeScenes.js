@@ -6,6 +6,7 @@ import useToggleState from '../hooks/useToggleState';
 import crimeObject from '../utils/crimeObject';
 import ReactModal from 'react-modal';
 import Score from "./Score"
+import { CSSTransition } from 'react-transition-group';
 // import crimeObject from "../utils/crimeObject"
 
 import crimeAPICall from '../utils/crimeAPICall';
@@ -17,6 +18,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
   const [score, setScore] = useState(0);
+
 
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
@@ -60,7 +62,8 @@ export default function CrimeScenes({ username, location, handleLocation }) {
 
   return (
     <>
-      <div className='CrimeScenes card'>
+
+      <div className='CrimeScenes card' >
         <h2>
           Welcome to {location[0]}, {username}
         </h2>

@@ -426,11 +426,11 @@ p {
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  height: 400px;
-  top: calc(50% - 200px);
+  height: 90%;
+  top: calc(50% - 300px);
   left: calc(50% - 300px);
   border: 1px solid #ccc;
-  background: #fff;
+  background: #926C57;
   overflow: auto;
   outline: none;
   padding: 20px;
@@ -445,6 +445,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #D5C29B;
 }
 
 .CrimeSceneModal-fieldset {
@@ -455,6 +456,7 @@ p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 20px 5px;
+  margin: 30px 0;
 }
 
 .CrimeSceneModal-container {
@@ -464,12 +466,33 @@ p {
 }
 
 .CrimeSceneModal-container-button {
+  padding: 2% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.CrimeSceneModal-textContainer {
+  background-color: #E9990B;
+  padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin-top: 2%;
+  -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
 }
 
 .CrimeSceneModal-input {
@@ -487,6 +510,8 @@ p {
 }
 .CrimeSceneModal-input:checked {
   background-image: url(../assets/images/Pokeball.svg);
+  -webkit-filter: sepia(80%);
+          filter: sepia(80%);
 }
 .CrimeSceneModal-input:hover {
   cursor: pointer;
@@ -498,22 +523,14 @@ p {
 .CrimeSceneModal-image {
   width: 75px;
   max-height: 6em;
+  -webkit-filter: sepia(20%);
+          filter: sepia(20%);
 }
 .CrimeSceneModal-image:hover {
   cursor: pointer;
 }
 .CrimeSceneModal-image:focus {
   cursor: pointer;
-}
-
-.CrimeSceneModal-modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 20px;
 }
 
 .CrimeSceneModal-container {
@@ -527,4 +544,39 @@ p {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
+}
+
+.CrimeSceneModal-resultsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.CrimeSceneModal-resultsContainer button {
+  margin: 15px;
+}
+
+.enter {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.crimescenes-enter-active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, -webkit-transform 300ms;
+  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms, transform 300ms, -webkit-transform 300ms;
 }

@@ -3,6 +3,7 @@ import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
 import Score from "./Score";
 
+
 export default function CrimeSceneModal({
   pokemon,
   crimeSelected,
@@ -14,6 +15,7 @@ export default function CrimeSceneModal({
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
+
 
   const handleButtonSwitch = (e) => {
     setPokemonSelectionID(parseInt(e.target.value));
@@ -39,22 +41,24 @@ export default function CrimeSceneModal({
       setCrimeSolved(trueOrFalse);
     }
   }, [selectedPokemon]);
-  console.log((crimeSelected.location.street.name).length)
+
+
   return (
     <>
       {!selectedPokemon && !crimeSolved ? (
         <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
-          <h4>{crimeObject[crimeSelected.category].alternate}</h4>
-          <h5>The Break Down</h5>
-          <p>{crimeObject[crimeSelected.category].backstory}</p>
-          <p>Crime's location:
-            {
-              crimeSelected.location.street.name.length <= 11 ?
-                ` Sorry got nothing for ya ${username}` :
-                ' ' + (crimeSelected.location.street.name).substring(11)
-            }
-          </p>
-
+          <div className="CrimeSceneModal-textContainer">
+            <h4>{crimeObject[crimeSelected.category].alternate}</h4>
+            <h5>The Break Down</h5>
+            <p>{crimeObject[crimeSelected.category].backstory}</p>
+            <p><b>Crime's location:</b>
+              {
+                crimeSelected.location.street.name.length <= 11 ?
+                  ` Sorry got nothing for ya ${username}` :
+                  ' ' + (crimeSelected.location.street.name).substring(11)
+              }
+            </p>
+          </div>
           <fieldset
             onChange={handleButtonSwitch}
             className="CrimeSceneModal-fieldset"
@@ -91,17 +95,26 @@ export default function CrimeSceneModal({
         </form>
       ) : crimeSolved === true ? (
         <>
-          <h4>You solved it</h4>
-          <p>{crimeObject[crimeSelected.category].solved}</p>
-          <button onClick={() => handleLocation(null)}> Take me Home</button>
-          <Score username={username} score={score} />
+          <div className="CrimeSceneModal-resultsContainer">
+            <div className="CrimeSceneModal-textContainer">
+              <h4>You solved the case</h4>
+              <p>{crimeObject[crimeSelected.category].solved}</p>
+            </div>
+            <button onClick={() => handleLocation(null)}> Take me Home</button>
+            <Score username={username} score={score} />
+          </div>
         </>
       ) : (
         <>
-          <h4>You Failed it</h4>
-          <p>{crimeObject[crimeSelected.category].failed}</p>
-          <button onClick={() => handleLocation(null)}> Take me Home</button>
-          <Score username={username} score={score} />
+          <div className="CrimeSceneModal-resultsContainer">
+            <div className="CrimeSceneModal-textContainer">
+              <h4>You failed the case!</h4>
+              <h5>{crimeObject[crimeSelected.category].alternate}</h5>
+              <p>{crimeObject[crimeSelected.category].failed}</p>
+            </div>
+            <button onClick={() => handleLocation(null)}> Take me Home</button>
+            <Score username={username} score={score} />
+          </div>
         </>
       )}
 
