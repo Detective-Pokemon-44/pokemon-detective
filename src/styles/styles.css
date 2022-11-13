@@ -193,7 +193,7 @@ a {
   text-decoration: none;
 }
 
-.button {
+button {
   width: 120px;
   height: 50px;
   background-color: #5E1800;
@@ -213,13 +213,13 @@ a {
   -webkit-box-shadow: 2px 2px 15px #7D210A;
           box-shadow: 2px 2px 15px #7D210A;
 }
-.button a {
+button a {
   color: #D5C29B;
 }
-.button:hover, .button:focus {
+button:hover, button:focus {
   background-color: #E9990B;
 }
-.button:hover a, .button:focus a {
+button:hover a, button:focus a {
   color: #5E1800;
 }
 
@@ -243,6 +243,7 @@ h2,
 h4,
 h5 {
   font-family: "Iceberg";
+  font-weight: 500;
 }
 
 h1 {
