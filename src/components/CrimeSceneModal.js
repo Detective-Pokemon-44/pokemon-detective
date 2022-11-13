@@ -3,6 +3,7 @@ import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
 import Score from "./Score";
 
+
 export default function CrimeSceneModal({
   pokemon,
   crimeSelected,
@@ -14,6 +15,7 @@ export default function CrimeSceneModal({
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
+
 
   const handleButtonSwitch = (e) => {
     setPokemonSelectionID(parseInt(e.target.value));
@@ -40,13 +42,23 @@ export default function CrimeSceneModal({
     }
   }, [selectedPokemon]);
 
+
   return (
     <>
       {!selectedPokemon && !crimeSolved ? (
         <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
-          <h4>{crimeObject[crimeSelected.category].alternate}</h4>
-          <p>Crime's location: {crimeSelected.location.street.name}</p>
-
+          <div className="CrimeSceneModal-textContainer">
+            <h4>{crimeObject[crimeSelected.category].alternate}</h4>
+            <h5>The Break Down</h5>
+            <p>{crimeObject[crimeSelected.category].backstory}</p>
+            <p><b>Crime's location:</b>
+              {
+                crimeSelected.location.street.name.length <= 11 ?
+                  ` Sorry got nothing for ya ${username}` :
+                  ' ' + (crimeSelected.location.street.name).substring(11)
+              }
+            </p>
+          </div>
           <fieldset
             onChange={handleButtonSwitch}
             className="CrimeSceneModal-fieldset"
@@ -56,12 +68,12 @@ export default function CrimeSceneModal({
             {pokemon.map((pokemonInfo) => {
               return (
                 <div
-                  className="CrimeSceneModal-modal-container"
+                  className="CrimeSceneModal-container"
                   key={pokemonInfo.id}
                 >
                   <label htmlFor={pokemonInfo.name}>
                     <img
-                      className="CrimeScene-modalImage"
+                      className="CrimeSceneModal-image"
                       src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
                       alt={pokemon.name}
                     />
@@ -71,26 +83,38 @@ export default function CrimeSceneModal({
                     id={pokemonInfo.name}
                     name="pokemon"
                     value={pokemonInfo.id}
+                    className="CrimeSceneModal-input"
                   ></input>
                 </div>
               );
             })}
           </fieldset>
-          <div className="Pokemon-radio-submit-button">
+          <div className="CrimeSceneModal-container-button">
             <button type="submit">Select Your Pokemon Detective</button>
           </div>
         </form>
       ) : crimeSolved === true ? (
         <>
-          <h4>YOU SOLVED THE CASE</h4>
-          <button onClick={() => handleLocation(null)}> Take me Home</button>
-          <Score username={username} score={score} />
+          <div className="CrimeSceneModal-resultsContainer">
+            <div className="CrimeSceneModal-textContainer">
+              <h4>You solved the case</h4>
+              <p>{crimeObject[crimeSelected.category].solved}</p>
+            </div>
+            <button onClick={() => handleLocation(null)}> Take me Home</button>
+            <Score username={username} score={score} />
+          </div>
         </>
       ) : (
         <>
-          <h4>YOU FAILED THE CASE</h4>
-          <button onClick={() => handleLocation(null)}> Take me Home</button>
-          <Score username={username} score={score} />
+          <div className="CrimeSceneModal-resultsContainer">
+            <div className="CrimeSceneModal-textContainer">
+              <h4>You failed the case!</h4>
+              <h5>{crimeObject[crimeSelected.category].alternate}</h5>
+              <p>{crimeObject[crimeSelected.category].failed}</p>
+            </div>
+            <button onClick={() => handleLocation(null)}> Take me Home</button>
+            <Score username={username} score={score} />
+          </div>
         </>
       )}
 

@@ -204,7 +204,10 @@ button {
   src: url("../assets/fonts/Lato-Regular.ttf");
   font-weight: 400;
 }
-h1, h2 {
+h1,
+h2,
+h4,
+h5 {
   font-family: "Iceberg";
 }
 
@@ -392,66 +395,6 @@ a {
   text-align: center;
 }
 
-.CrimeScene-modal {
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  top: calc(50% - 200px);
-  left: calc(50% - 300px);
-  border: 1px solid #ccc;
-  background: #fff;
-  overflow: auto;
-  outline: none;
-  padding: 20px;
-  border-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.CrimeSceneModal-fieldset {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.CrimeSceneModal-modal-container img {
-  width: 40px;
-}
-
-.CrimeSceneModal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 20px;
-}
-
-.CrimeSceneModal-modal-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-
 .PokemonList {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -544,93 +487,19 @@ a {
   gap: 10px;
 }
 
-.About-page {
-  margin: 0 auto;
-  background-color: #D5C29B;
-  min-height: 85vh;
-  padding-bottom: 4rem;
-}
-.About-page h2 {
-  font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
-}
-.About-page p {
-  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
-  color: #5E1800;
-}
 
-.About-header {
-  padding: 2rem;
-}
-
-.About-description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5rem;
-  padding: 10px 25px;
-}
-
-.pikachu-detective {
-  width: 300px;
-  border-radius: 15px;
-}
-
-.Creators-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: calc(100% - 20px);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  flex-wrap: wrap;
-}
-
-.creator1,
-.creator2,
-.creator3,
-.creator4 {
-  width: 50%;
-}
-
-.badge-container {
-  background-image: url("../assets/images/badge.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border-radius: 20px;
-  width: 480px;
-  height: 600px;
-}
-
-.badge-photo {
-  width: 300px;
-  height: 300px;
-  position: relative;
-}
-
-.detective-photo {
-  border-radius: 5px;
-  width: 190px;
+.CrimeSceneModal-modal {
   position: absolute;
-  top: 115px;
-  left: 65px;
-  z-index: 5;
-}
-
-.badge-description {
-  width: 450px;
+  width: 600px;
+  height: 90%;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  border: 1px solid #ccc;
+  background: #926C57;
+  overflow: auto;
+  outline: none;
+  padding: 20px;
+  border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -641,26 +510,61 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 25px;
-}
-.badge-description p {
-  color: aliceblue;
-  line-height: 0rem;
+  background-color: #D5C29B;
 }
 
-.detective-name {
-  font-style: italic;
-}
-
-.medias {
+.CrimeSceneModal-fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 5px;
+  margin: 30px 0;
 }
 
-.Button-about {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  margin-top: 2px;
+.CrimeSceneModal-container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.CrimeSceneModal-container-button {
+  padding: 2% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.CrimeSceneModal-textContainer {
+  background-color: #E9990B;
+  padding: 2%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
 }
