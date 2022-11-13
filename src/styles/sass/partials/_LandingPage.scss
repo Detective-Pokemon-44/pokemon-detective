@@ -3,6 +3,18 @@
 .LandingPage {
     color: $lightColor;
     background-color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.LandingPage-imgContainer {
+    width: 80%;
+}
+
+.LandingPage-imgContainer img {
+    width: 100%;
 }
 
 .LandingPage-form {

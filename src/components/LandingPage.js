@@ -15,8 +15,9 @@ export default function LandingPage({ handleUsername }) {
   return (
     <>
       <div className='LandingPage card'>
-        <img src={pokemonLogo} />
-        <br />
+        <div className="LandingPage-imgContainer">
+          <img src={pokemonLogo} alt="logo" />
+        </div>
         <form className='LandingPage-form'>
           <label htmlFor='username' className='LandingPage-formUsername'>Please Enter Your Name</label>
           <input
@@ -36,7 +37,6 @@ export default function LandingPage({ handleUsername }) {
             }>High Scores</button>
           </div>
         </form>
-
       </div>
     </>
   )

@@ -304,6 +304,25 @@ p {
 .LandingPage {
   color: #D5C29B;
   background-color: #7D210A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+
+.LandingPage-imgContainer {
+  width: 80%;
+}
+
+.LandingPage-imgContainer img {
+  width: 100%;
 }
 
 .LandingPage-form {
