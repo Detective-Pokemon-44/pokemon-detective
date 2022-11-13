@@ -1,11 +1,5 @@
 @use './variables' as *;
 
-button {
-    border: none;
-    padding: 0.5rem;
-    border-radius: 15px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
-}
 
 .card {
     padding: 50px;
@@ -25,4 +19,32 @@ button {
 a {
     color: $secondaryColor;
     text-decoration: none;
+}
+
+.button {
+    width: 120px;
+    height: 50px;
+    background-color: $primaryDarkColor;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 2px 2px 15px $primaryColor;
+    a {
+        color: $lightColor;
+    }
+    &:hover,
+    &:focus {
+        background-color: $secondaryDarkColor;
+        a {
+            color: $primaryDarkColor
+        }
+    }
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto
 }
