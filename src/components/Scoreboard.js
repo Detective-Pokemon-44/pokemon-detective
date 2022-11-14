@@ -22,13 +22,12 @@ export default function Scoreboard() {
       .slice(0, 20) 
       setHighScores(filteredData);
     })
-  }, [])
+  }, [dbRef])
 
   return (
     <div className="main">
-      <Link to="/"><button>Go Back</button></Link>
       <div className="Scoreboard">
-        <h2>High Scores</h2>
+        <h2 className="ScoreTitle">High Scores</h2>
         <ul>
           {highScores.map((highScore, i) => {
             return (
@@ -38,6 +37,7 @@ export default function Scoreboard() {
               </li>
             )
           })}
+          <Link  to="/"><button className="Go-back">X</button></Link>
         </ul>
       </div>
     </div>

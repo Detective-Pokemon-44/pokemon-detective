@@ -845,6 +845,17 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 80vw;
+  height: 75vh;
+  position: relative;
+  background-color: #7D210A;
+}
+
+.ScoreTitle {
+  position: absolute;
+  left: 5%;
+  top: 0;
+  color: #FFC120;
 }
 
 .Scoreboard-listItem {
@@ -852,6 +863,30 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  width: 300px;
+  background-color: rgba(146, 108, 87, 0.3294117647);
+  border: 2px solid red;
+}
+.Scoreboard-listItem span {
+  font-family: "Lato";
+  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 1.6rem);
+  line-height: 2rem;
+  color: #926C57;
+}
+
+.Go-back {
+  width: 40px;
+  height: 40px;
+  color: #7D210A;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 40px;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
 }
 
 .CrimeSceneModal-modal {
