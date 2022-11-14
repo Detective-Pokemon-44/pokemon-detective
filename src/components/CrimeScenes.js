@@ -81,12 +81,12 @@ export default function CrimeScenes({ username, location, handleLocation }) {
 
                 return (
                   <li
-                    key={individual.id} 
+                    key={individual.id}
                     onClick={(e) => {
                       handleCrimeClick(individual)
                     }}
                   >
-                    <CrimeEvent individual={individual} i={i}/>
+                    <CrimeEvent individual={individual} i={i} />
                   </li>
                 )
               })}
@@ -99,8 +99,9 @@ export default function CrimeScenes({ username, location, handleLocation }) {
             className='CrimeSceneModal-modal'
             onRequestClose={toggleModal}
             appElement={document.getElementById("root")}
+            closeTimeoutMS={500}
           >
-            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} username={username} score={score} setScore={setScore} />
+            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} username={username} score={score} setScore={setScore} toggleModal={toggleModal} />
           </ReactModal>
         )}
       </div>

@@ -1,12 +1,13 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 .CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
-    height: 90%;
+    height: 80%;
     top: calc(50% - 300px);
     left: calc(50% - 300px);
-    border: 1px solid #ccc;
+    border: 1px solid $primaryDarkColor;
     background: $primaryColor;
     overflow: auto;
     outline: none;
@@ -17,6 +18,29 @@
     align-items: center;
     background-color: $lightColor;
 
+    @include tablet {
+        max-height: 60%;
+    }
+
+    @include mobile {
+        top: 1%;
+        left: 4%;
+        width: 324px;
+        max-height: 90%;
+    }
+
+}
+
+.CrimeSceneModal-close-button-container {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
 .CrimeSceneModal-fieldset {
@@ -24,6 +48,14 @@
     justify-content: space-between;
     padding: 20px 5px;
     margin: 30px 0;
+    border: 2px solid $primaryDarkColor;
+    box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
+
+    @include mobile {
+
+        flex-direction: column;
+    }
+
 }
 
 .CrimeSceneModal-container {
@@ -35,16 +67,41 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    button {
+        font-size: 0.8rem;
+        color: $lightColor;
+    }
 }
 
 .CrimeSceneModal-textContainer {
-    background-color: $secondaryDarkColor;
+    background-color: $secondaryColor;
     padding: 2%;
     display: flex;
     flex-direction: column;
     width: 60%;
     margin-top: 2%;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
+
+    @include mobile {
+        width: 90%;
+        margin: 2% auto;
+    }
+
+
+
+    h4 {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
 }
 
 
@@ -60,6 +117,7 @@
     margin-bottom: 20px;
 
 
+
     &:checked {
         background-image: url(../assets/images/Pokeball.svg);
         filter: sepia(80%);
@@ -73,6 +131,8 @@
         cursor: pointer;
     }
 }
+
+
 
 
 .CrimeSceneModal-image {
@@ -93,6 +153,14 @@
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
+
+    @include mobile {
+        flex-direction: row;
+        justify-content: space-around;
+        border: 2px solid $primaryDarkColor;
+        margin: 2px auto;
+        padding: 3%;
+    }
 }
 
 .CrimeSceneModal-resultsContainer {
