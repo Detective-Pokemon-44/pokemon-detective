@@ -1,7 +1,7 @@
 import door from '../assets/images/door.svg';
 import Gamebar from './Gamebar';
 
-export default function Location({ setLocation }) {
+export default function Location({ handleLocation }) {
     const locations = [
         {
             city: "London",
@@ -21,8 +21,7 @@ export default function Location({ setLocation }) {
     ]
 
     function handleClick(location, lat, lng) {
-        setLocation([location, lat, lng]);
-        console.log(location);
+        handleLocation([location, lat, lng]);
     }
 
     return (

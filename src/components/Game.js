@@ -12,7 +12,6 @@ export default function Game() {
         setLocation(location)
     }
 
-
     return (
         <div className="main">
             {(!username && !location) &&
@@ -20,7 +19,7 @@ export default function Game() {
             }
             {(username && !location) &&
                 <Location
-                    setLocation={setLocation}
+                    handleLocation={handleLocation}
                 />}
             {(username && location) &&
                 <CrimeScenes
