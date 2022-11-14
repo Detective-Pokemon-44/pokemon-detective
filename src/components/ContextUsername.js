@@ -7,11 +7,11 @@ export function useUsername() {
     return useContext(UsernameContext);
 }
 
-export function useSetUsername() {
+export function useUpdateUsername() {
     return useContext(UsernameUpdateContext);
 }
 
-export default function UsernameProvider({ children }) {
+export function UsernameProvider({ children }) {
     const [username, setUsername] = useState();
 
     function updateUsername(userInput) {

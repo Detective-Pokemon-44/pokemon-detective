@@ -1,4 +1,5 @@
 import door from '../assets/images/door.svg';
+import Gamebar from './Gamebar';
 
 export default function Location({ setLocation }) {
     const locations = [
@@ -8,17 +9,11 @@ export default function Location({ setLocation }) {
             lng: "-0.1276",
         },
         {
-            // bicycle-theft
-            // criminal-damage-arson
-            // violent-crime
             city: "Birmingham",
             lat: "52.4862",
             lng: "-1.8904",
         },
         {
-            // criminal-damage-arson
-            // bicycle-theft
-            // burglary
             city: "Liverpool",
             lat: "53.4084",
             lng: "-2.9916",
@@ -32,6 +27,7 @@ export default function Location({ setLocation }) {
 
     return (
         <div className="Location card">
+            <Gamebar />
             <h2>Pick a Location</h2>
             <div className="Location-locationsContainer">
                 {locations.map((location) => (
