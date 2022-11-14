@@ -1020,7 +1020,6 @@ a {
 .About-page {
   margin: 0 auto;
   background-color: #D5C29B;
-  min-height: 85vh;
   padding-bottom: 4rem;
 }
 .About-page h2 {
@@ -1046,9 +1045,34 @@ a {
     gap: 0.5rem;
   }
 }
+@media (max-width: 768px) {
+  .About-description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px 25px;
+    min-width: 350px;
+  }
+}
 
 .description-container {
-  min-width: 420px;
+  min-width: 350px;
+}
+@media (max-width: 768px) {
+  .description-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+  }
 }
 
 .pikachu-container {
@@ -1067,6 +1091,23 @@ a {
   .pikachu-container .pikachu-detective {
     width: 270px;
     height: 270px;
+  }
+}
+@media (max-width: 1100px) and (max-width: 768px) {
+  .pikachu-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: absolute;
+    top: 110px;
+    right: 65px;
+  }
+  .pikachu-container .pikachu-detective {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -1114,6 +1155,14 @@ a {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .creator1,
+.creator2,
+.creator3,
+.creator4 {
+    height: 400px;
   }
 }
 
@@ -1169,6 +1218,16 @@ a {
     height: 200px;
     padding-top: 10px;
     padding-left: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .badge-description {
+    padding-top: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .badge-description {
+    padding-top: 25px;
   }
 }
 
@@ -1230,9 +1289,10 @@ a {
   background-color: rgba(37, 33, 32, 0.6431372549);
   border-radius: 15px;
 }
-.Button-about:hover, .Button-about:focus {
+.Button-about:hover {
   background-color: #E9990B;
 }
-.Button-about:hover a, .Button-about:focus a {
+.Button-about:hover a {
   color: #5E1800;
+  padding: 25px;
 }
