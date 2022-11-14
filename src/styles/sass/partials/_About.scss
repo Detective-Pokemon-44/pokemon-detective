@@ -1,5 +1,4 @@
 @use "./variables" as *;
-// import { badge } from `../assets/images/badge.png`;
 
 .About-page {
     margin: 0 auto;
@@ -11,90 +10,166 @@
 
     }
     p {
-        font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
-        color: $darkColor
+        color: $primaryDarkColor
     }
 }
 
 .About-header {
-    padding: 2rem;
+    padding-top: 2rem;
 }
 
 .About-description {
     display: flex;
     gap: 5rem;
     padding: 10px 25px;
+    @media (max-width: 1000px) {
+        gap: 0.5rem;
+    }
+    // @media (max-width: 700px) {
+    //     flex-direction: column-reverse;
+    //     gap: 0rem;
+    // }
 }
 
-.pikachu-detective {
-    width: 300px;
-    border-radius: 15px;
+.description-container {
+    min-width: 420px;
 }
+
+.pikachu-container {
+    display: flex;
+    align-items: center;
+    .pikachu-detective {
+        width: 300px;
+        border-radius: 15px;
+    }
+    @media (max-width: 1000px) {
+        .pikachu-detective {
+            width: 270px;
+            height: 270px;
+        }
+    }
+    // @media (max-width: 1000px) {
+    //     display: flex;
+    //     justify-content: flex-end;
+    //     .pikachu-detective {
+    //         width: 200px;
+    //     }
+    // }
+}
+
 .Creators-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% - 20px);
     align-items: center;
     flex-wrap: wrap;
+    gap: 1rem;
+    @media (max-width: 1000px) {
+        gap: 0rem;
+    }
 }
 
 .creator1,
 .creator2,
 .creator3,
 .creator4 {
-    width: calc(100% / 2);  
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    @media (max-width: 1000px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }
 
 .badge-container {
     background-image: url("../assets/images/badge.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
     width: 480px;
     height: 600px;
+    transform: scale(0.95);
+    @media (max-width: 1000px) {
+        width: 350px;
+        transform: scale(0.85);
+        height: 450px;
+    }
+}
+
+.badge-description {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-left: 50px;
+    p {
+        color:white;
+        line-height: 0.5rem;
+    }
+    @media (max-width: 1000px) {
+        width: 320px;
+        height: 200px;
+        padding-top: 10px;
+        padding-left: 15px;
+    }
 }
 
 .badge-photo {
     width: 300px;
     height:300px;
-    position: relative
+    position: relative;
+    @media (max-width: 1000px) {
+        width: 200px;
+        height:200px;
+    }
 }
 
 .detective-photo {
     border-radius: 5px;
     width: 190px;
     position: absolute;
-    top: 115px;
+    top: 55px;
     left: 65px;
-    z-index: 5;
-}
-.badge-description {
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 25px;
-    p {
-        color:aliceblue;
-        line-height: 0rem;
+    border: 1px solid #332f2e;
+    @media (max-width: 1000px) {
+        width: 140px;
+        height:140px;
+        left: 45px;
     }
 }
 
 .detective-name {
     font-style: italic;
+    color: white;
+    font-size: clamp(1.2rem, 0.65rem + 1.8333vw, 2.3rem);
 }
 
 .medias {
     display: flex;
-    gap: 2rem
+    gap: 0.5rem;
 }
 
 .Button-about {
-    box-shadow: none;
-    margin-top: 2px;
+    margin-top: 10px;
+    width: 110px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #252120a4;
+    border-radius: 15px;
+    &:hover,
+    &:focus {
+        background-color: $secondaryDarkColor;
+        a {
+            color: $primaryDarkColor
+        }
+    }
 }
 
 

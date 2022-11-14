@@ -226,6 +226,7 @@ button:hover a, button:focus a {
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  width: 90%;
 }
 
 @font-face {
@@ -1026,12 +1027,11 @@ a {
   font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
 }
 .About-page p {
-  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
-  color: #926C57;
+  color: #5E1800;
 }
 
 .About-header {
-  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .About-description {
@@ -1041,10 +1041,33 @@ a {
   gap: 5rem;
   padding: 10px 25px;
 }
+@media (max-width: 1000px) {
+  .About-description {
+    gap: 0.5rem;
+  }
+}
 
-.pikachu-detective {
+.description-container {
+  min-width: 420px;
+}
+
+.pikachu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pikachu-container .pikachu-detective {
   width: 300px;
   border-radius: 15px;
+}
+@media (max-width: 1000px) {
+  .pikachu-container .pikachu-detective {
+    width: 270px;
+    height: 270px;
+  }
 }
 
 .Creators-container {
@@ -1056,24 +1079,48 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: calc(100% - 20px);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
+  .Creators-container {
+    gap: 0rem;
+  }
 }
 
 .creator1,
 .creator2,
 .creator3,
 .creator4 {
-  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+@media (max-width: 1000px) {
+  .creator1,
+.creator2,
+.creator3,
+.creator4 {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .badge-container {
   background-image: url("../assets/images/badge.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1084,25 +1131,21 @@ a {
   border-radius: 20px;
   width: 480px;
   height: 600px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
-
-.badge-photo {
-  width: 300px;
-  height: 300px;
-  position: relative;
-}
-
-.detective-photo {
-  border-radius: 5px;
-  width: 190px;
-  position: absolute;
-  top: 115px;
-  left: 65px;
-  z-index: 5;
+@media (max-width: 1000px) {
+  .badge-container {
+    width: 350px;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+    height: 450px;
+  }
 }
 
 .badge-description {
-  width: 450px;
+  width: 400px;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1113,26 +1156,82 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 25px;
+  padding-top: 30px;
+  padding-left: 50px;
 }
 .badge-description p {
-  color: aliceblue;
-  line-height: 0rem;
+  color: white;
+  line-height: 0.5rem;
+}
+@media (max-width: 1000px) {
+  .badge-description {
+    width: 320px;
+    height: 200px;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+}
+
+.badge-photo {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+@media (max-width: 1000px) {
+  .badge-photo {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.detective-photo {
+  border-radius: 5px;
+  width: 190px;
+  position: absolute;
+  top: 55px;
+  left: 65px;
+  border: 1px solid #332f2e;
+}
+@media (max-width: 1000px) {
+  .detective-photo {
+    width: 140px;
+    height: 140px;
+    left: 45px;
+  }
 }
 
 .detective-name {
   font-style: italic;
+  color: white;
+  font-size: clamp(1.2rem, 0.65rem + 1.8333vw, 2.3rem);
 }
 
 .medias {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
 .Button-about {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  margin-top: 2px;
+  margin-top: 10px;
+  width: 110px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(37, 33, 32, 0.6431372549);
+  border-radius: 15px;
+}
+.Button-about:hover, .Button-about:focus {
+  background-color: #E9990B;
+}
+.Button-about:hover a, .Button-about:focus a {
+  color: #5E1800;
 }
