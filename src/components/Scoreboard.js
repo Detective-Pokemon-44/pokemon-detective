@@ -19,7 +19,7 @@ export default function Scoreboard() {
       }
       const filteredData = temp
       .sort((a, b) => b.Score - a.Score)
-      .slice(0, 20) 
+      .slice(0, 10) 
       setHighScores(filteredData);
     })
   }, [dbRef])
@@ -32,8 +32,15 @@ export default function Scoreboard() {
           {highScores.map((highScore, i) => {
             return (
               <li key={i} className="Scoreboard-listItem">
-                <span>{highScore.Name} : </span>
-                <span>{highScore.Score}</span>
+                <div className="Score-index">
+                  <span>{i + 1}</span>
+                </div>
+                <div className="Score-name">
+                  <span>{highScore.Name}</span>
+                </div>
+                <div className="Score-score">
+                  <span>{highScore.Score}</span>
+                </div>
               </li>
             )
           })}

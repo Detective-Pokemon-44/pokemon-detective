@@ -19,16 +19,34 @@
 
 .Scoreboard-listItem {
     display: flex;
-    gap: 10px;
-    width: 300px;
-    background-color: #926c5754;
-    border: 2px solid red;
+    gap: 30px;
+    min-width: 300px;
+    max-width: 470px;
+    background-color: #5e180095;
+    border-top: 2px solid $lightColor;
+    border-bottom: 2px solid $lightColor;
     span {
         font-family: $textFont;
         font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 1.6rem);
-        line-height: 2rem;
-        color: $darkColor;
+        line-height: 3rem;
+        color: $lightColor;
     }
+}
+
+.Score-index {
+    width: 60px;
+    padding-left: 25px;
+    border: 2px solid yellow
+}
+
+.Score-name {
+    width: 200px;
+}
+
+.Score-score {
+    width: 60px;
+    padding-right: 0;
+    border: 2px solid yellow
 }
 
 .Go-back {
