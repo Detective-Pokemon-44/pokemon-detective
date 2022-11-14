@@ -4,20 +4,20 @@ import gameLogic from "../utils/logic";
 import Score from "./Score";
 import { useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
+import useToggleState from "../hooks/useToggleState";
 
 
 export default function CrimeSceneModal({
   pokemon,
   crimeSelected,
   handleLocation,
-  username,
-  score,
-  setScore
 }) {
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
-
+  const [modalState, toggleModal] = useToggleState();
+  const username = useUsername();
+  const updateScore = useUpdateScore();
 
   const handleButtonSwitch = (e) => {
     setPokemonSelectionID(parseInt(e.target.value));
@@ -106,7 +106,6 @@ export default function CrimeSceneModal({
               <p>{crimeObject[crimeSelected.category].solved}</p>
             </div>
             <button onClick={() => handleLocation(null)}> Take me Home</button>
-            <Score username={username} score={score} />
           </div>
         </>
       ) : (
@@ -118,11 +117,9 @@ export default function CrimeSceneModal({
               <p>{crimeObject[crimeSelected.category].failed}</p>
             </div>
             <button onClick={() => handleLocation(null)}> Take me Home</button>
-            <Score username={username} score={score} />
           </div>
         </>
       )}
-
     </>
   );
 }
