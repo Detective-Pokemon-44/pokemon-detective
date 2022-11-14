@@ -24,10 +24,6 @@ export default function CrimeScenes({ location, handleLocation }) {
     toggleModal(true);
   }
 
-  const test = (id) => {
-    return { "--key-value": id }
-  }
-
   const setTheCrime = (crime) => {
     setCrimeSceneArray(crime);
   }
