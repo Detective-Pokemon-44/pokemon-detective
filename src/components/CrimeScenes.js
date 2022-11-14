@@ -94,7 +94,7 @@ export default function CrimeScenes({ location, handleLocation }) {
             onRequestClose={toggleModal}
             appElement={document.getElementById("root")}
           >
-            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} username={username} />
+            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
           </ReactModal>
         )}
       </div>
