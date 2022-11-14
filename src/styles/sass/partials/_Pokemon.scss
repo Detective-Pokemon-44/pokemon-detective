@@ -13,16 +13,22 @@
 .Pokemon-image {
     width: 65%;
     height: 90%;
+    position: absolute;
+    // display: none;
     // height: 100%;
     // padding: 10px
 }
 
 .Pokemon-modal {
     position: absolute;
-    width: 400px;
-    height: 600px;
-    top: calc(50% - 300px);
-    left: calc(50% - 200px);
+    width: 90%;
+    height: 72%;
+    max-height: 700px;
+    // top: 14%;
+    // left: 25%;
+    // justify-content: center;
+    top: calc(50% - 340px);
+    left: calc(50% - 230px);
     border: 20px solid #ffe50a;
     background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
     overflow: auto;
@@ -32,22 +38,45 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
+    max-width: 505px;
+    min-width: 370px;
+    p{
+    font-size: clamp(0.8rem, 0.8333rem + 0.9852vw, 1.2rem);
+    color: black;
+    }
+    h2{
+        margin: 20px 0;
+        font-size: clamp(1.5rem, 0.6667rem + 2.7037vw, 3rem);
+    }
 }
 .Pokemon-imageContainer{
     background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
     width: 90%;
-    height: 50%;
+    height: 250px;
+    min-height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.75);
 }
 .Pokemon-modalImage {
-    width: 60%;
+    width: 40%;
 }
 .Pokemon-name{
     width: 90%;
     text-align: start;
+}
+.Pokemon-nameCenter{
+    position: absolute;
+    // left: 21%;
+    margin: 20% auto;
+    width: 100%;
+}
+.Pokemon-detail{
+    position: absolute;
+    // margin-top: 43%;
+    // left: 10%;
+    margin: 43% auto 0 auto;
 }
 .Pokemon-modalTypes {
     display: flex;
@@ -57,6 +86,7 @@
     width: 90%;
     border-bottom: 2px solid black;
 }
+
 .Pokemon-pokeball{
     width: 10%;
     img{
@@ -80,4 +110,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    p{
+        font-size: clamp(0.5rem, 0.5333rem + 0.6852vw, 0.8rem);
+        color: black;
+    }
 }

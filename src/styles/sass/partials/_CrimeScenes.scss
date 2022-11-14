@@ -1,11 +1,19 @@
 @use './variables' as *;
 
+
 .CrimeScenes {
     margin: 20px;
-    width: 70%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    max-width: 2000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     h2{
         margin: 0 0 40px 0;
+    }
+    @media (max-width: 1100px) {
+        padding: 10px;
     }
 }
 
@@ -14,9 +22,21 @@
     margin: 0;
     padding: 0;
     justify-content: space-between;
+    @media (max-width: 1100px) {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 70px;
+    }
+    // flex-wrap: wrap;
     li{
         list-style-type: none;
         width: 20%;
+        max-width: 260px;
+        min-width: 170px;
+        @media (max-width: 1100px) {
+            width: 25%;
+            padding: 0;
+        }
     }
 }
 
@@ -25,10 +45,16 @@
     justify-content: space-around;
     gap: 20px;
     padding: 0;
-    margin-top: 20%;
+    margin-top: 170px;
+    @media (max-width: 1100px) {
+        flex-wrap: wrap;
+        gap: 0px;
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
 }
 
-.folderName{
+.CrimeEvent-folderName{
     bottom: -70%;
     left: 3%;
     position: absolute;
@@ -36,26 +62,32 @@
     // text-align: center;
 }
 
-.folder, .below-folder{
+.CrimeEvent-folder, .CrimeEvent-belowFolder{
     position: relative;
-	width: 200px;
+	width: 80%;
 	height: 70px;
 	background: #D5C29B;
-	top: 80%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-top-right-radius: 5px;
 	cursor: pointer;
 	transition: all 300ms ease;
     display: flex;
+    @media (max-width: 1100px) {
+        height: 40px;
+    }
 }
 
-.below-folder{
-    top: 200%;
+.CrimeEvent-belowFolder{
+    top: 130%;
+    @media (max-width: 1100px) {
+        top: 50%;
+    }
 }
 
-.folder::before, .below-folder::before{
-	width: 80px;
+.CrimeEvent-folder::before, .CrimeEvent-belowFolder::before{
+	width: 85px;
 	height: 20px;
 	content: "";
 	background: #D5C29B;
@@ -65,13 +97,13 @@
 	border-top-right-radius: 5px;
 }
 
-.folder::after, .below-folder::after{
-	width: 200px;
-	height: 130px;
+.CrimeEvent-folder::after, .CrimeEvent-belowFolder::after{
+	width: 100%;
+	height: 150%;
 	position: absolute;
 	content: '';
 	background: #D5C29B;
-	top: 40px;
+	top: 55%;
 	box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
@@ -79,27 +111,27 @@
 	transition: all 400ms ease;
 }
 
-.folder-inside{
-	width: 180px;
-	height: 130px;
+.CrimeEvent-folderInside{
+	width: 80%;
+	height: 170%;
 	position: absolute;
 	background: #fff;
-	top: 20px;
-	left: 10px;
+	top: 23%;
+	left: 8%;
 	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
 	transform: rotate(-1deg);
 	border: 1px solid #ddd;
 	transition: all 200ms ease;
 }
 
-.folder-inside::before{
+.CrimeEvent-folderInside::before{
 	content: '';
 	background: repeating-linear-gradient(0deg, #ffffff, #ffffff 10px, #333333 10px, #333333 20px);
 	position: absolute;
-	top: -37px;
-	left: 65px;
-	width: 60px;
-	height: 150px;
+	top: -10%;
+	left: 25%;
+	width: 47%;
+	height: 90%;
 	color: #343434;
 	font-size: 60px;
 	line-height: 30px;
@@ -107,13 +139,13 @@
 	opacity: 0.15;
 }
 
-.folder:hover, .below-folder:hover{
+.CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover{
 	transform: translate(-50%, -52%);
 }
-.folder:hover::after, .below-folder:hover::after{
+.CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after{
 	transform: rotateX(-15deg);
 }
-.folder:hover .folder-inside, .below-folder:hover .folder-inside{
+.CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside{
 	transform: rotate(-7deg) translateY(-15%);
 }
 
@@ -149,20 +181,45 @@
     gap: 20px;
 }
 
+
+
+.item-count {
+    display: flex;
+    // height: 150px;
+    transform: rotate(-45deg);
+    flex-direction: column;
+    align-items: center;
+	// width:150px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .shape-section {
     background: transparent;
     margin-top: 30px;
-    padding: 40px 0;
+    // padding: 40px 0;
     list-style-type: none;
+    width: 20%;
+    padding: 0 2%;
+    max-width: 260px;
+    min-width: 170px;
+    @media (max-width: 1100px) {
+        width: 16%;
+        margin-right: 20px;
+        padding: 0 2%;
+        
+    }
 }
 .diamond-shape {
     background: #D5C29B;
-    height: 150px;
+    // height: 100%;
     text-align: center;
     transform:rotate(45deg);
-    width:150px;
+    width:100%;
     border-radius: 10px;
     border: 2px solid rgb(104, 71, 71);
+    
     cursor: pointer;
     &:hover{
         // opacity: 30%;
@@ -174,92 +231,14 @@
         }
         // background-color: rgba(255,255,255,0.9);
     }
-    // img{
-    //     &:hover{
-    //         opacity: 30%;
-    //     }
-    // }
-    // &::after{
-    //     content: "pokemon";
-    //     transform:rotate(45deg);
-    // }
-}
-.item-count {
-    display: flex;
-    height: 150px;
-    transform: rotate(-45deg);
-    flex-direction: column;
-    align-items: center;
-	width:150px;
-    position: relative;
-}
-
-.Pokemon-hover{
-    // display:none;
-    color: rgba(0,0,0,0);
-    position: absolute;
-    font-size: 20px;
-    width: 100%;
-    p{
-        color: rgba(0,0,0,0);
-        
-    }
-    &:hover{
-        p{
-            color: rgba(0,0,0,1);
-            opacity: 500%;
-            z-index: 10;
-        }
-        color: rgba(0,0,0,1);
-        z-index: 10;
+    &::after{
+        padding-bottom: 100%;
+        content: "";
         display: block;
     }
 }
 
-.shape-section {
-    background: transparent;
-    margin-top: 30px;
-    padding: 40px 0;
-    list-style-type: none;
-}
-.diamond-shape {
-    background: #D5C29B;
-    height: 150px;
-    text-align: center;
-    transform:rotate(45deg);
-    width:150px;
-    border-radius: 10px;
-    border: 2px solid rgb(104, 71, 71);
-    cursor: pointer;
-    &:hover{
-        // opacity: 30%;
-        z-index: 20;
-        // position: relative;
-        background-color: rgba(255, 255, 255, 0.624);
-        .Pokemon-image{
-            filter: blur(4px);
-        }
-        // background-color: rgba(255,255,255,0.9);
-    }
-    // img{
-    //     &:hover{
-    //         opacity: 30%;
-    //     }
-    // }
-    // &::after{
-    //     content: "pokemon";
-    //     transform:rotate(45deg);
-    // }
-}
-.item-count {
-    display: flex;
-    height: 150px;
-    transform: rotate(-45deg);
-    flex-direction: column;
-    align-items: center;
-	width:150px;
-    position: relative;
-}
+
 
 .Pokemon-hover{
     // display:none;
@@ -267,14 +246,15 @@
     position: absolute;
     font-size: 20px;
     width: 100%;
+    height: 100%;
     p{
         color: rgba(0,0,0,0);
+        font-size: clamp(0.8rem, 0.7rem + 0.7vw, 1.4rem);
         
     }
     &:hover{
         p{
             color: rgba(0,0,0,1);
-            opacity: 500%;
             z-index: 10;
         }
         color: rgba(0,0,0,1);

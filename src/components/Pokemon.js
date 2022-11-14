@@ -16,17 +16,17 @@ export default function Pokemon({ pokemonInfo }) {
   return (
     <>
       <div className='diamond-shape' onClick={toggleModal}>
-        <div className='item-count'>
+         <div className='item-count'>
           <img
             className='Pokemon-image'
             src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
             alt={pokemonInfo.name}
-          />
+          /> 
           {/* {pokemonInfo.types.map((pokemonPower) => (
             <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
           ))} */}
           <div className='Pokemon-hover'>
-            <p className='Pokemon-name'>
+            <p className='Pokemon-nameCenter'>
               <strong>{capitalizeFirstLetter(pokemonInfo.name)}</strong>
             </p>
             <p className='Pokemon-detail'>Pokemon Detail</p>

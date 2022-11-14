@@ -28,10 +28,6 @@ export default function CrimeScenes({ username, location, handleLocation }) {
     toggleModal(true);
   }
 
-  const test = (id) => {
-    return { "--key-value": id }
-  }
-
   const setTheCrime = (crime) => {
     setCrimeSceneArray(crime);
   }
@@ -104,7 +100,7 @@ export default function CrimeScenes({ username, location, handleLocation }) {
           </ReactModal>
         )}
       </div>
-      <Score username={username} score={score} />
+      {/* <Score username={username} score={score} /> */}
     </>
   )
 }

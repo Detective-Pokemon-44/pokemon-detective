@@ -11,9 +11,9 @@ export default function CrimeEvent({ individual, i }) {
     
     return (
         // <div className='container'>
-            <Folder className={i % 2 ===0? "folder": "below-folder"}>
-                <div className='folder-inside'></div>
-                <span className='folderName'>
+            <Folder className={i % 2 ===0? "CrimeEvent-folder": "CrimeEvent-belowFolder"}>
+                <div className='CrimeEvent-folderInside'></div>
+                <span className='CrimeEvent-folderName'>
                     {crimeObject[individual.category].alternate}
                 </span>
             </Folder>
