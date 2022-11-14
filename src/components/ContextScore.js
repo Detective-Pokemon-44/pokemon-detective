@@ -12,7 +12,7 @@ export function useUpdateScore() {
 }
 
 export function ScoreProvider({ children }) {
-    const [score, setScore] = useState();
+    const [score, setScore] = useState(0);
 
     function updateScore(amt) {
         setScore(score + amt);

@@ -5,7 +5,7 @@ export default function Gamebar() {
     return (
         <div className="Gamebar">
             <span>Quit</span>
-            <span>{score && `Cases Solved: ${score}`}</span>
+            <span>{score > 0 && `Cases Solved: ${score}`}</span>
         </div>
     )
 }
