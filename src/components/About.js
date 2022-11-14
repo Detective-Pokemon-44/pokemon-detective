@@ -32,7 +32,7 @@ export default function About () {
                                 </div>
                             </div>
                             <div className="badge-photo">
-                                <img className='detective-photo' src={require(`../assets/images/pokemonDetective.jpg`)} alt="Pikachu detective" />
+                                <img className='detective-photo' src={require(`../assets/images/karl.jpg`)} alt="Pikachu detective" />
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@ export default function About () {
                                 </div>
                             </div>
                             <div className="badge-photo">
-                            <img className='detective-photo' src={require(`../assets/images/pokemonDetective.jpg`)} alt="Pikachu detective" />
+                                <img className='detective-photo' src={require(`../assets/images/phil.jpg`)} alt="Pikachu detective" />
                             </div>
                         </div>
                     </div>
@@ -75,12 +75,12 @@ export default function About () {
                                 <p>Detective</p>
                                 <span className="detective-name">Serena Kang</span>
                                 <div className="medias">
-                                <p className="Button-about"><a href="https://github.com/serenakang77" target="_blank" rel="noopener noreferrer">Github</a></p>
-                                <p className="Button-about"><a href="https://www.linkedin.com/in/serena-kang-0443941b2/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                                    <p className="Button-about"><a href="https://github.com/serenakang77" target="_blank" rel="noopener noreferrer">Github</a></p>
+                                    <p className="Button-about"><a href="https://www.linkedin.com/in/serena-kang-0443941b2/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
                                 </div>
                             </div>
                             <div className="badge-photo">
-                            <img className='detective-photo' src={require(`../assets/images/pokemonDetective.jpg`)} alt="Pikachu detective" />
+                                <img className='detective-photo' src={require(`../assets/images/serena.webp`)} alt="Pikachu detective" />
                             </div>
                         </div>
                     </div>

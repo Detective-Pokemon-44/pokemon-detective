@@ -1187,16 +1187,17 @@ a {
 .detective-photo {
   border-radius: 5px;
   width: 190px;
+  height: 185px;
   position: absolute;
-  top: 55px;
+  top: 54px;
   left: 65px;
-  border: 1px solid #332f2e;
 }
 @media (max-width: 1000px) {
   .detective-photo {
     width: 140px;
-    height: 140px;
+    height: 138px;
     left: 45px;
+    top: 58px;
   }
 }
 
