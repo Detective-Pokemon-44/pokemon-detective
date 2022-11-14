@@ -72,7 +72,6 @@ export default function CrimeScenes({ location, handleLocation }) {
                 return (
                   <li
                     key={individual.id}
-                    key={individual.id}
                     onClick={(e) => {
                       handleCrimeClick(individual)
                     }}
