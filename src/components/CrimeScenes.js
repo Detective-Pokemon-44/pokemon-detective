@@ -6,6 +6,7 @@ import { isNotUnique, randNum } from '../utils/functions';
 import crimeAPICall from '../utils/crimeAPICall';
 
 import { useUsername } from './ContextUsername';
+import { useUpdateScore } from './ContextScore';
 import { useLocation } from './ContextLocation';
 
 import CrimeSceneModal from "./CrimeSceneModal";

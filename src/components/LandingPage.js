@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import useInputState from '../hooks/useInputState';
 import {useUpdateUsername} from './ContextUsername';
 
-import pokemonLogo from '../assets/images/pokemon-detective-logo.png';
+import pokemonLogo from '../assets/images/pd-logo.png';
 import aboutIcon from '../assets/images/circle-info-solid.svg';
 
 
