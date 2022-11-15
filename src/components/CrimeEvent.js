@@ -2,11 +2,10 @@ import styled from '@emotion/styled';
 import crimeObject from '../utils/crimeObject';
 
 export default function CrimeEvent({ individual, i }) {
-    console.log(crimeObject["anti-social-behaviour"])
     const Folder = styled.div`
-        :before {
-            content: "${individual.id}";
-        }
+      :before {
+        content: "${+individual.id.toString().slice(4, 9)}";
+      }
     `
     
     return (

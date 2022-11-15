@@ -60,11 +60,11 @@ export default function CrimeScenes({ location, handleLocation }) {
 
   return (
     <>
-      <div className='CrimeScenes card' >
+      <div className='CrimeScenes card'>
         <Gamebar />
-        <h2>
+        {/* <h2>
           Welcome to {location[0]}, {username}
-        </h2>
+        </h2> */}
         {crimeSceneArray && (
           <ul className='CrimeScenes-category'>
             {crimeSceneArray &&
@@ -94,10 +94,6 @@ export default function CrimeScenes({ location, handleLocation }) {
           </ReactModal>
         )}
       </div>
-<<<<<<< HEAD
-      {/* <Score username={username} score={score} /> */}
-=======
->>>>>>> a218ebd74056565e1f0eec33d3dd3cc2bbd78b09
     </>
   )
 }

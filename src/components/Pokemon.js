@@ -15,13 +15,13 @@ export default function Pokemon({ pokemonInfo }) {
   })
   return (
     <>
-      <div className='diamond-shape' onClick={toggleModal}>
-         <div className='item-count'>
+      <div className='Pokemon-diamondShape' onClick={toggleModal}>
+        <div className='Pokemon-itemCount'>
           <img
             className='Pokemon-image'
             src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
             alt={pokemonInfo.name}
-          /> 
+          />
           {/* {pokemonInfo.types.map((pokemonPower) => (
             <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
           ))} */}
@@ -57,16 +57,20 @@ export default function Pokemon({ pokemonInfo }) {
           </p>
         </div>
         <div className='Pokemon-modalTypes'>
-          <div className="Pokemon-pokeball">
-            <img src={require(`../assets/svgPokemon/pokemonball.png`)} alt="" srcset="" />
+          <div className='Pokemon-pokeball'>
+            <img
+              src={require(`../assets/svgPokemon/pokemonball.png`)}
+              alt=''
+              srcset=''
+            />
           </div>
           {pokemonInfo.types.map((pokemonPower) => (
-            <p key={pokemonPower.type.name} className="Pokemon-typeName">
+            <p key={pokemonPower.type.name} className='Pokemon-typeName'>
               {pokemonPower.type.name.toUpperCase()}
             </p>
           ))}
         </div>
-        <p className="Pokemon-hint">
+        <p className='Pokemon-hint'>
           {capitalizeFirstLetter(pokemonInfo.name)} is good at solving{" "}
           {crimeStrengths.map((individualType, i, arr) =>
             i + 1 === arr.length

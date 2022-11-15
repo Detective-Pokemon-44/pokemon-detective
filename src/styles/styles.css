@@ -176,7 +176,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .main {
   background-color: #D5C29B;
-  height: 80vh;
+  min-height: 83vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,7 +336,7 @@ a {
 .Footer {
   background-color: #5E1800;
   color: #D5C29B;
-  height: 10vh;
+  height: 7vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,6 +435,7 @@ a {
 @media (max-width: 1100px) {
   .CrimeScenes {
     padding: 10px;
+    min-height: 600px;
   }
 }
 
@@ -455,19 +456,25 @@ a {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    gap: 70px;
+    gap: 0;
   }
 }
 .CrimeScenes-category li {
   list-style-type: none;
-  width: 20%;
-  max-width: 260px;
-  min-width: 170px;
+  width: 18%;
+  max-width: 230px;
+  min-width: 86px;
 }
 @media (max-width: 1100px) {
   .CrimeScenes-category li {
-    width: 25%;
     padding: 0;
+    margin-bottom: 90px;
+  }
+}
+@media (max-width: 480px) {
+  .CrimeScenes-category li {
+    width: 33%;
+    margin-bottom: 75px;
   }
 }
 
@@ -477,19 +484,18 @@ a {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  gap: 20px;
   padding: 0;
   margin-top: 170px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 @media (max-width: 1100px) {
   .pokemonList {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 0px;
+    gap: 20px;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin-top: 50px;
+    margin-top: 0;
   }
 }
 
@@ -498,6 +504,7 @@ a {
   left: 3%;
   position: absolute;
   z-index: 10;
+  font-size: clamp(0.7rem, 2.5vw, 1.1rem);
 }
 
 .CrimeEvent-folder, .CrimeEvent-belowFolder {
@@ -519,7 +526,17 @@ a {
 }
 @media (max-width: 1100px) {
   .CrimeEvent-folder, .CrimeEvent-belowFolder {
-    height: 40px;
+    height: 65px;
+  }
+}
+@media (max-width: 768px) {
+  .CrimeEvent-folder, .CrimeEvent-belowFolder {
+    height: 52px;
+  }
+}
+@media (max-width: 480px) {
+  .CrimeEvent-folder, .CrimeEvent-belowFolder {
+    height: 45px;
   }
 }
 
@@ -533,7 +550,7 @@ a {
 }
 
 .CrimeEvent-folder::before, .CrimeEvent-belowFolder::before {
-  width: 85px;
+  width: 60px;
   height: 20px;
   content: "";
   background: #D5C29B;
@@ -591,20 +608,43 @@ a {
           transform: rotate(-90deg);
   opacity: 0.15;
 }
+@media (max-width: 768px) {
+  .CrimeEvent-folderInside::before {
+    display: none;
+  }
+}
 
 .CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover {
   -webkit-transform: translate(-50%, -52%);
           transform: translate(-50%, -52%);
+}
+@media (max-width: 768px) {
+  .CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
 }
 
 .CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after {
   -webkit-transform: rotateX(-15deg);
           transform: rotateX(-15deg);
 }
+@media (max-width: 768px) {
+  .CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
 
 .CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
   -webkit-transform: rotate(-7deg) translateY(-15%);
           transform: rotate(-7deg) translateY(-15%);
+}
+@media (max-width: 768px) {
+  .CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .CrimeScene-modal {
@@ -654,7 +694,7 @@ a {
   gap: 20px;
 }
 
-.item-count {
+.Pokemon-itemCount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -674,22 +714,24 @@ a {
 
 .shape-section {
   background: transparent;
-  margin-top: 30px;
   list-style-type: none;
-  width: 20%;
-  padding: 0 2%;
+  width: 25%;
+  padding: 3%;
   max-width: 260px;
-  min-width: 170px;
+  min-width: 70px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 768px) {
   .shape-section {
-    width: 16%;
-    margin-right: 20px;
-    padding: 0 2%;
+    padding: 2%;
+  }
+}
+@media (max-width: 480px) {
+  .shape-section {
+    padding: 0;
   }
 }
 
-.diamond-shape {
+.Pokemon-diamondShape {
   background: #D5C29B;
   text-align: center;
   -webkit-transform: rotate(45deg);
@@ -699,15 +741,15 @@ a {
   border: 2px solid rgb(104, 71, 71);
   cursor: pointer;
 }
-.diamond-shape:hover {
+.Pokemon-diamondShape:hover {
   z-index: 20;
   background-color: rgba(255, 255, 255, 0.624);
 }
-.diamond-shape:hover .Pokemon-image {
+.Pokemon-diamondShape:hover .Pokemon-image {
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }
-.diamond-shape::after {
+.Pokemon-diamondShape::after {
   padding-bottom: 100%;
   content: "";
   display: block;
@@ -722,7 +764,7 @@ a {
 }
 .Pokemon-hover p {
   color: rgba(0, 0, 0, 0);
-  font-size: clamp(0.8rem, 0.7rem + 0.7vw, 1.4rem);
+  font-size: clamp(0.6rem, 3vw, 1.1rem);
 }
 .Pokemon-hover:hover {
   color: rgb(0, 0, 0);
@@ -742,11 +784,11 @@ a {
 
 .Pokemon-modal {
   position: absolute;
-  width: 90%;
-  height: 72%;
+  width: 600px;
+  height: 80%;
   max-height: 700px;
-  top: calc(50% - 340px);
-  left: calc(50% - 230px);
+  top: 10%;
+  left: calc(50% - 300px);
   border: 20px solid #ffe50a;
   background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
   overflow: auto;
@@ -762,10 +804,23 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
-  max-width: 505px;
-  min-width: 370px;
+}
+@media (max-width: 1100px) {
+  .Pokemon-modal {
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}
+@media (max-width: 480px) {
+  .Pokemon-modal {
+    width: 300px;
+    left: calc(50% - 150px);
+  }
 }
 .Pokemon-modal p {
   font-size: clamp(0.8rem, 0.8333rem + 0.9852vw, 1.2rem);
@@ -812,6 +867,7 @@ a {
 .Pokemon-detail {
   position: absolute;
   margin: 43% auto 0 auto;
+  width: 100%;
 }
 
 .Pokemon-modalTypes {
@@ -862,8 +918,13 @@ a {
           align-items: center;
 }
 .Pokemon-info p {
-  font-size: clamp(0.5rem, 0.5333rem + 0.6852vw, 0.8rem);
+  font-size: clamp(0.6rem, 0.5033rem + 0.6052vw, 0.8rem);
   color: black;
+}
+@media (max-width: 768px) {
+  .Pokemon-info {
+    width: 90%;
+  }
 }
 
 .Scoreboard {
