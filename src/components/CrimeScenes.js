@@ -14,11 +14,13 @@ import CrimeEvent from './CrimeEvent';
 import PokemonList from './PokemonList';
 
 export default function CrimeScenes() {
+
   const [crimeSceneArray, setCrimeSceneArray] = useState();
   const [pokemonURL, setPokemonURL] = useState([]);
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
+  const updateScore = useUpdateScore();
   const username = useUsername();
   const location = useLocation();
 
@@ -92,6 +94,7 @@ export default function CrimeScenes() {
             className='CrimeSceneModal-modal'
             onRequestClose={toggleModal}
             appElement={document.getElementById("root")}
+            closeTimeoutMS={500}
           >
             <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} />
           </ReactModal>
