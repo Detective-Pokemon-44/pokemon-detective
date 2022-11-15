@@ -6,7 +6,6 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg";
 
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
-
 import { useUpdateLocation } from './ContextLocation';
 
 import Score from "./Score";
@@ -116,5 +115,6 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         </div>
       )}
     </>
-  )
+
+  );
 }
