@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
 import Score from "./Score";
-import { useUpdateScore } from './ContextScore';
+import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
 
 export default function CrimeSceneModal({
@@ -13,6 +13,7 @@ export default function CrimeSceneModal({
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
+  const score = useScore();
   const updateScore = useUpdateScore();
   const username = useUsername();
 
@@ -91,31 +92,21 @@ export default function CrimeSceneModal({
             <button type="submit">Select Your Pokemon Detective</button>
           </div>
         </form>
-      ) : crimeSolved === true ? (
-        <>
-          <div className="CrimeSceneModal-resultsContainer">
-            <div className="CrimeSceneModal-textContainer">
-              <h4>You solved the case</h4>
-              <p>{crimeObject[crimeSelected.category].solved}</p>
-            </div>
-            <button onClick={() => handleLocation(null)}> Take me Home</button>
-            <Score />
-          </div>
-        </>
       ) : (
-        <>
-          <div className="CrimeSceneModal-resultsContainer">
-            <div className="CrimeSceneModal-textContainer">
-              <h4>You failed the case!</h4>
-              <h5>{crimeObject[crimeSelected.category].alternate}</h5>
-              <p>{crimeObject[crimeSelected.category].failed}</p>
-            </div>
-            <button onClick={() => handleLocation(null)}> Take me Home</button>
-            <Score />
+        <div className="CrimeSceneModal-resultsContainer">
+          <div className="CrimeSceneModal-textContainer">
+            <h4>{crimeSolved ? "You solved the case" : "You failed the case!"}</h4>
+            {!crimeSolved && <h5>{crimeObject[crimeSelected.category].alternate}</h5>}
+            <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
           </div>
-        </>
+          <button onClick={() => handleLocation(null)}> Take me Home</button>
+          <div className="CrimeSceneModal-resultsInfo">
+            <p><b>Name:</b>{" " + username}</p>
+            <p><b>Score: </b>{" " + score}</p>
+          </div>
+          <Score />
+        </div>
       )}
-
     </>
   );
 }
