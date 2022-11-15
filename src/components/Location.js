@@ -33,11 +33,11 @@ export default function Location({ handleLocation }) {
             <h2>Where would you like to solve your first crime?</h2>
             <div className="Location-locationsContainer" >
                 {locations.map((location) => (
-                    <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} >
+                    <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} role="img" alt={`Click for ${location.city} `} >
                         <div className="doorEntrance">
                             <div className="doorFront"></div>
                         </div>
-                        <div>{location.city}</div>
+                        <p>{location.city}</p>
                     </div>
                 ))}
             </div>
