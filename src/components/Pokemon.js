@@ -66,12 +66,8 @@ export default function Pokemon({ pokemonInfo }) {
           </p>
         </div>
         <div className='Pokemon-modalTypes'>
-          <div className='Pokemon-pokeball'>
-            <img
-              src={require(`../assets/svgPokemon/pokemonball.png`)}
-              alt=''
-              srcset=''
-            />
+          <div className="Pokemon-pokeball">
+            <img src={require(`../assets/svgPokemon/pokemonball.png`)} alt="Pokemon-ball" srcSet="" />
           </div>
           {pokemonInfo.types.map((pokemonPower) => (
             <p key={pokemonPower.type.name} className='Pokemon-typeName'>

@@ -1,32 +1,19 @@
-import { useState } from 'react';
+import { useUsername } from './ContextUsername';
+import { useLocation } from './ContextLocation';
+
 import LandingPage from './LandingPage';
 import Location from './Location';
 import CrimeScenes from './CrimeScenes';
-import { useUsername } from './ContextUsername';
 
 export default function Game() {
     const username = useUsername();
-    const [location, setLocation] = useState();
-
-    function handleLocation(location) {
-        setLocation(location)
-    }
+    const location = useLocation();
 
     return (
         <div className="main">
-            {(!username && !location) &&
-                <LandingPage />
-            }
-            {(username && !location) &&
-                <Location
-                    handleLocation={handleLocation}
-                />}
-            {(username && location) &&
-                <CrimeScenes
-                    location={location}
-                    handleLocation={handleLocation}
-                />
-            }
+            {(!username && !location) && <LandingPage />}
+            {(username && !location) && <Location />}
+            {(username && location) && <CrimeScenes />}
         </div >
     )
 }
