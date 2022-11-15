@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .card {
-    padding: 50px;
+    padding: 30px;
     // background-color: lavender;
     background-color: $primaryColor;
     border-radius: 15px;
@@ -10,7 +10,7 @@
 
 .main {
     background-color: $lightColor;
-    height: 80vh;
+    min-height: 83vh;
     display: flex;
     align-items: center;
     justify-content: center;
