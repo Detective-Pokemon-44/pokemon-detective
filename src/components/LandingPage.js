@@ -1,8 +1,11 @@
-import useInputState from '../hooks/useInputState';
 import { useNavigate, Link } from 'react-router-dom';
-import pokemonLogo from '../assets/images/pokemon-detective-low-resolution-logo-white-on-transparent-background.png';
-import aboutIcon from '../assets/images/circle-info-solid.svg';
+
+import useInputState from '../hooks/useInputState';
 import {useUpdateUsername} from './ContextUsername';
+
+import pokemonLogo from '../assets/images/pd-logo.png';
+import aboutIcon from '../assets/images/circle-info-solid.svg';
+
 
 export default function LandingPage() {
   const navigate = useNavigate();
