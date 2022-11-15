@@ -6,6 +6,7 @@ import About from './About';
 import { Routes, Route } from 'react-router-dom';
 import { UsernameProvider } from './ContextUsername';
 import { ScoreProvider } from './ContextScore';
+import { LocationProvider} from './ContextLocation';
 
 
 export default function DetectivePokemon() {
@@ -13,13 +14,15 @@ export default function DetectivePokemon() {
         <div>
             <NavBar />
             <UsernameProvider>
-                <ScoreProvider>
-                    <Routes>
-                        <Route path="*" element={<Game />} />
-                        <Route path="/highscores" element={<Scoreboard />} />
-                        <Route path="/about" element={<About />} />
-                    </Routes>
-                </ScoreProvider>
+                <LocationProvider>
+                    <ScoreProvider>
+                        <Routes>
+                            <Route path="*" element={<Game />} />
+                            <Route path="/highscores" element={<Scoreboard />} />
+                            <Route path="/about" element={<About />} />
+                        </Routes>
+                    </ScoreProvider>
+                </LocationProvider>
             </UsernameProvider>
             <Footer />
         </div>
