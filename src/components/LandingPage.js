@@ -25,7 +25,7 @@ export default function LandingPage() {
       <div className='LandingPage card'>
         <div className="LandingPage-aboutContainer">
           <Link to="/about">
-          <img src={aboutIcon} className="LandingPage-aboutIcon" />
+          <img src={aboutIcon} className="LandingPage-aboutIcon" alt="about"/>
           </Link>
         </div>
         <div className="LandingPage-imgContainer">

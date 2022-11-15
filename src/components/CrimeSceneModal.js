@@ -41,7 +41,7 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
       const trueOrFalse = gameLogic(selectedPokemon, crimeSelected, updateScore);
       setCrimeSolved(trueOrFalse);
     }
-  }, [selectedPokemon]);
+  }, [selectedPokemon, crimeSelected, updateScore]);
 
   return (
     <>

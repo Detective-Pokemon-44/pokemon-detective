@@ -14,6 +14,7 @@ export default function Pokemon({ pokemonInfo }) {
     for (let key in crimeObject) {
       (crimeObject[key].weaknesses.includes(individualType.type.name) && !isNotUnique(crimeStrengths, key) && crimeStrengths.push(key))
     }
+    return "";
   })
   return (
     <>
