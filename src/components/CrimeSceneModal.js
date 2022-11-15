@@ -1,7 +1,7 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 import crimeObject from "../utils/crimeObject";
-// import gameLogic from "../utils/logic";
+import gameLogic from "../utils/logic";
 import closeButton from "../assets/images/rectangle-xmark-solid.svg";
 
 import { useScore, useUpdateScore } from './ContextScore';
@@ -30,40 +30,12 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         (pokemon) => pokemon.id === pokemonId
       );
       setSelectedPokemon(pokemonFoundById);
+      const trueOrFalse = gameLogic(pokemonFoundById, crimeSelected, updateScore);
+      setCrimeSolved(trueOrFalse);
     } else {
       alert("PICK SOMETHING");
     }
   };
-
-  useCallback(() => {
-    const gameLogic = () => {
-      const types = selectedPokemon.types.map(({ type }) => type.name);
-      const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crimeSelected.category);
-      const solved = types.filter(type => {
-        return crimeValues.value.weaknesses.includes(type)
-      })
-      if (solved.length > 0) {
-        updateScore(1);
-        return true
-      }
-      else {
-        return false
-      }
-    }
-    if (selectedPokemon) {
-      const trueOrFalse = gameLogic();
-      setCrimeSolved(trueOrFalse);
-
-    }
-
-  }, [selectedPokemon])
-
-  // call game logic on pokemon selection from modal
-  // useEffect(() => {
-  //   if (selectedPokemon) {
-
-  //   }
-  // }, [selectedPokemon]);
 
   return (
     <>
