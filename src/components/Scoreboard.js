@@ -12,16 +12,16 @@ export default function Scoreboard() {
   const dbRef = ref(database, "highscores");
   const endScore = useEndScore();
 
-  function retrieveHighscores() {
-    onValue(dbRef, (res) => {
-      const data = res.val();
-      setHighScores(data);
-    })
-  }
-
   useEffect(() => {
+    function retrieveHighscores() {
+      onValue(dbRef, (res) => {
+        const data = res.val();
+        setHighScores(data);
+      })
+    }
+  
     retrieveHighscores();
-  }, [retrieveHighscores])
+  }, [])
 
   return (
     <div className="main">
