@@ -1,8 +1,10 @@
+@use "variables" as *;
+
 .Location {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+
 }
 
 .Location-locationsContainer {
@@ -18,8 +20,65 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
-.Location-locationImg {
-    width: 50px;
+
+
+// .Location-locationImg {
+//     width: 50px;
+// }
+
+.doorEntrance {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    background-color: black;
+    width: 75px;
+    margin: 20px;
+    padding: 2%;
+    border-radius: 20% 20% 0 0;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        cursor: pointer;
+    }
+
+    &:hover .doorFront {
+        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    &:focus .doorFront {
+        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    .doorFront {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        border-radius: 20% 20% 0 0;
+        background-color: $secondaryColor ;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+
+        &:focus {
+            transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+    }
 }
