@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
 import closeButton from "../assets/images/rectangle-xmark-solid.svg";
-
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
 import { useUpdateLocation } from './ContextLocation';
@@ -14,6 +13,8 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
+
+
   const score = useScore();
   const updateScore = useUpdateScore();
   const username = useUsername();
@@ -101,7 +102,7 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
           </form>
         </>
       ) : (
-        <div className="CrimeSceneModal-resultsContainer">
+        < div className="CrimeSceneModal-resultsContainer" >
           <div className="CrimeSceneModal-textContainer">
             <div className="CrimeSceneModal-miniInfoContainer">
               <p><b>Name:</b>{" " + username}</p>
@@ -116,7 +117,8 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
             <Score />
           </div>
         </div>
-      )}
+      )
+      }
     </>
 
   );

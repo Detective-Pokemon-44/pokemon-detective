@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ReactModal from 'react-modal';
 
 import useToggleState from '../hooks/useToggleState';
 import { isNotUnique, randNum } from '../utils/functions';
 import crimeAPICall from '../utils/crimeAPICall';
-
 import { useLocation } from './ContextLocation';
-
 import CrimeSceneModal from "./CrimeSceneModal";
 import Gamebar from './Gamebar';
 import CrimeEvent from './CrimeEvent';
 import PokemonList from './PokemonList';
+import { CSSTransition } from 'react-transition-group';
 
 export default function CrimeScenes() {
 
@@ -19,15 +18,20 @@ export default function CrimeScenes() {
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
-
+  const [inProp, setInProp] = useState(false);
+  const nodeRef = useRef(null);
   const location = useLocation();
+
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
     toggleModal(true);
   }
 
+
   const setTheCrime = (crime) => {
     setCrimeSceneArray(crime);
+    setInProp(true);
+
   }
 
   // this function creates an array of 5 unique pokemon
@@ -62,38 +66,46 @@ export default function CrimeScenes() {
 
   return (
     <>
-      <div className='CrimeScenes card'>
-        <Gamebar />
-        {crimeSceneArray && (
-          <ul className='CrimeScenes-category'>
-            {crimeSceneArray &&
-              crimeSceneArray.map((individual, i) => {
-                return (
-                  <li
-                    key={individual.id}
-                    onClick={(e) => {
-                      handleCrimeClick(individual)
-                    }}
-                  >
-                    <CrimeEvent individual={individual} i={i} />
-                  </li>
-                )
-              })}
-          </ul>
-        )}
-        {pokemon && <PokemonList pokemon={pokemon} />}
-        {pokemon && (
-          <ReactModal
-            isOpen={modalState}
-            className='CrimeSceneModal-modal'
-            onRequestClose={toggleModal}
-            appElement={document.getElementById("root")}
-            closeTimeoutMS={500}
-          >
-            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} toggleModal={toggleModal} />
-          </ReactModal>
-        )}
-      </div>
+      <CSSTransition
+        in={inProp}
+        timeout={1000}
+        classNames="card"
+        nodeRef={nodeRef}
+        unmountOnExit
+      >
+        <div className='CrimeScenes card' ref={nodeRef}>
+          <Gamebar />
+          {crimeSceneArray && (
+            <ul className='CrimeScenes-category'>
+              {crimeSceneArray &&
+                crimeSceneArray.map((individual, i) => {
+                  return (
+                    <li
+                      key={individual.id}
+                      onClick={(e) => {
+                        handleCrimeClick(individual)
+                      }}
+                    >
+                      <CrimeEvent individual={individual} i={i} />
+                    </li>
+                  )
+                })}
+            </ul>
+          )}
+          {pokemon && <PokemonList pokemon={pokemon} />}
+          {pokemon && (
+            <ReactModal
+              isOpen={modalState}
+              className='CrimeSceneModal-modal'
+              onRequestClose={toggleModal}
+              appElement={document.getElementById("root")}
+              closeTimeoutMS={500}
+            >
+              <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} toggleModal={toggleModal} />
+            </ReactModal>
+          )}
+        </div>
+      </CSSTransition>
     </>
   )
 }
