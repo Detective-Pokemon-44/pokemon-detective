@@ -35,7 +35,7 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
     }
   };
 
-  function gameLogic(selectedPokemon, crimeSelected, updateScore) {
+  function gameLogic() {
     const types = selectedPokemon.types.map(({ type }) => type.name);
     const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crimeSelected.category);
     const solved = types.filter(type => {
