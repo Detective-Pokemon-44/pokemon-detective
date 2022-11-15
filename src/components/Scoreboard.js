@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import firebaseConfig from "../utils/firebase";
 import { getDatabase, ref, onValue } from "firebase/database";
+import { useEndScore } from "./ContextScore"; 
 
 export default function Scoreboard() {
   // export default function Scoreboard() {
   // Limit to 10 scores
   const [highScores, setHighScores] = useState([]);
-  const database = getDatabase(firebaseConfig)
-  const dbRef = ref(database, `container`)
+  const database = getDatabase(firebaseConfig);
+  const dbRef = ref(database, `container`);
+  const endScore = useEndScore();
 
   useEffect(() => {
     onValue(dbRef, (res) => {
@@ -47,7 +49,7 @@ export default function Scoreboard() {
             )
           })}
        
-            <h3 className="Your-score">Your score: jshkjhs</h3>
+            <h3 className="Your-score">Your score: {endScore}</h3>
           <Link  to="/"><button className="Go-back">X</button></Link>
         </ul>
       </div>
