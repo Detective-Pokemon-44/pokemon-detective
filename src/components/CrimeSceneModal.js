@@ -35,13 +35,16 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
     }
   };
 
+  const calculateGameLogic = () => {
+    return gameLogic(selectedPokemon, crimeSelected, updateScore);
+  }
   // call game logic on pokemon selection from modal
   useEffect(() => {
     if (selectedPokemon) {
-      const trueOrFalse = gameLogic(selectedPokemon, crimeSelected, updateScore);
+      const trueOrFalse = calculateGameLogic();
       setCrimeSolved(trueOrFalse);
     }
-  }, [selectedPokemon, crimeSelected, updateScore]);
+  }, [selectedPokemon]);
 
   return (
     <>
