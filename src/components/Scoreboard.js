@@ -8,18 +8,18 @@ export default function Scoreboard() {
   // export default function Scoreboard() {
   // Limit to 10 scores
   const [highScores, setHighScores] = useState([]);
-  const database = getDatabase(firebaseConfig);
-  const dbRef = ref(database, "highscores");
   const endScore = useEndScore();
 
   useEffect(() => {
     function retrieveHighscores() {
+      const database = getDatabase(firebaseConfig);
+      const dbRef = ref(database, "highscores");
       onValue(dbRef, (res) => {
         const data = res.val();
         setHighScores(data);
       })
     }
-  
+
     retrieveHighscores();
   }, [])
 
