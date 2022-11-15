@@ -4,35 +4,33 @@
 .CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
-    min-height: 80vh;
-    top: calc(50% - 350px);
+    max-height: 800px;
+    top: 2%;
     left: calc(50% - 300px);
     border: 1px solid $primaryDarkColor;
     background: $primaryColor;
     overflow: auto;
     outline: none;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $lightColor;
-    margin: 0 auto;
 
     @include tablet {
-        max-height: 80%;
-        top: calc(50% - 300px);
-        left: calc(50% - 300px);
-        width: 75%;
+        width: 600px;
+    }
+
+    @media (max-width:690px) {
+        width: 500px;
+        left: calc(50% - 250px);
     }
 
     @include mobile {
-        top: 5%;
-        max-width: 324px;
-        min-height: 90vh;
-        margin: 0 auto;
+        width: 300px;
+        left: calc(50% - 150px);
     }
-
 }
 
 .CrimeSceneModal-close-button-container {
@@ -40,6 +38,12 @@
     width: 50px;
     height: 50px;
     right: 5%;
+    filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+
+    @include mobile {
+        width: 30px;
+        height: 30px;
+    }
 
     img {
         width: 100%;
@@ -69,13 +73,11 @@
     border: 2px solid $primaryDarkColor;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
 
-
-
     @include mobile {
-        padding: 15px 5px;
+        padding: 10px 5px;
         flex-direction: column;
+        align-self: flex-end;
     }
-
 }
 
 .CrimeSceneModal-container {
@@ -109,15 +111,13 @@
     }
 
     @include mobile {
-        width: 90%;
-        margin: 2% auto;
+        width: 80%;
     }
-
-
 
     h4 {
         font-size: 1.6rem;
         font-weight: 600;
+        margin: 3px 0;
     }
 
     h5 {

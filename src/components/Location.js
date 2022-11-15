@@ -1,8 +1,9 @@
 import { useUpdateLocation } from './ContextLocation';
-import door from '../assets/images/door.svg';
 import Gamebar from './Gamebar';
+import doorknob from "../assets/images/circle-solid.svg"
 
 export default function Location() {
+
     const locations = [
         {
             city: "Sheffield",
@@ -29,12 +30,15 @@ export default function Location() {
     return (
         <div className="Location card">
             <Gamebar />
-            <h2>Where would you like to solve your first crime?</h2>
+            <h2>What city?</h2>
             <div className="Location-locationsContainer" >
                 {locations.map((location) => (
                     <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} role="img" alt={`Click for ${location.city} `} >
                         <div className="doorEntrance">
-                            <div className="doorFront"></div>
+                            <img src={require(`../assets/images/${location.city}.svg`)} alt={`${location.city} coat of arms`} className="coatOfArms" />
+                            <div className="doorFront">
+                                <img src={doorknob} alt="little doorknob decoration" className='doorknob' />
+                            </div>
                         </div>
                         <p>{location.city}</p>
                     </div>

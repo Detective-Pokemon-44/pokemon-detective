@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: center;
 
+
     &:hover {
         cursor: pointer;
     }
@@ -64,6 +65,15 @@
     border-radius: 20% 20% 0 0;
     transition: all 0.5s ease-in-out;
 
+    .coatOfArms {
+        position: absolute;
+        z-index: 10;
+        width: 60px;
+        height: 75px;
+        top: 25%;
+        left: 15%;
+    }
+
     &:hover {
         cursor: pointer;
     }
@@ -72,18 +82,25 @@
         cursor: pointer;
     }
 
-
     .doorFront {
         width: 100%;
         height: 100%;
         position: absolute;
-        z-index: 10;
+        z-index: 20;
         border-radius: 20% 20% 0 0;
-        background-color: $secondaryColor ;
+        background-color: $lightColor ;
         transition: all 0.3s ease-in;
         border: 1px solid black;
         border-collapse: separate;
 
+        .doorknob {
+            position: absolute;
+            z-index: 30;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            right: 5%;
+        }
 
         &:hover {
             transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
