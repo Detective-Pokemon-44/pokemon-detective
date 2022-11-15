@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     width: 80vw;
-    height: 75vh;
+    min-height: 75vh;
     position: relative;
     background-color: $primaryColor;
     border-radius: 25px;
@@ -18,7 +18,6 @@
     position: absolute;
     left: 32%;
     top: 0;
-    color: $secondaryColor;
 }
 
 .crown {
@@ -74,7 +73,7 @@
     text-transform: uppercase;
     text-align: center;
     .Score-name-span {
-        color: $lightColor;
+        color: $white;
     }
 }
 

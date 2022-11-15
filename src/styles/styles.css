@@ -189,14 +189,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 a {
-  color: #FFC120;
+  color: white;
   text-decoration: none;
 }
 
 button {
   width: 120px;
   height: 50px;
-  background-color: #5E1800;
+  background-color: #D5C29B;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,12 +209,14 @@ button {
           justify-content: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  border: none;
   cursor: pointer;
-  -webkit-box-shadow: 2px 2px 15px #7D210A;
-          box-shadow: 2px 2px 15px #7D210A;
+  -webkit-box-shadow: 2px 2px 15px #5E1800;
+          box-shadow: 2px 2px 15px #5E1800;
 }
 button a {
-  color: #D5C29B;
+  color: #E9990B;
+  font-weight: bold;
 }
 button:hover, button:focus {
   background-color: #E9990B;
@@ -254,11 +256,12 @@ h1 {
 p {
   font-family: "Lato";
   font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
-  color: #926C57;
+  color: white;
 }
 
 h2 {
   font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+  color: white;
 }
 
 h3 {
@@ -993,7 +996,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 80vw;
-  height: 75vh;
+  min-height: 75vh;
   position: relative;
   background-color: #7D210A;
   border-radius: 25px;
@@ -1007,7 +1010,6 @@ a {
   position: absolute;
   left: 32%;
   top: 0;
-  color: #FFC120;
 }
 
 .crown {
@@ -1080,7 +1082,7 @@ a {
   text-align: center;
 }
 .Score-name .Score-name-span {
-  color: #D5C29B;
+  color: white;
 }
 
 .Score-score {
