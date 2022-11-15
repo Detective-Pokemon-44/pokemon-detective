@@ -116,4 +116,5 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
       )}
     </>
   );
+      
 }
