@@ -6,7 +6,6 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg";
 
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
-
 import { useUpdateLocation } from './ContextLocation';
 
 import Score from "./Score";
@@ -69,34 +68,35 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
             >
               <legend>Which Pokemon Detective can solve this mystery?</legend>
 
-            {pokemon.map((pokemonInfo) => {
-              return (
-                <div
-                  className="CrimeSceneModal-container"
-                  key={pokemonInfo.id}
-                >
-                  <label htmlFor={pokemonInfo.name}>
-                    <img
-                      className="CrimeSceneModal-image"
-                      src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
-                      alt={pokemon.name}
-                    />
-                  </label>
-                  <input
-                    type="radio"
-                    id={pokemonInfo.name}
-                    name="pokemon"
-                    value={pokemonInfo.id}
-                    className="CrimeSceneModal-input"
-                  ></input>
-                </div>
-              );
-            })}
-          </fieldset>
-          <div className="CrimeSceneModal-container-button">
-            <button type="submit">Select Your Pokemon Detective</button>
-          </div>
-        </form>
+              {pokemon.map((pokemonInfo) => {
+                return (
+                  <div
+                    className="CrimeSceneModal-container"
+                    key={pokemonInfo.id}
+                  >
+                    <label htmlFor={pokemonInfo.name}>
+                      <img
+                        className="CrimeSceneModal-image"
+                        src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
+                        alt={pokemon.name}
+                      />
+                    </label>
+                    <input
+                      type="radio"
+                      id={pokemonInfo.name}
+                      name="pokemon"
+                      value={pokemonInfo.id}
+                      className="CrimeSceneModal-input"
+                    ></input>
+                  </div>
+                );
+              })}
+            </fieldset>
+            <div className="CrimeSceneModal-container-button">
+              <button type="submit">Select Your Pokemon Detective</button>
+            </div>
+          </form>
+        </>
       ) : (
         <div className="CrimeSceneModal-resultsContainer">
           <div className="CrimeSceneModal-textContainer">
@@ -115,6 +115,6 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         </div>
       )}
     </>
+
   );
-      
 }

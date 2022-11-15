@@ -20,7 +20,6 @@ export default function CrimeScenes() {
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
-  const updateScore = useUpdateScore();
   const username = useUsername();
   const location = useLocation();
 
@@ -96,7 +95,7 @@ export default function CrimeScenes() {
             appElement={document.getElementById("root")}
             closeTimeoutMS={500}
           >
-            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} />
+            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} toggleModal={toggleModal} />
           </ReactModal>
         )}
       </div>

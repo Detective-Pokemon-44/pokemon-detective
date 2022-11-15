@@ -4,11 +4,9 @@
 .CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
-    min-height: 90%;
-    // top: calc(50% - 300px);
-    // left: calc(50% - 300px);
-    top: 7%;
-    left: 23%;
+    min-height: 80vh;
+    top: calc(50% - 350px);
+    left: calc(50% - 300px);
     border: 1px solid $primaryDarkColor;
     background: $primaryColor;
     overflow: auto;
@@ -19,18 +17,20 @@
     flex-direction: column;
     align-items: center;
     background-color: $lightColor;
+    margin: 0 auto;
 
     @include tablet {
-        min-height: 90%;
-        top: calc(5% - 10px);
-        left: 7%;
+        max-height: 80%;
+        top: calc(50% - 300px);
+        left: calc(50% - 300px);
+        width: 75%;
     }
 
     @include mobile {
-        top: 2%;
-        left: 5%;
+        top: 5%;
         max-width: 324px;
-        min-height: 90%;
+        min-height: 90vh;
+        margin: 0 auto;
     }
 
 }
@@ -40,8 +40,6 @@
     width: 50px;
     height: 50px;
     right: 5%;
-
-
 
     img {
         width: 100%;
@@ -71,8 +69,10 @@
     border: 2px solid $primaryDarkColor;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
 
-    @include mobile {
 
+
+    @include mobile {
+        padding: 15px 5px;
         flex-direction: column;
     }
 
@@ -102,6 +102,11 @@
     width: 60%;
     margin-top: 2%;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
+
+    @include tablet {
+        padding: 1%;
+        width: 50%;
+    }
 
     @include mobile {
         width: 90%;
@@ -135,7 +140,6 @@
     border-radius: 50%;
     align-self: center;
     margin-bottom: 20px;
-
 
 
     &:checked {
@@ -173,6 +177,7 @@
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
+
 
     @include mobile {
         flex-direction: row;
