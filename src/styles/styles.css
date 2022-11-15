@@ -1150,6 +1150,13 @@ a {
   margin: 15px;
 }
 
+.CrimeSceneModal-miniInfoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
 .appear {
   opacity: 0;
 }
