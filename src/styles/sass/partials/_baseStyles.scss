@@ -1,7 +1,7 @@
 @use './variables' as *;
 
 .card {
-    padding: 50px;
+    padding: 30px;
     // background-color: lavender;
     background-color: $primaryColor;
     border-radius: 15px;
@@ -10,7 +10,7 @@
 
 .main {
     background-color: $lightColor;
-    height: 80vh;
+    min-height: 83vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,15 +32,12 @@ button {
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 2px 2px 15px $primaryColor;
-
     a {
         color: $lightColor;
     }
-
     &:hover,
     &:focus {
         background-color: $secondaryDarkColor;
-
         a {
             color: $primaryDarkColor
         }
@@ -49,5 +46,6 @@ button {
 
 .wrapper {
     max-width: 1440px;
-    margin: 0 auto
+    margin: 0 auto;
+    width: 90%;
 }

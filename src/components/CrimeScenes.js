@@ -6,6 +6,7 @@ import { isNotUnique, randNum } from '../utils/functions';
 import crimeAPICall from '../utils/crimeAPICall';
 
 import { useUsername } from './ContextUsername';
+import { useUpdateScore } from './ContextScore';
 import { useLocation } from './ContextLocation';
 
 import CrimeSceneModal from "./CrimeSceneModal";
@@ -21,8 +22,8 @@ export default function CrimeScenes() {
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
   const username = useUsername();
-  const location = useLocation();
 
+  const location = useLocation();
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
     toggleModal(true);
@@ -64,11 +65,11 @@ export default function CrimeScenes() {
 
   return (
     <>
-      <div className='CrimeScenes card' >
+      <div className='CrimeScenes card'>
         <Gamebar />
-        <h2>
+        {/* <h2>
           Welcome to {location[0]}, {username}
-        </h2>
+        </h2> */}
         {crimeSceneArray && (
           <ul className='CrimeScenes-category'>
             {crimeSceneArray &&
