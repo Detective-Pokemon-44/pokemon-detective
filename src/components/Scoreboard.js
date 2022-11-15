@@ -21,7 +21,7 @@ export default function Scoreboard() {
 
   useEffect(() => {
     retrieveHighscores();
-  }, [])
+  }, [retrieveHighscores])
 
   return (
     <div className="main">
