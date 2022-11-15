@@ -1012,6 +1012,43 @@ a {
   }
 }
 
+.Pokemon-close-button-container {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 5%;
+  -webkit-filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+          filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+  top: 0;
+}
+@media (max-width: 480px) {
+  .Pokemon-close-button-container {
+    width: 30px;
+    height: 30px;
+  }
+}
+.Pokemon-close-button-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.Pokemon-close-button-container img:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.Pokemon-close-button-container img:focus {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .Scoreboard {
   display: -webkit-box;
   display: -ms-flexbox;

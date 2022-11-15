@@ -43,7 +43,7 @@ export default function Pokemon({ pokemonInfo }) {
         onRequestClose={toggleModal}
         appElement={document.getElementById("root")}
       >
-        <div className='CrimeSceneModal-close-button-container'>
+        <div className='Pokemon-close-button-container'>
           <img
             src={closeButton}
             alt='Close Modal'
