@@ -35,25 +35,25 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
     }
   };
 
-  function gameLogic() {
-    const types = selectedPokemon.types.map(({ type }) => type.name);
-    const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crimeSelected.category);
-    const solved = types.filter(type => {
-        return crimeValues.value.weaknesses.includes(type)
-    })
-    if (solved.length > 0) {
-        updateScore(1);
-        return true
-    }
-    else {
-        return false
-    }
-}
 
-  
   // call game logic on pokemon selection from modal
   useEffect(() => {
     if (selectedPokemon) {
+      function gameLogic() {
+        const types = selectedPokemon.types.map(({ type }) => type.name);
+        const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crimeSelected.category);
+        const solved = types.filter(type => {
+          return crimeValues.value.weaknesses.includes(type)
+        })
+        if (solved.length > 0) {
+          updateScore(1);
+          return true
+        }
+        else {
+          return false
+        }
+      }
+
       const trueOrFalse = gameLogic();
       setCrimeSolved(trueOrFalse);
     }
