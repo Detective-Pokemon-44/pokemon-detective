@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 
 import crimeObject from "../utils/crimeObject";
 // import gameLogic from "../utils/logic";
@@ -35,28 +35,35 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
     }
   };
 
-  const gameLogic = useCallback(() => {
-    const types = selectedPokemon.types.map(({ type }) => type.name);
-    const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crimeSelected.category);
-    const solved = types.filter(type => {
+  useCallback(() => {
+    const gameLogic = () => {
+      const types = selectedPokemon.types.map(({ type }) => type.name);
+      const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crimeSelected.category);
+      const solved = types.filter(type => {
         return crimeValues.value.weaknesses.includes(type)
-    })
-    if (solved.length > 0) {
+      })
+      if (solved.length > 0) {
         updateScore(1);
         return true
-    }
-    else {
+      }
+      else {
         return false
+      }
     }
-  })
-  
-  // call game logic on pokemon selection from modal
-  useEffect(() => {
     if (selectedPokemon) {
       const trueOrFalse = gameLogic();
       setCrimeSolved(trueOrFalse);
+
     }
-  }, [selectedPokemon]);
+
+  }, [selectedPokemon])
+
+  // call game logic on pokemon selection from modal
+  // useEffect(() => {
+  //   if (selectedPokemon) {
+
+  //   }
+  // }, [selectedPokemon]);
 
   return (
     <>
