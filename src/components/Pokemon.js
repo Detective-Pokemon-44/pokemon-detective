@@ -6,7 +6,7 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg"
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
-  
+
   console.log(pokemonInfo)
   let crimeStrengths = []
   pokemonInfo.types.map((individualType) => {
@@ -76,17 +76,17 @@ export default function Pokemon({ pokemonInfo }) {
           ))}
         </div>
         <p className='Pokemon-hint'>
-          {capitalizeFirstLetter(pokemonInfo.name)} is good at solving{" "}
+          {capitalizeFirstLetter(pokemonInfo.name)} is good for crimes related to{" "}
           {crimeStrengths.map((individualType, i, arr) =>
             i + 1 === arr.length
-              ? `and ${crimeObject[individualType].alternate.replaceAll(
-                  "-",
-                  " "
-                )}.`
-              : `${crimeObject[individualType].alternate.replaceAll(
-                  "-",
-                  " "
-                )}, `
+              ? `and ${crimeObject[individualType].pokemonskill.replaceAll(
+                "-",
+                " "
+              )}.`
+              : `${crimeObject[individualType].pokemonskill.replaceAll(
+                "-",
+                " "
+              )}, `
           )}
         </p>
       </ReactModal>
