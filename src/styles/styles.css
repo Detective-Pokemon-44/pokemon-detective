@@ -581,7 +581,7 @@ a {
     height: 65px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .CrimeEvent-folder, .CrimeEvent-belowFolder {
     height: 52px;
   }
@@ -660,7 +660,7 @@ a {
           transform: rotate(-90deg);
   opacity: 0.15;
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .CrimeEvent-folderInside::before {
     display: none;
   }
@@ -670,7 +670,7 @@ a {
   -webkit-transform: translate(-50%, -52%);
           transform: translate(-50%, -52%);
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -681,7 +681,7 @@ a {
   -webkit-transform: rotateX(-15deg);
           transform: rotateX(-15deg);
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after {
     -webkit-transform: none;
             transform: none;
@@ -692,7 +692,7 @@ a {
   -webkit-transform: rotate(-7deg) translateY(-15%);
           transform: rotate(-7deg) translateY(-15%);
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
     -webkit-transform: none;
             transform: none;
@@ -772,7 +772,7 @@ a {
   max-width: 260px;
   min-width: 70px;
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .shape-section {
     padding: 2%;
   }
@@ -973,7 +973,7 @@ a {
   font-size: clamp(0.6rem, 0.5033rem + 0.6052vw, 0.8rem);
   color: black;
 }
-@media (max-width: 768px) {
+@media (max-width: 810px) {
   .Pokemon-info {
     width: 90%;
   }
@@ -1044,6 +1044,7 @@ a {
   width: 50px;
   height: 50px;
   right: 5%;
+  top: 5%;
 }
 .CrimeSceneModal-close-button-container img {
   width: 100%;

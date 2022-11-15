@@ -2,6 +2,7 @@ import ReactModal from 'react-modal';
 import useToggleState from '../hooks/useToggleState';
 import crimeObject from "../utils/crimeObject";
 import { capitalizeFirstLetter, isNotUnique } from '../utils/functions';
+import closeButton from "../assets/images/rectangle-xmark-solid.svg"
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
@@ -41,6 +42,13 @@ export default function Pokemon({ pokemonInfo }) {
         onRequestClose={toggleModal}
         appElement={document.getElementById("root")}
       >
+        <div className='CrimeSceneModal-close-button-container'>
+          <img
+            src={closeButton}
+            alt='Close Modal'
+            onClick={() => toggleModal(false)}
+          />
+        </div>
         <h2 className='Pokemon-name'>
           {capitalizeFirstLetter(pokemonInfo.name)}
         </h2>
