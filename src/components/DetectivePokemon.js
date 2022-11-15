@@ -1,13 +1,14 @@
+import { Routes, Route } from 'react-router-dom';
+
+import { UsernameProvider } from './ContextUsername';
+import { ScoreProvider } from './ContextScore';
+import { LocationProvider} from './ContextLocation';
+
 import NavBar from './NavBar';
 import Game from './Game';
 import Footer from './Footer';
 import Scoreboard from './Scoreboard';
 import About from './About';
-import { Routes, Route } from 'react-router-dom';
-import { UsernameProvider } from './ContextUsername';
-import { ScoreProvider } from './ContextScore';
-import { LocationProvider} from './ContextLocation';
-
 
 export default function DetectivePokemon() {
     return (

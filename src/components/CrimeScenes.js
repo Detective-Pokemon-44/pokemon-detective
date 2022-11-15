@@ -1,23 +1,26 @@
 import { useState, useEffect } from 'react';
-import { isNotUnique, randNum } from '../utils/functions';
-import CrimeSceneModal from "./CrimeSceneModal";
-import useToggleState from '../hooks/useToggleState';
 import ReactModal from 'react-modal';
 
+import useToggleState from '../hooks/useToggleState';
+import { isNotUnique, randNum } from '../utils/functions';
+import crimeAPICall from '../utils/crimeAPICall';
+
 import { useUsername } from './ContextUsername';
+import { useLocation } from './ContextLocation';
+
+import CrimeSceneModal from "./CrimeSceneModal";
 import Gamebar from './Gamebar';
 import CrimeEvent from './CrimeEvent';
 import PokemonList from './PokemonList';
 
-import crimeAPICall from '../utils/crimeAPICall';
-
-export default function CrimeScenes({ location, handleLocation }) {
+export default function CrimeScenes() {
   const [crimeSceneArray, setCrimeSceneArray] = useState();
   const [pokemonURL, setPokemonURL] = useState([]);
   const [pokemon, setPokemon] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
   const username = useUsername();
+  const location = useLocation();
 
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
@@ -90,7 +93,7 @@ export default function CrimeScenes({ location, handleLocation }) {
             onRequestClose={toggleModal}
             appElement={document.getElementById("root")}
           >
-            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
+            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} />
           </ReactModal>
         )}
       </div>

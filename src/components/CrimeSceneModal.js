@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
+
 import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
-import Score from "./Score";
+
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
+import { useUpdateLocation } from './ContextLocation';
 
-export default function CrimeSceneModal({
-  pokemon,
-  crimeSelected,
-  handleLocation
-}) {
+import Score from "./Score";
+
+export default function CrimeSceneModal({ pokemon, crimeSelected }) {
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
   const score = useScore();
   const updateScore = useUpdateScore();
   const username = useUsername();
+  const updateLocation = useUpdateLocation();
 
   const handleButtonSwitch = (e) => {
     setPokemonSelectionID(parseInt(e.target.value));
@@ -36,7 +37,7 @@ export default function CrimeSceneModal({
 
   // call game logic on pokemon selection from modal
   useEffect(() => {
-    if (selectedPokemon !== null) {
+    if (selectedPokemon) {
       const trueOrFalse = gameLogic(selectedPokemon, crimeSelected, updateScore);
       setCrimeSolved(trueOrFalse);
     }
@@ -95,16 +96,18 @@ export default function CrimeSceneModal({
       ) : (
         <div className="CrimeSceneModal-resultsContainer">
           <div className="CrimeSceneModal-textContainer">
+            <div className="CrimeSceneModal-miniInfoContainer">
+              <p><b>Name:</b>{" " + username}</p>
+              <p><b>Score: </b>{" " + score}</p>
+            </div>
             <h4>{crimeSolved ? "You solved the case" : "You failed the case!"}</h4>
             {!crimeSolved && <h5>{crimeObject[crimeSelected.category].alternate}</h5>}
             <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
           </div>
-          <button onClick={() => handleLocation(null)}> Take me Home</button>
-          <div className="CrimeSceneModal-resultsInfo">
-            <p><b>Name:</b>{" " + username}</p>
-            <p><b>Score: </b>{" " + score}</p>
+          <div className="CrimeSceneModal-miniInfoContainer">
+            <button onClick={() => updateLocation(null)}>Play Again</button>
+            <Score />
           </div>
-          <Score />
         </div>
       )}
     </>

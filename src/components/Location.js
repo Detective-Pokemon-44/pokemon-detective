@@ -1,7 +1,8 @@
+import { useUpdateLocation } from './ContextLocation';
 import door from '../assets/images/door.svg';
 import Gamebar from './Gamebar';
 
-export default function Location({ handleLocation }) {
+export default function Location() {
     const locations = [
         {
             city: "London",
@@ -18,10 +19,11 @@ export default function Location({ handleLocation }) {
             lat: "53.4084",
             lng: "-2.9916",
         },
-    ]
+    ];
+    const updateLocation = useUpdateLocation();
 
     function handleClick(location, lat, lng) {
-        handleLocation([location, lat, lng]);
+        updateLocation([location, lat, lng]);
     }
 
     return (

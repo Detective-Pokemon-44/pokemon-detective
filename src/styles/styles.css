@@ -996,7 +996,7 @@ a {
   margin: 15px;
 }
 
-.CrimeSceneModal-resultsInfo {
+.CrimeSceneModal-miniInfoContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
