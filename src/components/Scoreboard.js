@@ -27,8 +27,10 @@ export default function Scoreboard() {
   return (
     <div className="main">
       <div className="Scoreboard">
-        <h2 className="ScoreTitle">High Scores</h2>
-        <ul>
+        <h2 className="Score-title">Top Detectives</h2>
+        <img className="crown" src={require('../assets/images/crown1.png')} alt="first place crown" />
+        <div></div>
+        <ul className="Score-list">
           {highScores.map((highScore, i) => {
             return (
               <li key={i} className="Scoreboard-listItem">
@@ -36,7 +38,7 @@ export default function Scoreboard() {
                   <span>{i + 1}</span>
                 </div>
                 <div className="Score-name">
-                  <span>{highScore.Name}</span>
+                  <span className="Score-name-span">{highScore.Name}</span>
                 </div>
                 <div className="Score-score">
                   <span>{highScore.Score}</span>
@@ -44,6 +46,8 @@ export default function Scoreboard() {
               </li>
             )
           })}
+       
+            <h3 className="Your-score">Your score: jshkjhs</h3>
           <Link  to="/"><button className="Go-back">X</button></Link>
         </ul>
       </div>

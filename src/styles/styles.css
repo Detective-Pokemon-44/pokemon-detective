@@ -849,13 +849,44 @@ a {
   height: 75vh;
   position: relative;
   background-color: #7D210A;
+  border-radius: 25px;
+  max-width: 900px;
+  width: 90vw;
 }
 
-.ScoreTitle {
+.Score-title {
   position: absolute;
-  left: 5%;
+  left: 32%;
   top: 0;
   color: #FFC120;
+}
+
+.crown {
+  width: 50px;
+  position: absolute;
+  top: 140px;
+  left: 3%;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+@media (max-width: 1000px) {
+  .crown {
+    left: 0;
+  }
+}
+
+.Score-list {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  margin-top: 10rem;
+  -webkit-column-gap: 1.8rem;
+     -moz-column-gap: 1.8rem;
+          column-gap: 1.8rem;
+  padding-left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 0;
 }
 
 .Scoreboard-listItem {
@@ -865,31 +896,52 @@ a {
   gap: 30px;
   min-width: 300px;
   max-width: 470px;
-  background-color: rgba(94, 24, 0, 0.5843137255);
-  border-top: 2px solid #D5C29B;
-  border-bottom: 2px solid #D5C29B;
+  background-color: #5e1800;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  margin-bottom: 15px;
 }
 .Scoreboard-listItem span {
   font-family: "Lato";
   font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 1.6rem);
-  line-height: 3rem;
+  line-height: 3.5rem;
   color: #D5C29B;
+}
+@media (max-width: 1000px) {
+  .Scoreboard-listItem {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
 }
 
 .Score-index {
   width: 60px;
   padding-left: 25px;
-  border: 2px solid yellow;
+}
+.Score-index span {
+  color: #FFC120;
 }
 
 .Score-name {
   width: 200px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.Score-name .Score-name-span {
+  color: #D5C29B;
 }
 
 .Score-score {
   width: 60px;
   padding-right: 0;
-  border: 2px solid yellow;
+  text-align: center;
+  background: rgb(233, 153, 11);
+  background: radial-gradient(circle, rgb(233, 153, 11) 0%, rgb(255, 193, 32) 86%);
+}
+.Score-score span {
+  color: #5E1800;
 }
 
 .Go-back {
@@ -907,6 +959,65 @@ a {
   border: none;
 }
 
+.Your-score {
+  width: 350px;
+  height: 60px;
+  text-align: center;
+  position: absolute;
+  left: 240px;
+  bottom: 0;
+  border-radius: 25px;
+  background-color: #FFC120;
+  border: 5px solid #E9990B;
+  color: #5E1800;
+  font-size: 2rem;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: pulse 2s 2;
+          animation: pulse 2s 2;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+  }
+}
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
