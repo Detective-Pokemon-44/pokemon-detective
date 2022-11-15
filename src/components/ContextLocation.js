@@ -14,8 +14,8 @@ export function useUpdateLocation() {
 export function LocationProvider({ children }) {
     const [location, setLocation] = useState(0);
 
-    function updateLocation(amt) {
-        setLocation(score + amt);
+    function updateLocation(location) {
+        setLocation(location);
     }
 
     return (
