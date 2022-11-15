@@ -2,8 +2,9 @@ import firebaseConfig from "../utils/firebase";
 import { getDatabase, push, ref } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import { useUsername, useUpdateUsername } from './ContextUsername';
-import { useScore, useResetScore } from './ContextScore';
+import { useScore, useResetScore, useEndScoreUpdate } from './ContextScore';
 import { useUpdateLocation } from './ContextLocation';
+
 
 export default function Score() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function Score() {
   const score = useScore();
   const resetScore = useResetScore();
   const updateLocation = useUpdateLocation();
+  const updateEndScore = useEndScoreUpdate(); 
 
   function saveName(event) {
     event.preventDefault()
@@ -24,6 +26,7 @@ export default function Score() {
     saveName(e);
     updateLocation(null);
     updateUsername(null);
+    updateEndScore(score);
     resetScore();
     navigate('/highscores');
   }
