@@ -996,6 +996,13 @@ a {
   margin: 15px;
 }
 
+.CrimeSceneModal-resultsInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
 .appear {
   opacity: 0;
 }
