@@ -5,6 +5,7 @@ import { capitalizeFirstLetter, isNotUnique } from '../utils/functions';
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
+  
   console.log(pokemonInfo)
   let crimeStrengths = []
   pokemonInfo.types.map((individualType) => {

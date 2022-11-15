@@ -18,7 +18,7 @@ export default function CrimeScenes({ location, handleLocation }) {
   const [crimeSelected, setCrimeSelected] = useState(null);
   const [modalState, toggleModal] = useToggleState();
   const username = useUsername();
-
+  
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
     toggleModal(true);
