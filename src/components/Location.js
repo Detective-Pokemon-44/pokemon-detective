@@ -1,12 +1,15 @@
 import door from '../assets/images/door.svg';
 import Gamebar from './Gamebar';
 
+
 export default function Location({ handleLocation }) {
+
+
     const locations = [
         {
-            city: "London",
-            lat: "51.5072",
-            lng: "-0.1276",
+            city: "Sheffield",
+            lat: "53.3811",
+            lng: "-1.4701",
         },
         {
             city: "Birmingham",
@@ -27,15 +30,17 @@ export default function Location({ handleLocation }) {
     return (
         <div className="Location card">
             <Gamebar />
-            <h2>Pick a Location</h2>
-            <div className="Location-locationsContainer">
+            <h2>Where would you like to solve your first crime?</h2>
+            <div className="Location-locationsContainer" >
                 {locations.map((location) => (
-                    <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)}>
-                        <img src={door} className="Location-locationImg" alt={door} />
+                    <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} >
+                        <div className="doorEntrance">
+                            <div className="doorFront"></div>
+                        </div>
                         <div>{location.city}</div>
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }

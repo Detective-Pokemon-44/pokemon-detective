@@ -299,7 +299,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
 }
 
 .Location-locationsContainer {
@@ -329,8 +328,61 @@ a {
           align-items: center;
 }
 
-.Location-locationImg {
-  width: 50px;
+.doorEntrance {
+  position: relative;
+  z-index: 0;
+  height: 150px;
+  background-color: black;
+  width: 75px;
+  margin: 20px;
+  padding: 2%;
+  border-radius: 20% 20% 0 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.doorEntrance:hover {
+  cursor: pointer;
+}
+.doorEntrance:focus {
+  cursor: pointer;
+}
+.doorEntrance:hover .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance:focus .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  border-radius: 20% 20% 0 0;
+  background-color: #FFC120;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront:hover {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront:focus {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .Footer {
@@ -857,10 +909,10 @@ a {
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  height: 90%;
-  top: calc(50% - 300px);
-  left: calc(50% - 300px);
-  border: 1px solid #ccc;
+  height: 80%;
+  top: 7%;
+  left: 23%;
+  border: 1px solid #5E1800;
   background: #7D210A;
   overflow: auto;
   outline: none;
@@ -878,6 +930,49 @@ a {
           align-items: center;
   background-color: #D5C29B;
 }
+@media (max-width: 810px) {
+  .CrimeSceneModal-modal {
+    min-height: 90%;
+    top: calc(5% - 10px);
+    left: 7%;
+  }
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-modal {
+    top: 2%;
+    left: 5%;
+    max-width: 324px;
+    min-height: 90%;
+  }
+}
+
+.CrimeSceneModal-close-button-container {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 5%;
+}
+.CrimeSceneModal-close-button-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CrimeSceneModal-close-button-container img:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CrimeSceneModal-close-button-container img:focus {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
 
 .CrimeSceneModal-fieldset {
   display: -webkit-box;
@@ -888,6 +983,17 @@ a {
           justify-content: space-between;
   padding: 20px 5px;
   margin: 30px 0;
+  border: 2px solid #5E1800;
+  -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-fieldset {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .CrimeSceneModal-container {
@@ -909,9 +1015,13 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.CrimeSceneModal-container-button button {
+  font-size: 0.8rem;
+  color: #D5C29B;
+}
 
 .CrimeSceneModal-textContainer {
-  background-color: #E9990B;
+  background-color: #FFC120;
   padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -924,6 +1034,22 @@ a {
   margin-top: 2%;
   -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-textContainer {
+    width: 90%;
+    margin: 2% auto;
+  }
+}
+.CrimeSceneModal-textContainer h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.CrimeSceneModal-textContainer h5 {
+  font-size: 1.5rem;
+}
+.CrimeSceneModal-textContainer p {
+  font-size: 1.2rem;
 }
 
 .CrimeSceneModal-input {
@@ -976,6 +1102,19 @@ a {
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
 }
+@media (max-width: 480px) {
+  .CrimeSceneModal-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border: 2px solid #5E1800;
+    margin: 2px auto;
+    padding: 3%;
+  }
+}
 
 .CrimeSceneModal-resultsContainer {
   display: -webkit-box;
@@ -1014,6 +1153,26 @@ a {
   opacity: 0;
   -webkit-transition: opacity 300ms;
   transition: opacity 300ms;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }
 
 .About-page {
