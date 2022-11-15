@@ -1,13 +1,19 @@
 import firebaseConfig from "../utils/firebase";
 import { getDatabase, push, ref } from "firebase/database";
 import { useNavigate } from "react-router-dom";
-import { useUsername } from './ContextUsername';
-import { useScore } from './ContextScore';
+import { useUsername, useUpdateUsername } from './ContextUsername';
+import { useScore, useResetScore, useEndScoreUpdate } from './ContextScore';
+import { useUpdateLocation } from './ContextLocation';
+
 
 export default function Score() {
   const navigate = useNavigate();
   const username = useUsername();
+  const updateUsername = useUpdateUsername();
   const score = useScore();
+  const resetScore = useResetScore();
+  const updateLocation = useUpdateLocation();
+  const updateEndScore = useEndScoreUpdate(); 
 
   function saveName(event) {
     event.preventDefault()
@@ -16,16 +22,16 @@ export default function Score() {
     push(dbRef, { Name: username, Score: score })
   }
 
+  function handleClick(e) {
+    saveName(e);
+    updateLocation(null);
+    updateUsername(null);
+    updateEndScore(score);
+    resetScore();
+    navigate('/highscores');
+  }
+
   return (
-    <>
-      <div className='Score-container'>
-        {/* Button will save user's name and score to firebase to display into High Score page, and quit the game */}
-        <p><b>Name:</b>{" " + username}</p>    <p><b>Score: </b>{" " + score}</p>
-        <button onClick={(e) => {
-          saveName(e);
-          navigate('/highscores')
-        }}>Submit score and quit game</button>
-      </div>
-    </>
+    <button onClick={(e) => handleClick(e)}>Submit score and quit game</button>
   )
 }
