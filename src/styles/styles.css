@@ -299,7 +299,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
 }
 
 .Location-locationsContainer {
@@ -329,8 +328,61 @@ a {
           align-items: center;
 }
 
-.Location-locationImg {
-  width: 50px;
+.doorEntrance {
+  position: relative;
+  z-index: 0;
+  height: 150px;
+  background-color: black;
+  width: 75px;
+  margin: 20px;
+  padding: 2%;
+  border-radius: 20% 20% 0 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.doorEntrance:hover {
+  cursor: pointer;
+}
+.doorEntrance:focus {
+  cursor: pointer;
+}
+.doorEntrance:hover .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance:focus .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  border-radius: 20% 20% 0 0;
+  background-color: #FFC120;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront:hover {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront:focus {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .Footer {
@@ -858,8 +910,8 @@ a {
   position: absolute;
   width: 600px;
   height: 80%;
-  top: calc(50% - 300px);
-  left: calc(50% - 300px);
+  top: 7%;
+  left: 23%;
   border: 1px solid #5E1800;
   background: #7D210A;
   overflow: auto;
@@ -880,15 +932,17 @@ a {
 }
 @media (max-width: 810px) {
   .CrimeSceneModal-modal {
-    max-height: 60%;
+    min-height: 90%;
+    top: calc(5% - 10px);
+    left: 7%;
   }
 }
 @media (max-width: 480px) {
   .CrimeSceneModal-modal {
-    top: 1%;
-    left: 4%;
-    width: 324px;
-    max-height: 90%;
+    top: 2%;
+    left: 5%;
+    max-width: 324px;
+    min-height: 90%;
   }
 }
 
@@ -896,11 +950,28 @@ a {
   position: absolute;
   width: 50px;
   height: 50px;
+  right: 5%;
 }
 .CrimeSceneModal-close-button-container img {
   width: 100%;
   height: auto;
   display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CrimeSceneModal-close-button-container img:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CrimeSceneModal-close-button-container img:focus {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .CrimeSceneModal-fieldset {

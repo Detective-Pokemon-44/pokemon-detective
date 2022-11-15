@@ -91,7 +91,7 @@ export default function CrimeScenes({ location, handleLocation }) {
             appElement={document.getElementById("root")}
             closeTimeoutMS={500}
           >
-            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} />
+            <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} handleLocation={handleLocation} toggleModal={toggleModal} />
           </ReactModal>
         )}
       </div>

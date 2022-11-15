@@ -4,18 +4,19 @@ import gameLogic from "../utils/logic";
 import Score from "./Score";
 import { useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
-import useToggleState from "../hooks/useToggleState";
+import closeButton from "../assets/images/rectangle-xmark-solid.svg"
 
 
 export default function CrimeSceneModal({
   pokemon,
   crimeSelected,
   handleLocation,
+  toggleModal
 }) {
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
-  const [modalState, toggleModal] = useToggleState();
+
   const username = useUsername();
   const updateScore = useUpdateScore();
 
@@ -29,7 +30,6 @@ export default function CrimeSceneModal({
       const pokemonFoundById = pokemon.find(
         (pokemon) => pokemon.id === pokemonId
       );
-      console.log(pokemonFoundById);
       setSelectedPokemon(pokemonFoundById);
     } else {
       alert("PICK SOMETHING");
@@ -48,8 +48,8 @@ export default function CrimeSceneModal({
     <>
       {!selectedPokemon && !crimeSolved ? (
         <>
-          <div className="CrimeSceneModal-close-button-container" onClick={() => toggleModal(false)}>
-            <img src={require("../assets/images/closebutton.svg")} alt="Close Modal" />
+          <div className="CrimeSceneModal-close-button-container" >
+            <img src={closeButton} alt="Close Modal" onClick={() => toggleModal(false)} />
           </div>
           <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
             <div className="CrimeSceneModal-textContainer">

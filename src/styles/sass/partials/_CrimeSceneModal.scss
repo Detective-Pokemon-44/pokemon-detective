@@ -5,8 +5,10 @@
     position: absolute;
     width: 600px;
     height: 80%;
-    top: calc(50% - 300px);
-    left: calc(50% - 300px);
+    // top: calc(50% - 300px);
+    // left: calc(50% - 300px);
+    top: 7%;
+    left: 23%;
     border: 1px solid $primaryDarkColor;
     background: $primaryColor;
     overflow: auto;
@@ -19,14 +21,16 @@
     background-color: $lightColor;
 
     @include tablet {
-        max-height: 60%;
+        min-height: 90%;
+        top: calc(5% - 10px);
+        left: 7%;
     }
 
     @include mobile {
-        top: 1%;
-        left: 4%;
-        width: 324px;
-        max-height: 90%;
+        top: 2%;
+        left: 5%;
+        max-width: 324px;
+        min-height: 90%;
     }
 
 }
@@ -35,11 +39,27 @@
     position: absolute;
     width: 50px;
     height: 50px;
+    right: 5%;
+
+
 
     img {
         width: 100%;
         height: auto;
         display: block;
+        transition: 0.3s;
+
+        &:hover {
+            transform: rotateZ(180deg);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            transform: rotateZ(180deg);
+            cursor: pointer;
+            transition: 0.3s;
+        }
     }
 }
 
