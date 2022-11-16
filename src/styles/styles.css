@@ -174,7 +174,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .card {
   padding: 30px;
-  background-color: #7D210A;
+  background-color: #273878;
   border-radius: 15px;
   -webkit-box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
@@ -215,8 +215,8 @@ button {
           justify-content: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  color: #5E1800;
-  border: 3px solid #7D210A;
+  color: #1a2652;
+  border: 3px solid #273878;
   cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -237,7 +237,7 @@ button:hover, button:focus {
 }
 
 .Go-back-button2 {
-  color: #7D210A;
+  color: #273878;
   background-color: white;
   border: none;
 }
@@ -297,7 +297,7 @@ a {
 }
 
 .Navbar {
-  background-color: #5E1800;
+  background-color: #1a2652;
   color: #D5C29B;
   height: 10vh;
   padding-left: 10%;
@@ -452,7 +452,7 @@ a {
 }
 
 .Footer {
-  background-color: #5E1800;
+  background-color: #1a2652;
   color: #D5C29B;
   height: 7vh;
   display: -webkit-box;
@@ -472,7 +472,7 @@ a {
 
 .LandingPage {
   color: #D5C29B;
-  background-color: #7D210A;
+  background-color: #273878;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -626,7 +626,7 @@ a {
   text-align: center;
   position: absolute;
   z-index: 10;
-  color: #5E1800;
+  color: #1a2652;
   font-size: clamp(0.7rem, 2.5vw, 1.1rem);
   background-color: rgba(255, 255, 255, 0.362);
   border-radius: 3px;
@@ -938,8 +938,8 @@ a {
   max-height: 700px;
   top: 10%;
   left: calc(50% - 300px);
-  border: 20px solid #ffe50a;
-  background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
+  border: 20px solid #FF9D7F;
+  background-color: #273878;
   overflow: auto;
   outline: none;
   border-radius: 15px;
@@ -973,7 +973,7 @@ a {
 }
 .Pokemon-modal p {
   font-size: clamp(0.8rem, 0.8333rem + 0.9852vw, 1.2rem);
-  color: black;
+  color: white;
 }
 .Pokemon-modal h2 {
   margin: 20px 0;
@@ -981,7 +981,7 @@ a {
 }
 
 .Pokemon-imageContainer {
-  background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+  background-image: linear-gradient(45deg, #C4E39C, #85A45D, #C4E39C, #83A25C, #C4E39C, #93BD5C);
   width: 90%;
   height: 250px;
   min-height: 200px;
@@ -1031,7 +1031,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
 }
 
 .Pokemon-pokeball {
@@ -1050,7 +1050,7 @@ a {
 }
 
 .Pokemon-info {
-  background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+  background-image: linear-gradient(45deg, #C4E39C, #85A45D, #C4E39C, #83A25C, #C4E39C, #93BD5C);
   width: 80%;
   font-size: 13px;
   font-weight: bold;
@@ -1127,7 +1127,7 @@ a {
   width: 80vw;
   min-height: 75vh;
   position: relative;
-  background-color: #7D210A;
+  background-color: #273878;
   border-radius: 25px;
   max-width: 900px;
   width: 90vw;
@@ -1183,7 +1183,7 @@ a {
   gap: 30px;
   min-width: 300px;
   max-width: 470px;
-  background-color: #5e1800;
+  background-color: #1a2652;
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
@@ -1228,7 +1228,7 @@ a {
   background: radial-gradient(circle, rgb(233, 153, 11) 0%, rgb(255, 193, 32) 86%);
 }
 .Score-score span {
-  color: #5E1800;
+  color: #1a2652;
 }
 
 .Go-back {
@@ -1247,7 +1247,7 @@ a {
   border-radius: 25px;
   background-color: #FFC120;
   border: 5px solid #E9990B;
-  color: #5E1800;
+  color: #1a2652;
   font-size: 2rem;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -1304,7 +1304,7 @@ a {
 .Go-back-button {
   width: 40px;
   height: 40px;
-  color: #7D210A;
+  color: #273878;
   font-weight: bold;
   background-color: white;
   border-radius: 40px;
@@ -1319,8 +1319,8 @@ a {
   max-height: 800px;
   top: 2%;
   left: calc(50% - 300px);
-  border: 1px solid #5E1800;
-  background: #7D210A;
+  border: 1px solid #1a2652;
+  background: #273878;
   overflow: auto;
   outline: none;
   padding: 15px;
@@ -1400,7 +1400,7 @@ a {
           justify-content: space-between;
   padding: 20px 5px;
   margin: 30px 0;
-  border: 2px solid #5E1800;
+  border: 2px solid #1a2652;
   -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
 }
@@ -1436,17 +1436,17 @@ a {
           flex-direction: column;
 }
 .CrimeSceneModal-container-button button {
-  background-color: #7D210A;
+  background-color: #273878;
   width: 125px;
   font-size: 0.8rem;
   color: white;
-  border: 2px solid #5E1800;
+  border: 2px solid #1a2652;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
 }
 .CrimeSceneModal-container-button button:hover, .CrimeSceneModal-container-button button:focus {
-  background-color: #5E1800;
-  border: 2px solid #7D210A;
+  background-color: #1a2652;
+  border: 2px solid #273878;
 }
 
 .CrimeSceneModal-textContainer {
@@ -1545,7 +1545,7 @@ a {
             flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    border: 2px solid #5E1800;
+    border: 2px solid #1a2652;
     margin: 2px auto;
     padding: 3%;
   }
@@ -1676,7 +1676,7 @@ a {
   font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
 }
 .About-page p {
-  color: #5E1800;
+  color: #1a2652;
 }
 
 .About-header {
@@ -1943,7 +1943,7 @@ a {
   background-color: #E9990B;
 }
 .Button-about:hover a {
-  color: #5E1800;
+  color: #1a2652;
   padding: 25px;
 }
 
