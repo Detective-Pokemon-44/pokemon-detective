@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use "./mixins" as *;
 
 .Navbar {
     background-color: $primaryDarkColor;
@@ -8,4 +9,8 @@
     margin: auto;
     display: flex;
     align-items: center;
+    @include mobile{
+        padding: 0;
+        justify-content: center;
+    }
 }
