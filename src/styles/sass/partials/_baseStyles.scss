@@ -1,5 +1,11 @@
 @use './variables' as *;
 
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 90%;
+}
+
 .card {
     padding: 30px;
     background-color: $primaryColor;
@@ -21,7 +27,7 @@ a {
 }
 
 button {
-    width: 120px;
+    width: 110px;
     height: 50px;
     background-color: $lightColor;
     border-radius: 15px;
@@ -29,9 +35,11 @@ button {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-    border: none;
+    color: $primaryDarkColor;
+    border: 3px solid $primaryColor;
     cursor: pointer;
-    box-shadow: 2px 2px 15px $primaryDarkColor;
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
     a {
         color: $secondaryDarkColor;
         font-weight: bold;
@@ -39,14 +47,36 @@ button {
     &:hover,
     &:focus {
         background-color: $secondaryDarkColor;
+        color: $white;
+        border: none;
+        box-shadow: inset 2px 0 15px $secondaryColor
         a {
-            color: $primaryDarkColor
+            color: $white;
         }
     }
 }
 
-.wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 90%;
+// .Go-back-button {
+//     width: 40px;
+//     height: 40px;
+//     color: $primaryColor;
+//     font-weight: bold;
+//     background-color: white;
+//     border-radius: 40px;
+//     box-shadow: none;
+//     border: none;
+// }
+
+.Go-back-button2 {
+    color: $primaryColor;
+    background-color: white;
+
+    border: none;
+    &:hover {
+        color: $white;
+        padding: 5px 10px;
+    }
+    &:focus {
+        border: 1px solid $white;          
+    }
 }

@@ -12,32 +12,40 @@
     max-width: 900px;
     width: 90vw;
     box-shadow: 10px 10px rgb(0 0 0 / 30%);
+    @media (max-width: 1000px) {
+        max-width: 730px;
+    } 
 }
 
 .Score-title {
     position: absolute;
     left: 32%;
-    top: 0;
+    top: -20px;
 }
 
 .crown {
     width: 50px;
     position: absolute;
-    top: 140px;
+    top: 110px;
     left: 3%;
     transform: rotate(-15deg);
     @media (max-width: 1000px) {
-        left: 0;
+        left: 2%;
+        top: 100px;
+        transform: rotate(-8deg);
     }
 }
 
 .Score-list {
     column-count: 2;
-    margin-top: 10rem;
+    margin-top: 8rem;
     column-gap: 1.8rem;
     padding-left: 0;
     transition: 0.3s;
     font-size: 0;
+    @media (max-width: 1000px) {
+        
+    }
 }
 
 .Scoreboard-listItem {
@@ -75,6 +83,9 @@
     .Score-name-span {
         color: $white;
     }
+    @media (max-width: 1000px) {
+
+    }
 }
 
 .Score-score {
@@ -87,19 +98,10 @@
         color: $primaryDarkColor
     }
 }
-
 .Go-back {
-    width: 40px;
-    height: 40px;
-    color: $primaryColor;
-    font-weight: bold;
-    background-color: white;
-    border-radius: 40px;
     position: absolute;
     top: 10px;
     right: 12px;
-    box-shadow: none;
-    border: none;
 }
 
 .Your-score {
@@ -116,6 +118,10 @@
     font-size: 2rem;
     transform: scale(1);
     animation: pulse 2s 2;
+    @media (max-width: 1000px) {
+        left: 190px;
+    }
+    
 }
 
 @keyframes pulse {
@@ -136,4 +142,15 @@
   }
   
 
+
+  .Go-back-button {
+        width: 40px;
+        height: 40px;
+        color: $primaryColor;
+        font-weight: bold;
+        background-color: white;
+        border-radius: 40px;
+        box-shadow: none;
+        border: none;
+  }
 

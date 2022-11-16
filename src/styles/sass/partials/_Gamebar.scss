@@ -2,4 +2,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    .Gamebar-title{
+        color: white;
+        font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+    }   
 }
+

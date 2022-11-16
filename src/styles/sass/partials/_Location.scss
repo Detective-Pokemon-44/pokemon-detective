@@ -25,6 +25,21 @@
     flex-direction: column;
     align-items: center;
 
+
+}
+
+.doorEntrance {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    background-color: black;
+    width: 75px;
+    margin: 20px;
+    padding: 2%;
+    border-radius: 20% 20% 0 0;
+    transition: all 0.5s ease-in-out;
+
+
     &:hover {
         cursor: pointer;
     }

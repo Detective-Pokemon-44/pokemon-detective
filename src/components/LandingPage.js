@@ -4,6 +4,8 @@ import { useUpdateUsername } from './ContextUsername';
 import { CSSTransition } from 'react-transition-group';
 import pokemonLogo from '../assets/images/pd-logo.png';
 import aboutIcon from '../assets/images/circle-info-solid.svg';
+import { Modal } from '@mui/material';
+import swal from 'sweetalert';
 import { useRef } from 'react';
 
 
@@ -18,6 +20,7 @@ export default function LandingPage() {
 
   function handleClick(e) {
     e.preventDefault();
+    !username && swal('Hey Detective! Please enter your name.');
     updateUser(username);
     resetUsername();
   }

@@ -166,6 +166,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 90%;
+}
+
 .card {
   padding: 30px;
   background-color: #7D210A;
@@ -194,7 +200,7 @@ a {
 }
 
 button {
-  width: 120px;
+  width: 110px;
   height: 50px;
   background-color: #D5C29B;
   border-radius: 15px;
@@ -209,10 +215,13 @@ button {
           justify-content: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  border: none;
+  color: #5E1800;
+  border: 3px solid #7D210A;
   cursor: pointer;
-  -webkit-box-shadow: 2px 2px 15px #5E1800;
-          box-shadow: 2px 2px 15px #5E1800;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
+          box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
 }
 button a {
   color: #E9990B;
@@ -220,15 +229,24 @@ button a {
 }
 button:hover, button:focus {
   background-color: #E9990B;
-}
-button:hover a, button:focus a {
-  color: #5E1800;
+  color: white;
+  border: none;
+  -webkit-box-shadow: inset 2px 0 15px #FFC120 a;
+          box-shadow: inset 2px 0 15px #FFC120 a;
+  box-shadow-color: white;
 }
 
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 90%;
+.Go-back-button2 {
+  color: #7D210A;
+  background-color: white;
+  border: none;
+}
+.Go-back-button2:hover {
+  color: white;
+  padding: 5px 10px;
+}
+.Go-back-button2:focus {
+  border: 1px solid white;
 }
 
 @font-face {
@@ -334,24 +352,37 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
-.Location-locationCard:hover {
+
+.doorEntrance {
+  position: relative;
+  z-index: 0;
+  height: 150px;
+  background-color: black;
+  width: 75px;
+  margin: 20px;
+  padding: 2%;
+  border-radius: 20% 20% 0 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.doorEntrance:hover {
   cursor: pointer;
 }
-.Location-locationCard:focus {
+.doorEntrance:focus {
   cursor: pointer;
 }
-.Location-locationCard p {
+.doorEntrance p {
   color: black;
   font-size: 1rem;
 }
-.Location-locationCard:hover .doorFront {
+.doorEntrance:hover .doorFront {
   -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
           transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
-.Location-locationCard:focus .doorFront {
+.doorEntrance:focus .doorFront {
   -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
           transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
   cursor: pointer;
@@ -532,7 +563,7 @@ a {
   display: flex;
   margin: 0;
   padding: 0;
-  padding-top: 40px;
+  padding-top: 85px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -589,10 +620,16 @@ a {
 
 .CrimeEvent-folderName {
   bottom: -70%;
-  left: 3%;
+  left: 5%;
+  right: 5%;
+  padding: 3px 1px;
+  text-align: center;
   position: absolute;
   z-index: 10;
+  color: #5E1800;
   font-size: clamp(0.7rem, 2.5vw, 1.1rem);
+  background-color: rgba(255, 255, 255, 0.362);
+  border-radius: 3px;
 }
 
 .CrimeEvent-folder, .CrimeEvent-belowFolder {
@@ -826,8 +863,12 @@ a {
           transform: rotate(45deg);
   width: 100%;
   border-radius: 10px;
-  border: 2px solid rgb(104, 71, 71);
+  border: 5px solid #d8ceba;
+  -webkit-box-shadow: 3px 3px 10px rgba(216, 206, 186, 0.4941176471), -3px -3px 10px rgba(216, 206, 186, 0.4941176471), inset 5px 5px 10px rgba(122, 34, 16, 0.4941176471), inset -5px -5px 10px rgba(122, 34, 16, 0.4941176471);
+          box-shadow: 3px 3px 10px rgba(216, 206, 186, 0.4941176471), -3px -3px 10px rgba(216, 206, 186, 0.4941176471), inset 5px 5px 10px rgba(122, 34, 16, 0.4941176471), inset -5px -5px 10px rgba(122, 34, 16, 0.4941176471);
   cursor: pointer;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 .Pokemon-diamondShape:hover {
   z-index: 20;
@@ -862,6 +903,22 @@ a {
 .Pokemon-hover:hover p {
   color: rgb(0, 0, 0);
   z-index: 10;
+}
+
+.Gamebar {
+  position: relative;
+}
+.Gamebar .Go-back-button2 {
+  width: 70px;
+  width: 70px;
+  border-radius: 25px;
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+.Gamebar .Gamebar-title {
+  position: absolute;
+  top: -5px;
 }
 
 .Pokemon-image {
@@ -1073,24 +1130,32 @@ a {
   -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
 }
+@media (max-width: 1000px) {
+  .Scoreboard {
+    max-width: 730px;
+  }
+}
 
 .Score-title {
   position: absolute;
   left: 32%;
-  top: 0;
+  top: -20px;
 }
 
 .crown {
   width: 50px;
   position: absolute;
-  top: 140px;
+  top: 110px;
   left: 3%;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
 }
 @media (max-width: 1000px) {
   .crown {
-    left: 0;
+    left: 2%;
+    top: 100px;
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
   }
 }
 
@@ -1098,7 +1163,7 @@ a {
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
-  margin-top: 10rem;
+  margin-top: 8rem;
   -webkit-column-gap: 1.8rem;
      -moz-column-gap: 1.8rem;
           column-gap: 1.8rem;
@@ -1107,7 +1172,6 @@ a {
   transition: 0.3s;
   font-size: 0;
 }
-
 .Scoreboard-listItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1152,7 +1216,6 @@ a {
 .Score-name .Score-name-span {
   color: white;
 }
-
 .Score-score {
   width: 60px;
   padding-right: 0;
@@ -1165,18 +1228,9 @@ a {
 }
 
 .Go-back {
-  width: 40px;
-  height: 40px;
-  color: #7D210A;
-  font-weight: bold;
-  background-color: white;
-  border-radius: 40px;
   position: absolute;
   top: 10px;
   right: 12px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: none;
 }
 
 .Your-score {
@@ -1195,6 +1249,11 @@ a {
           transform: scale(1);
   -webkit-animation: pulse 2s 2;
           animation: pulse 2s 2;
+}
+@media (max-width: 1000px) {
+  .Your-score {
+    left: 190px;
+  }
 }
 
 @-webkit-keyframes pulse {
@@ -1238,6 +1297,18 @@ a {
             box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
   }
 }
+.Go-back-button {
+  width: 40px;
+  height: 40px;
+  color: #7D210A;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
@@ -1361,12 +1432,21 @@ a {
           flex-direction: column;
 }
 .CrimeSceneModal-container-button button {
+  background-color: #7D210A;
+  width: 125px;
   font-size: 0.8rem;
-  color: #D5C29B;
+  color: white;
+  border: 2px solid #5E1800;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.CrimeSceneModal-container-button button:hover, .CrimeSceneModal-container-button button:focus {
+  background-color: #5E1800;
+  border: 2px solid #7D210A;
 }
 
 .CrimeSceneModal-textContainer {
-  background-color: #FFC120;
+  background-color: #E9990B;
   padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1871,4 +1951,8 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.Gamebar .Gamebar-title {
+  color: white;
+  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
 }
