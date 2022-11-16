@@ -94,9 +94,6 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         </>
       ) : (
         <>
-          <div className="CrimeSceneModal-close-button-container" >
-            <img src={closeButton} alt="Close Modal" onClick={() => toggleModal(false)} />
-          </div>
           < div className="CrimeSceneModal-resultsContainer" >
             <div className="CrimeSceneModal-textContainer">
               <div className="CrimeSceneModal-miniInfoContainer">
