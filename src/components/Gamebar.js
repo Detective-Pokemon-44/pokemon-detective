@@ -12,7 +12,7 @@ export default function Gamebar() {
         <div className="Gamebar">
             <span><Score /></span>
             <span className="Gamebar-title">{location ? `Welcome to ${location[0]}, ${username}!` : ""}</span>
-            <span>{score > 0 && `Cases Solved: ${score}`}</span>
+            <span className='scoreCounter'>{score > 0 && `Cases Solved: ${score}`}</span>
         </div>
     )
 }
