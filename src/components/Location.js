@@ -44,12 +44,12 @@ export default function Location() {
                     {locations.map((location) => (
                         <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} role="img" alt={`Click for ${location.city} `} >
                             <div className="doorEntrance">
-                                <img src={require(`../assets/images/${location.city}.svg`)} alt={`${location.city} coat of arms`} className="coatOfArms" />
+                                <img id="city" src={require(`../assets/images/${location.city}.svg`)} alt={`${location.city} coat of arms`} className="coatOfArms" />
                                 <div className="doorFront">
                                     <img src={doorknob} alt="little doorknob decoration" className='doorknob' />
                                 </div>
                             </div>
-                            <p>{location.city}</p>
+                            <label htmlFor='city'>{location.city}</label>
                         </div>
                     ))}
                 </div>

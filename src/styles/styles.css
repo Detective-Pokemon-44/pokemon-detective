@@ -360,6 +360,28 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+.Location-locationCard label {
+  font-family: "Lato";
+  font-size: clamp(1rem, 0.4368rem + 0.9294vw, 1.25rem);
+  color: white;
+}
+.Location-locationCard label:hover {
+  cursor: pointer;
+}
+.Location-locationCard:hover .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.Location-locationCard:focus .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
 
 .doorEntrance {
   position: relative;
@@ -378,24 +400,6 @@ a {
 }
 .doorEntrance:focus {
   cursor: pointer;
-}
-.doorEntrance p {
-  color: black;
-  font-size: 1rem;
-}
-.doorEntrance:hover .doorFront {
-  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
-          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-.doorEntrance:focus .doorFront {
-  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
-          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
 }
 
 .doorEntrance {
@@ -1077,8 +1081,8 @@ a {
   width: 30px;
   height: 30px;
   right: 5%;
-  -webkit-filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
-          filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+  -webkit-filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
+          filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
   top: 0;
 }
 @media (max-width: 480px) {
@@ -1356,8 +1360,8 @@ a {
   width: 50px;
   height: 50px;
   right: 5%;
-  -webkit-filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
-          filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+  -webkit-filter: invert(20%) sepia(73%) saturate(938%) hue-rotate(200deg) brightness(89%) contrast(96%);
+          filter: invert(20%) sepia(73%) saturate(938%) hue-rotate(200deg) brightness(89%) contrast(96%);
 }
 @media (max-width: 480px) {
   .CrimeSceneModal-close-button-container {
@@ -1446,7 +1450,7 @@ a {
 }
 
 .CrimeSceneModal-textContainer {
-  background-color: #E9990B;
+  background-color: #273878;
   padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1459,6 +1463,7 @@ a {
   margin-top: 2%;
   -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 @media (max-width: 810px) {
   .CrimeSceneModal-textContainer {
@@ -1475,6 +1480,7 @@ a {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 3px 0;
+  color: white;
 }
 .CrimeSceneModal-textContainer h5 {
   font-size: 1.5rem;
@@ -1574,13 +1580,13 @@ a {
 }
 
 .card-exit {
-  opacity: 1;
-}
-
-.card-exit-active {
   opacity: 0;
   -webkit-transition: opacity 1000ms;
   transition: opacity 1000ms;
+}
+
+.card-exit-active {
+  opacity: 1;
 }
 
 .card-enter {
