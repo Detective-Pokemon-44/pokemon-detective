@@ -1541,11 +1541,31 @@ a {
   transition: opacity 1000ms;
 }
 
-.results-appear {
+.Scoreboard-appear {
   opacity: 0;
 }
 
-.results-appear-active {
+.Scoreboard-appear-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-enter {
+  opacity: 0;
+}
+
+.Scoreboard-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-exit {
+  opacity: 0;
+}
+
+.Scoreboard-exit-active {
   opacity: 1;
   -webkit-transition: opacity 1000ms;
   transition: opacity 1000ms;
