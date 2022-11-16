@@ -621,7 +621,7 @@ a {
   margin-top: 170px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 70px;
+  margin-bottom: 15vw;
 }
 @media (max-width: 1100px) {
   .pokemonList {
@@ -856,16 +856,18 @@ a {
   padding: 3%;
   max-width: 260px;
   min-width: 70px;
-  margin-bottom: -50px;
+  margin-bottom: -10vw;
 }
 @media (max-width: 810px) {
   .shape-section {
     padding: 2%;
+    margin-bottom: -10vw;
   }
 }
 @media (max-width: 480px) {
   .shape-section {
-    padding: 0;
+    padding: 1%;
+    margin-bottom: -10vw;
   }
 }
 
