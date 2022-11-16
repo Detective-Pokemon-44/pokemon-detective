@@ -1517,24 +1517,74 @@ a {
   gap: 20px;
 }
 
-.appear {
-  opacity: 0;
-}
-
-.appear-active {
-  opacity: 1;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
-}
-
-.transitions-exit {
+.card-exit {
   opacity: 1;
 }
 
-.transitions-exit-active {
+.card-exit-active {
   opacity: 0;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.card-enter {
+  opacity: 0;
+}
+
+.card-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.card-appear {
+  opacity: 0;
+}
+
+.card-appear-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.card-exit {
+  opacity: 1;
+}
+
+.card-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-appear {
+  opacity: 0;
+}
+
+.Scoreboard-appear-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-enter {
+  opacity: 0;
+}
+
+.Scoreboard-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-exit {
+  opacity: 1;
+}
+
+.Scoreboard-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
 }
 
 .ReactModal__Overlay {

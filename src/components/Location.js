@@ -1,9 +1,11 @@
 import { useUpdateLocation } from './ContextLocation';
 import Gamebar from './Gamebar';
 import doorknob from "../assets/images/circle-solid.svg"
+import { CSSTransition } from 'react-transition-group';
+import { useRef } from 'react';
 
 export default function Location() {
-
+    const nodeRef = useRef(null);
     const locations = [
         {
             city: "Sheffield",
@@ -28,22 +30,30 @@ export default function Location() {
     }
 
     return (
-        <div className="Location card">
-            <Gamebar />
-            <h2>What city?</h2>
-            <div className="Location-locationsContainer" >
-                {locations.map((location) => (
-                    <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} role="img" alt={`Click for ${location.city} `} >
-                        <div className="doorEntrance">
-                            <img src={require(`../assets/images/${location.city}.svg`)} alt={`${location.city} coat of arms`} className="coatOfArms" />
-                            <div className="doorFront">
-                                <img src={doorknob} alt="little doorknob decoration" className='doorknob' />
+        <CSSTransition
+            in={true}
+            appear={true}
+            timeout={1000}
+            classNames="card"
+            nodeRef={nodeRef}
+        >
+            <div className="Location card" ref={nodeRef}>
+                <Gamebar />
+                <h2>What city?</h2>
+                <div className="Location-locationsContainer" >
+                    {locations.map((location) => (
+                        <div key={location.city} className="Location-locationCard" onClick={() => handleClick(location.city, location.lat, location.lng)} role="img" alt={`Click for ${location.city} `} >
+                            <div className="doorEntrance">
+                                <img src={require(`../assets/images/${location.city}.svg`)} alt={`${location.city} coat of arms`} className="coatOfArms" />
+                                <div className="doorFront">
+                                    <img src={doorknob} alt="little doorknob decoration" className='doorknob' />
+                                </div>
                             </div>
+                            <p>{location.city}</p>
                         </div>
-                        <p>{location.city}</p>
-                    </div>
-                ))}
-            </div>
-        </div >
+                    ))}
+                </div>
+            </div >
+        </CSSTransition>
     )
 }

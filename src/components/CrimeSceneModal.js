@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
 import closeButton from "../assets/images/rectangle-xmark-solid.svg";
-
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
 import { useUpdateLocation } from './ContextLocation';
@@ -14,6 +13,8 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
+
+
   const score = useScore();
   const updateScore = useUpdateScore();
   const username = useUsername();
@@ -30,21 +31,12 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         (pokemon) => pokemon.id === pokemonId
       );
       setSelectedPokemon(pokemonFoundById);
+      const trueOrFalse = gameLogic(pokemonFoundById, crimeSelected, updateScore);
+      setCrimeSolved(trueOrFalse);
     } else {
       alert("PICK SOMETHING");
     }
   };
-
-  const calculateGameLogic = () => {
-    return gameLogic(selectedPokemon, crimeSelected, updateScore);
-  }
-  // call game logic on pokemon selection from modal
-  useEffect(() => {
-    if (selectedPokemon) {
-      const trueOrFalse = calculateGameLogic();
-      setCrimeSolved(trueOrFalse);
-    }
-  }, [selectedPokemon, calculateGameLogic]);
 
   return (
     <>
@@ -101,22 +93,28 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
           </form>
         </>
       ) : (
-        <div className="CrimeSceneModal-resultsContainer">
-          <div className="CrimeSceneModal-textContainer">
-            <div className="CrimeSceneModal-miniInfoContainer">
-              <p><b>Name:</b>{" " + username}</p>
-              <p><b>Score: </b>{" " + score}</p>
+        <>
+          <div className="CrimeSceneModal-close-button-container" >
+            <img src={closeButton} alt="Close Modal" onClick={() => toggleModal(false)} />
+          </div>
+          < div className="CrimeSceneModal-resultsContainer" >
+            <div className="CrimeSceneModal-textContainer">
+              <div className="CrimeSceneModal-miniInfoContainer">
+                <p><b>Name:</b>{" " + username}</p>
+                <p><b>Score: </b>{" " + score}</p>
+              </div>
+              <h4>{crimeSolved ? "You solved the case" : "You failed the case!"}</h4>
+              {!crimeSolved && <h5>{crimeObject[crimeSelected.category].alternate}</h5>}
+              <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
             </div>
-            <h4>{crimeSolved ? "You solved the case" : "You failed the case!"}</h4>
-            {!crimeSolved && <h5>{crimeObject[crimeSelected.category].alternate}</h5>}
-            <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
+            <div className="CrimeSceneModal-miniInfoContainer">
+              <button onClick={() => updateLocation(null)}>Play Again</button>
+              <Score />
+            </div>
           </div>
-          <div className="CrimeSceneModal-miniInfoContainer">
-            <button onClick={() => updateLocation(null)}>Play Again</button>
-            <Score />
-          </div>
-        </div>
-      )}
+        </>
+      )
+      }
     </>
 
   );
