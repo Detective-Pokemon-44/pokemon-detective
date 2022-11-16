@@ -100,7 +100,6 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
                 <p><b>Score: </b>{" " + score}</p>
               </div>
               <h4>{crimeSolved ? `${capitalizeFirstLetter(selectedPokemon.name)} solved the case!` : `${capitalizeFirstLetter(selectedPokemon.name)} failed the case!`}</h4>
-              {!crimeSolved && <h5>{crimeObject[crimeSelected.category].alternate}</h5>}
               <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
             </div>
             <div className="CrimeSceneModal-miniInfoContainer">
