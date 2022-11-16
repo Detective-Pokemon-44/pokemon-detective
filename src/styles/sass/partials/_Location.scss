@@ -25,6 +25,28 @@
     flex-direction: column;
     align-items: center;
 
+    label {
+        font-family: $textFont;
+        font-size: clamp(1rem, 0.4368rem + 0.9294vw, 1.25rem);
+        color: $white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &:hover .doorFront {
+        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    &:focus .doorFront {
+        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
 
 }
 
@@ -48,22 +70,6 @@
         cursor: pointer;
     }
 
-    p {
-        color: black;
-        font-size: 1rem;
-    }
-
-    &:hover .doorFront {
-        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
-        cursor: pointer;
-        transition: all 0.3s ease-in;
-    }
-
-    &:focus .doorFront {
-        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
-        cursor: pointer;
-        transition: all 0.3s ease-in;
-    }
 
 }
 
@@ -128,4 +134,3 @@
         }
     }
 }
-

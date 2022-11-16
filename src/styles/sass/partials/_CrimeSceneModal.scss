@@ -38,7 +38,7 @@
     width: 50px;
     height: 50px;
     right: 5%;
-    filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+    filter: invert(20%) sepia(73%) saturate(938%) hue-rotate(200deg) brightness(89%) contrast(96%);
 
     @include mobile {
         width: 30px;
@@ -107,13 +107,14 @@
 }
 
 .CrimeSceneModal-textContainer {
-    background-color: $secondaryDarkColor;
+    background-color: $primaryColor;
     padding: 2%;
     display: flex;
     flex-direction: column;
     width: 60%;
     margin-top: 2%;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
+    border-radius: 10px;
 
     @include tablet {
         padding: 1%;
@@ -128,6 +129,7 @@
         font-size: 1.6rem;
         font-weight: 600;
         margin: 3px 0;
+        color: $white;
     }
 
     h5 {
@@ -204,6 +206,9 @@
     align-items: center;
     margin-bottom: 30px;
     padding: 10px;
+
+
+
 }
 
 .CrimeSceneModal-resultsContainer button {

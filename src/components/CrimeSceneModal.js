@@ -7,7 +7,7 @@ import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
 import { useUpdateLocation } from './ContextLocation';
 import swal from 'sweetalert';
-
+import { capitalizeFirstLetter } from "../utils/functions";
 import Score from "./Score";
 
 export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal }) {
@@ -99,7 +99,7 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
                 <p><b>Name:</b>{" " + username}</p>
                 <p><b>Score: </b>{" " + score}</p>
               </div>
-              <h4>{crimeSolved ? "You solved the case" : "You failed the case!"}</h4>
+              <h4>{crimeSolved ? `${capitalizeFirstLetter(selectedPokemon.name)} solved the case!` : `${capitalizeFirstLetter(selectedPokemon.name)} failed the case!`}</h4>
               {!crimeSolved && <h5>{crimeObject[crimeSelected.category].alternate}</h5>}
               <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
             </div>
