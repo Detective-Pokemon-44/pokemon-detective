@@ -1,5 +1,5 @@
 import firebaseConfig from "../utils/firebase";
-import { getDatabase, push, ref } from "firebase/database";
+import { getDatabase, onValue, ref, set } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import { useUsername, useUpdateUsername } from './ContextUsername';
 import { useScore, useResetScore, useEndScoreUpdate } from './ContextScore';
@@ -13,13 +13,27 @@ export default function Score() {
   const score = useScore();
   const resetScore = useResetScore();
   const updateLocation = useUpdateLocation();
-  const updateEndScore = useEndScoreUpdate(); 
+  const updateEndScore = useEndScoreUpdate();
 
   function saveName(event) {
     event.preventDefault()
-    const database = getDatabase(firebaseConfig)
-    const dbRef = ref(database, `container`)
-    push(dbRef, { Name: username, Score: score })
+    const database = getDatabase(firebaseConfig);
+    const dbRef = ref(database, 'highscores');
+    let data;
+    onValue(dbRef, (res) => {
+      data = res.val();
+    })
+    if (data.length < 10) {
+      data.push({ name: username, score: score });
+      const highscores = data.sort((a, b) => b.score - a.score);
+      set(dbRef, highscores)
+    } else {
+      if (score > data[9].score) {
+        data.push({name: username, score: score});
+        const highscores = data.sort((a, b) => b.score - a.score).slice(0, 10);
+        set(dbRef, highscores);
+      }
+    }
   }
 
   function handleClick(e) {
