@@ -46,7 +46,7 @@ export default function Scoreboard() {
             )
           })}
           <h3 className="Your-score">Your score: {endScore}</h3>
-          <Link to="/"><button className="Go-back">X</button></Link>
+          <Link to="/"><button className="Go-back Go-back-button">X</button></Link>
         </ul>
       </div>
     </div>

@@ -166,6 +166,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 90%;
+}
+
 .card {
   padding: 30px;
   background-color: #7D210A;
@@ -194,7 +200,7 @@ a {
 }
 
 button {
-  width: 120px;
+  width: 110px;
   height: 50px;
   background-color: #D5C29B;
   border-radius: 15px;
@@ -209,10 +215,13 @@ button {
           justify-content: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  border: none;
+  color: #5E1800;
+  border: 3px solid #7D210A;
   cursor: pointer;
-  -webkit-box-shadow: 2px 2px 15px #5E1800;
-          box-shadow: 2px 2px 15px #5E1800;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
+          box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
 }
 button a {
   color: #E9990B;
@@ -220,15 +229,24 @@ button a {
 }
 button:hover, button:focus {
   background-color: #E9990B;
-}
-button:hover a, button:focus a {
-  color: #5E1800;
+  color: white;
+  border: none;
+  -webkit-box-shadow: inset 2px 0 15px #FFC120 a;
+          box-shadow: inset 2px 0 15px #FFC120 a;
+  box-shadow-color: white;
 }
 
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  width: 90%;
+.Go-back-button2 {
+  color: #7D210A;
+  background-color: white;
+  border: none;
+}
+.Go-back-button2:hover {
+  color: white;
+  padding: 5px 10px;
+}
+.Go-back-button2:focus {
+  border: 1px solid white;
 }
 
 @font-face {
@@ -602,10 +620,16 @@ a {
 
 .CrimeEvent-folderName {
   bottom: -70%;
-  left: 3%;
+  left: 5%;
+  right: 5%;
+  padding: 3px 1px;
+  text-align: center;
   position: absolute;
   z-index: 10;
+  color: #5E1800;
   font-size: clamp(0.7rem, 2.5vw, 1.1rem);
+  background-color: rgba(255, 255, 255, 0.362);
+  border-radius: 3px;
 }
 
 .CrimeEvent-folder, .CrimeEvent-belowFolder {
@@ -839,8 +863,12 @@ a {
           transform: rotate(45deg);
   width: 100%;
   border-radius: 10px;
-  border: 2px solid rgb(104, 71, 71);
+  border: 5px solid #d8ceba;
+  -webkit-box-shadow: 3px 3px 10px rgba(216, 206, 186, 0.4941176471), -3px -3px 10px rgba(216, 206, 186, 0.4941176471), inset 5px 5px 10px rgba(122, 34, 16, 0.4941176471), inset -5px -5px 10px rgba(122, 34, 16, 0.4941176471);
+          box-shadow: 3px 3px 10px rgba(216, 206, 186, 0.4941176471), -3px -3px 10px rgba(216, 206, 186, 0.4941176471), inset 5px 5px 10px rgba(122, 34, 16, 0.4941176471), inset -5px -5px 10px rgba(122, 34, 16, 0.4941176471);
   cursor: pointer;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
 .Pokemon-diamondShape:hover {
   z-index: 20;
@@ -875,6 +903,22 @@ a {
 .Pokemon-hover:hover p {
   color: rgb(0, 0, 0);
   z-index: 10;
+}
+
+.Gamebar {
+  position: relative;
+}
+.Gamebar .Go-back-button2 {
+  width: 70px;
+  width: 70px;
+  border-radius: 25px;
+  position: absolute;
+  right: 0;
+  top: -5px;
+}
+.Gamebar .Gamebar-title {
+  position: absolute;
+  top: -5px;
 }
 
 .Pokemon-image {
@@ -1184,18 +1228,9 @@ a {
 }
 
 .Go-back {
-  width: 40px;
-  height: 40px;
-  color: #7D210A;
-  font-weight: bold;
-  background-color: white;
-  border-radius: 40px;
   position: absolute;
   top: 10px;
   right: 12px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: none;
 }
 
 .Your-score {
@@ -1262,6 +1297,18 @@ a {
             box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
   }
 }
+.Go-back-button {
+  width: 40px;
+  height: 40px;
+  color: #7D210A;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
@@ -1385,12 +1432,21 @@ a {
           flex-direction: column;
 }
 .CrimeSceneModal-container-button button {
+  background-color: #7D210A;
+  width: 125px;
   font-size: 0.8rem;
-  color: #D5C29B;
+  color: white;
+  border: 2px solid #5E1800;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.CrimeSceneModal-container-button button:hover, .CrimeSceneModal-container-button button:focus {
+  background-color: #5E1800;
+  border: 2px solid #7D210A;
 }
 
 .CrimeSceneModal-textContainer {
-  background-color: #FFC120;
+  background-color: #E9990B;
   padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
