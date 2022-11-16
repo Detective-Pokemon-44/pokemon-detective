@@ -1,4 +1,6 @@
-export default function About () {
+import { detectives } from '../utils/detectives';
+
+export default function About() {
     return (
         <main className="About-page">
             <section className="About-header">
@@ -18,77 +20,29 @@ export default function About () {
 
             <section className="wrapper">
                 <h2>Meet the Detectives</h2>
-                
                 <div className="Creators-container">
-
-                    <div className="creator1">
-                        <div className="badge-container">
-                            <div className="badge-description">
-                                <p>Detective</p>
-                                <span className="detective-name">Karl Lu</span>
-                                <div className="medias">
-                                    <p className="Button-about"><a href="https://github.com/lunarpirate" target="_blank" rel="noopener noreferrer">Github</a></p>
-                                    <p className="Button-about"><a href="https://www.linkedin.com/in/karl-lu/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                    {detectives.map((detective, i) => {
+                        return (
+                            <div key={detective.name} className={`creator${i + 1}`}>
+                                <div className="badge-container">
+                                    <div className="badge-description">
+                                        <p>Detective</p>
+                                        <span className="detective-name">{detective.name}</span>
+                                        <div className="medias">
+                                            <p className="Button-about"><a href={detective.github} target="_blank" rel="noopener noreferrer">Github</a></p>
+                                            <p className="Button-about"><a href={detective.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                                        </div>
+                                    </div>
+                                    <div className="badge-photo">
+                                        <img className='detective-photo' src={require(`../assets/images/${detective.image}`)} alt="Pikachu detective" />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="badge-photo">
-                                <img className='detective-photo' src={require(`../assets/images/karl.jpg`)} alt="Pikachu detective" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="creator2">
-                        <div className="badge-container">
-                            <div className="badge-description">
-                                <p>Detective</p>
-                                <span className="detective-name">Paula Vivas Teixeira</span>
-                                <div className="medias">
-                                    <p className="Button-about"><a href="https://github.com/paulavivasteixeira" target="_blank" rel="noopener noreferrer">Github</a></p>
-                                    <p className="Button-about"><a href="https://www.linkedin.com/in/paulavivasteixeira/?locale=en_US" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                                </div>
-                            </div>
-                            <div className="badge-photo">
-                                <img className='detective-photo' src={require(`../assets/images/paula.png`)} alt="Paula" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="creator3">                 
-                        <div className="badge-container">
-                            <div className="badge-description">
-                                <p>Detective</p>
-                                <span className="detective-name">Philip Miles</span>
-                                <div className="medias">
-                                    <p className="Button-about"><a href="https://github.com/pgm87" target="_blank" rel="noopener noreferrer">Github</a></p>
-                                    <p className="Button-about"><a href="https://www.linkedin.com/in/philip-miles-01570b24b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                                </div>
-                            </div>
-                            <div className="badge-photo">
-                                <img className='detective-photo' src={require(`../assets/images/phil.jpg`)} alt="Pikachu detective" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="creator4">
-                        <div className="badge-container">
-                            <div className="badge-description">
-                                <p>Detective</p>
-                                <span className="detective-name">Serena Kang</span>
-                                <div className="medias">
-                                    <p className="Button-about"><a href="https://github.com/serenakang77" target="_blank" rel="noopener noreferrer">Github</a></p>
-                                    <p className="Button-about"><a href="https://www.linkedin.com/in/serena-kang-0443941b2/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-                                </div>
-                            </div>
-                            <div className="badge-photo">
-                                <img className='detective-photo' src={require(`../assets/images/serena.webp`)} alt="Pikachu detective" />
-                            </div>
-                        </div>
-                    </div>
-                    
+                        )
+                    })
+                    }
                 </div>
-            </section>   
+            </section>
         </main>
-        
     )
-
 }
