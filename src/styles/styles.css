@@ -1078,12 +1078,12 @@ a {
 
 .Pokemon-close-button-container {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   right: 5%;
   -webkit-filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
           filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
-  top: 0;
+  top: 15px;
 }
 @media (max-width: 480px) {
   .Pokemon-close-button-container {
