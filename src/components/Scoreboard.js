@@ -27,8 +27,6 @@ export default function Scoreboard() {
     <div className="main">
       <div className="Scoreboard">
         <h2 className="Score-title">Top Detectives</h2>
-        <img className="crown" src={require('../assets/images/crown1.png')} alt="first place crown" />
-        <div></div>
         <ul className="Score-list">
           {highScores.map((highScore, i) => {
             return (
@@ -45,9 +43,9 @@ export default function Scoreboard() {
               </li>
             )
           })}
+        </ul>
           <h3 className="Your-score">Your score: {endScore}</h3>
           <Link to="/"><button className="Go-back Go-back-button">X</button></Link>
-        </ul>
       </div>
     </div>
   )
