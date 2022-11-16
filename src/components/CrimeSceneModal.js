@@ -6,6 +6,7 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg";
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
 import { useUpdateLocation } from './ContextLocation';
+import swal from 'sweetalert';
 
 import Score from "./Score";
 
@@ -34,7 +35,7 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
       const trueOrFalse = gameLogic(pokemonFoundById, crimeSelected, updateScore);
       setCrimeSolved(trueOrFalse);
     } else {
-      alert("PICK SOMETHING");
+      swal("Choose a Pokemon Detective to solve this mystery!");
     }
   };
 

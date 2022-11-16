@@ -22,7 +22,7 @@
     display: flex;
     margin: 0;
     padding: 0;
-    padding-top: 40px;
+    padding-top: 85px;
     justify-content: space-between;
     @media (max-width: 1100px) {
         flex-wrap: wrap;
@@ -239,7 +239,6 @@
     transform:rotate(45deg);
     width:100%;
     border-radius: 10px;
-    // border: 2px solid rgb(104, 71, 71);
     border: 5px solid #d8ceba;
     box-shadow: 
     3px 3px 10px #d8ceba7e, 
