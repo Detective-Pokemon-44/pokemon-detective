@@ -14,8 +14,6 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
-
-
   const score = useScore();
   const updateScore = useUpdateScore();
   const username = useUsername();
