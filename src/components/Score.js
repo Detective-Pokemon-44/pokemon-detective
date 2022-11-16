@@ -29,7 +29,7 @@ export default function Score() {
       set(dbRef, highscores)
     } else {
       if (score > data[9].score) {
-        data.push({name: username, score: score});
+        data.push({ name: username, score: score });
         const highscores = data.sort((a, b) => b.score - a.score).slice(0, 10);
         set(dbRef, highscores);
       }
@@ -46,6 +46,6 @@ export default function Score() {
   }
 
   return (
-    <button onClick={(e) => handleClick(e)}>Submit score and quit game</button>
+    <button className="PHIL" onClick={(e) => handleClick(e)}>Submit score and quit game</button>
   )
 }

@@ -1494,13 +1494,13 @@ a {
 }
 
 .card-exit {
-  opacity: 1;
-}
-
-.card-exit-active {
   opacity: 0;
   -webkit-transition: opacity 1000ms;
   transition: opacity 1000ms;
+}
+
+.card-exit-active {
+  opacity: 1;
 }
 
 .card-enter {

@@ -42,6 +42,7 @@ export default function Pokemon({ pokemonInfo }) {
         className='Pokemon-modal'
         onRequestClose={toggleModal}
         appElement={document.getElementById("root")}
+        closeTimeoutMS={500}
       >
         <div className='Pokemon-close-button-container'>
           <img
