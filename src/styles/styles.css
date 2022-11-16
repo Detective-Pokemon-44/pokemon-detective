@@ -1126,11 +1126,11 @@ a {
           align-items: center;
   width: 80vw;
   min-height: 75vh;
+  max-width: 900px;
+  width: 90vw;
   position: relative;
   background-color: #273878;
   border-radius: 25px;
-  max-width: 900px;
-  width: 90vw;
   -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
 }
@@ -1139,35 +1139,26 @@ a {
     max-width: 730px;
   }
 }
+@media (max-width: 810px) {
+  .Scoreboard {
+    margin: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .Scoreboard {
+    min-width: 320px;
+  }
+}
 
 .Score-title {
-  position: absolute;
-  left: 32%;
-  top: -20px;
-}
-
-.crown {
-  width: 50px;
-  position: absolute;
-  top: 110px;
-  left: 3%;
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
-}
-@media (max-width: 1000px) {
-  .crown {
-    left: 2%;
-    top: 100px;
-    -webkit-transform: rotate(-8deg);
-            transform: rotate(-8deg);
-  }
+  font-size: clamp(2.2rem, 1.6753rem + 2.583vw, 4rem);
 }
 
 .Score-list {
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
-  margin-top: 8rem;
+  margin-top: 25px;
   -webkit-column-gap: 1.8rem;
      -moz-column-gap: 1.8rem;
           column-gap: 1.8rem;
@@ -1176,6 +1167,36 @@ a {
   transition: 0.3s;
   font-size: 0;
 }
+.Score-list li:nth-child(1) {
+  position: relative;
+}
+.Score-list li:nth-child(1)::before {
+  content: url("../assets/images/crown1.png");
+  z-index: 10;
+  position: absolute;
+  top: -25px;
+  left: -10px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+@media (max-width: 810px) {
+  .Score-list {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+    -webkit-column-gap: 0px;
+       -moz-column-gap: 0px;
+            column-gap: 0px;
+    min-width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .Score-list {
+    width: 200px;
+    margin-left: -67px;
+  }
+}
+
 .Scoreboard-listItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1184,9 +1205,6 @@ a {
   min-width: 300px;
   max-width: 470px;
   background-color: #1a2652;
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
   margin-bottom: 15px;
 }
 .Scoreboard-listItem span {
@@ -1197,10 +1215,17 @@ a {
 }
 @media (max-width: 1000px) {
   .Scoreboard-listItem {
-    -webkit-column-count: 1;
-       -moz-column-count: 1;
-            column-count: 1;
     gap: 5px;
+  }
+}
+@media (max-width: 810px) {
+  .Scoreboard-listItem {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .Scoreboard-listItem {
+    min-width: 270px;
   }
 }
 
@@ -1220,6 +1245,17 @@ a {
 .Score-name .Score-name-span {
   color: white;
 }
+@media (max-width: 810px) {
+  .Score-name {
+    width: 170px;
+  }
+}
+@media (max-width: 480px) {
+  .Score-name {
+    width: 160px;
+  }
+}
+
 .Score-score {
   width: 60px;
   padding-right: 0;
@@ -1230,20 +1266,16 @@ a {
 .Score-score span {
   color: #1a2652;
 }
-
-.Go-back {
-  position: absolute;
-  top: 10px;
-  right: 12px;
+@media (max-width: 480px) {
+  .Score-score {
+    width: 50px;
+  }
 }
 
 .Your-score {
   width: 350px;
   height: 60px;
   text-align: center;
-  position: absolute;
-  left: 240px;
-  bottom: 0;
   border-radius: 25px;
   background-color: #FFC120;
   border: 5px solid #E9990B;
@@ -1254,9 +1286,9 @@ a {
   -webkit-animation: pulse 2s 2;
           animation: pulse 2s 2;
 }
-@media (max-width: 1000px) {
+@media (max-width: 810px) {
   .Your-score {
-    left: 190px;
+    width: 280px;
   }
 }
 
@@ -1311,6 +1343,12 @@ a {
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
+}
+
+.Go-back {
+  position: absolute;
+  top: 10px;
+  right: 12px;
 }
 
 .CrimeSceneModal-modal {
