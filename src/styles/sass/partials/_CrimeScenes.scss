@@ -290,11 +290,15 @@
         width: 70px;
         border-radius: 25px; 
         position: absolute;
-        right: 0;
-        top: -5px;
+        left: -5px;
+        top: -20px;
     }
     .Gamebar-title{
         position: absolute;
         top: -5px;
+        left: 35%;
+    }
+    .scoreCounter{
+        color: $white;
     }
 }
