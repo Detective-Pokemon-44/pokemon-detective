@@ -6,8 +6,6 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg"
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
-
-  console.log(pokemonInfo)
   let crimeStrengths = []
   pokemonInfo.types.map((individualType) => {
     // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
@@ -25,9 +23,6 @@ export default function Pokemon({ pokemonInfo }) {
             src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
             alt={pokemonInfo.name}
           />
-          {/* {pokemonInfo.types.map((pokemonPower) => (
-            <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
-          ))} */}
           <div className='Pokemon-hover'>
             <p className='Pokemon-nameCenter'>
               <strong>{capitalizeFirstLetter(pokemonInfo.name)}</strong>
