@@ -6,7 +6,6 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg";
 
 import { useScore, useUpdateScore } from './ContextScore';
 import { useUsername } from './ContextUsername';
-
 import { useUpdateLocation } from './ContextLocation';
 
 import Score from "./Score";
@@ -36,13 +35,16 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
     }
   };
 
+  const calculateGameLogic = () => {
+    return gameLogic(selectedPokemon, crimeSelected, updateScore);
+  }
   // call game logic on pokemon selection from modal
   useEffect(() => {
     if (selectedPokemon) {
-      const trueOrFalse = gameLogic(selectedPokemon, crimeSelected, updateScore);
+      const trueOrFalse = calculateGameLogic();
       setCrimeSolved(trueOrFalse);
     }
-  }, [selectedPokemon]);
+  }, [selectedPokemon, calculateGameLogic]);
 
   return (
     <>
@@ -116,5 +118,6 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         </div>
       )}
     </>
-  )
+
+  );
 }

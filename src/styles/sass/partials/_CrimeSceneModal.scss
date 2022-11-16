@@ -4,16 +4,14 @@
 .CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
-    height: 80%;
-    // top: calc(50% - 300px);
-    // left: calc(50% - 300px);
-    top: 7%;
-    left: 23%;
+    max-height: 800px;
+    top: 2%;
+    left: calc(50% - 300px);
     border: 1px solid $primaryDarkColor;
     background: $primaryColor;
     overflow: auto;
     outline: none;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -21,18 +19,18 @@
     background-color: $lightColor;
 
     @include tablet {
-        min-height: 90%;
-        top: calc(5% - 10px);
-        left: 7%;
+        width: 600px;
+    }
+
+    @media (max-width:690px) {
+        width: 500px;
+        left: calc(50% - 250px);
     }
 
     @include mobile {
-        top: 2%;
-        left: 5%;
-        max-width: 324px;
-        min-height: 90%;
+        width: 300px;
+        left: calc(50% - 150px);
     }
-
 }
 
 .CrimeSceneModal-close-button-container {
@@ -40,7 +38,12 @@
     width: 50px;
     height: 50px;
     right: 5%;
-    top: 5%;
+    filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+
+    @include mobile {
+        width: 30px;
+        height: 30px;
+    }
 
     img {
         width: 100%;
@@ -71,10 +74,10 @@
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
 
     @include mobile {
-
+        padding: 10px 5px;
         flex-direction: column;
+        align-self: flex-end;
     }
-
 }
 
 .CrimeSceneModal-container {
@@ -102,16 +105,19 @@
     margin-top: 2%;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
 
-    @include mobile {
-        width: 90%;
-        margin: 2% auto;
+    @include tablet {
+        padding: 1%;
+        width: 50%;
     }
 
-
+    @include mobile {
+        width: 80%;
+    }
 
     h4 {
         font-size: 1.6rem;
         font-weight: 600;
+        margin: 3px 0;
     }
 
     h5 {
@@ -134,7 +140,6 @@
     border-radius: 50%;
     align-self: center;
     margin-bottom: 20px;
-
 
 
     &:checked {
@@ -172,6 +177,7 @@
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
+
 
     @include mobile {
         flex-direction: row;

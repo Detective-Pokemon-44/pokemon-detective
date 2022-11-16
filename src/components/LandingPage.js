@@ -5,7 +5,8 @@ import {useUpdateUsername} from './ContextUsername';
 
 import pokemonLogo from '../assets/images/pd-logo.png';
 import aboutIcon from '../assets/images/circle-info-solid.svg';
-
+import { Modal } from '@mui/material';
+import swal from 'sweetalert';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ export default function LandingPage() {
 
   function handleClick(e) {
     e.preventDefault();
+    !username && swal('Hey Detective! Please enter your name.');
     updateUser(username);
     resetUsername();
   }
@@ -25,7 +27,7 @@ export default function LandingPage() {
       <div className='LandingPage card'>
         <div className="LandingPage-aboutContainer">
           <Link to="/about">
-          <img src={aboutIcon} className="LandingPage-aboutIcon" />
+          <img src={aboutIcon} className="LandingPage-aboutIcon" alt="about"/>
           </Link>
         </div>
         <div className="LandingPage-imgContainer">
@@ -38,6 +40,7 @@ export default function LandingPage() {
             name='username'
             onChange={updateUsername}
             value={username}
+            maxLength={10} 
           />
           <div className="LandingPage-formButtonContainer">
             <button type='submit' onClick={handleClick}>

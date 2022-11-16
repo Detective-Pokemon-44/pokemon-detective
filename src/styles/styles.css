@@ -304,6 +304,9 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+.Location h2 {
+  font-size: 2rem;
+}
 
 .Location-locationsContainer {
   display: -webkit-box;
@@ -350,6 +353,10 @@ a {
 .doorEntrance:focus {
   cursor: pointer;
 }
+.doorEntrance p {
+  color: black;
+  font-size: 1rem;
+}
 .doorEntrance:hover .doorFront {
   -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
           transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
@@ -364,15 +371,52 @@ a {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
+
+.doorEntrance {
+  position: relative;
+  z-index: 0;
+  height: 150px;
+  background-color: black;
+  width: 75px;
+  margin: 20px;
+  padding: 2%;
+  border-radius: 20% 20% 0 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.doorEntrance .coatOfArms {
+  position: absolute;
+  z-index: 10;
+  width: 60px;
+  height: 75px;
+  top: 25%;
+  left: 15%;
+}
+.doorEntrance:hover {
+  cursor: pointer;
+}
+.doorEntrance:focus {
+  cursor: pointer;
+}
 .doorEntrance .doorFront {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   border-radius: 20% 20% 0 0;
-  background-color: #FFC120;
+  background-color: #D5C29B;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  border: 1px solid black;
+  border-collapse: separate;
+}
+.doorEntrance .doorFront .doorknob {
+  position: absolute;
+  z-index: 30;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  right: 5%;
 }
 .doorEntrance .doorFront:hover {
   -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
@@ -984,6 +1028,43 @@ a {
   }
 }
 
+.Pokemon-close-button-container {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 5%;
+  -webkit-filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+          filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+  top: 0;
+}
+@media (max-width: 480px) {
+  .Pokemon-close-button-container {
+    width: 30px;
+    height: 30px;
+  }
+}
+.Pokemon-close-button-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.Pokemon-close-button-container img:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.Pokemon-close-button-container img:focus {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .Scoreboard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1005,24 +1086,32 @@ a {
   -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
 }
+@media (max-width: 1000px) {
+  .Scoreboard {
+    max-width: 730px;
+  }
+}
 
 .Score-title {
   position: absolute;
   left: 32%;
-  top: 0;
+  top: -20px;
 }
 
 .crown {
   width: 50px;
   position: absolute;
-  top: 140px;
+  top: 110px;
   left: 3%;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
 }
 @media (max-width: 1000px) {
   .crown {
-    left: 0;
+    left: 2%;
+    top: 100px;
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
   }
 }
 
@@ -1030,7 +1119,7 @@ a {
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
-  margin-top: 10rem;
+  margin-top: 8rem;
   -webkit-column-gap: 1.8rem;
      -moz-column-gap: 1.8rem;
           column-gap: 1.8rem;
@@ -1039,7 +1128,6 @@ a {
   transition: 0.3s;
   font-size: 0;
 }
-
 .Scoreboard-listItem {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1084,7 +1172,6 @@ a {
 .Score-name .Score-name-span {
   color: white;
 }
-
 .Score-score {
   width: 60px;
   padding-right: 0;
@@ -1127,6 +1214,11 @@ a {
           transform: scale(1);
   -webkit-animation: pulse 2s 2;
           animation: pulse 2s 2;
+}
+@media (max-width: 1000px) {
+  .Your-score {
+    left: 190px;
+  }
 }
 
 @-webkit-keyframes pulse {
@@ -1173,14 +1265,14 @@ a {
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  height: 80%;
-  top: 7%;
-  left: 23%;
+  max-height: 800px;
+  top: 2%;
+  left: calc(50% - 300px);
   border: 1px solid #5E1800;
   background: #7D210A;
   overflow: auto;
   outline: none;
-  padding: 20px;
+  padding: 15px;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1196,17 +1288,19 @@ a {
 }
 @media (max-width: 810px) {
   .CrimeSceneModal-modal {
-    min-height: 90%;
-    top: calc(5% - 10px);
-    left: 7%;
+    width: 600px;
+  }
+}
+@media (max-width: 690px) {
+  .CrimeSceneModal-modal {
+    width: 500px;
+    left: calc(50% - 250px);
   }
 }
 @media (max-width: 480px) {
   .CrimeSceneModal-modal {
-    top: 2%;
-    left: 5%;
-    max-width: 324px;
-    min-height: 90%;
+    width: 300px;
+    left: calc(50% - 150px);
   }
 }
 
@@ -1215,7 +1309,14 @@ a {
   width: 50px;
   height: 50px;
   right: 5%;
-  top: 5%;
+  -webkit-filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+          filter: invert(11%) sepia(56%) saturate(3299%) hue-rotate(5deg) brightness(92%) contrast(101%);
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-close-button-container {
+    width: 30px;
+    height: 30px;
+  }
 }
 .CrimeSceneModal-close-button-container img {
   width: 100%;
@@ -1254,10 +1355,13 @@ a {
 }
 @media (max-width: 480px) {
   .CrimeSceneModal-fieldset {
+    padding: 10px 5px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
@@ -1300,15 +1404,21 @@ a {
   -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
 }
+@media (max-width: 810px) {
+  .CrimeSceneModal-textContainer {
+    padding: 1%;
+    width: 50%;
+  }
+}
 @media (max-width: 480px) {
   .CrimeSceneModal-textContainer {
-    width: 90%;
-    margin: 2% auto;
+    width: 80%;
   }
 }
 .CrimeSceneModal-textContainer h4 {
   font-size: 1.6rem;
   font-weight: 600;
+  margin: 3px 0;
 }
 .CrimeSceneModal-textContainer h5 {
   font-size: 1.5rem;
