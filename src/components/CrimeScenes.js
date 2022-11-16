@@ -100,6 +100,8 @@ export default function CrimeScenes() {
               onRequestClose={toggleModal}
               appElement={document.getElementById("root")}
               closeTimeoutMS={500}
+              shouldCloseOnOverlayClick={false}
+              contentLabel={"Select Pokemon for the Crime"}
             >
               <CrimeSceneModal pokemon={pokemon} crimeSelected={crimeSelected} toggleModal={toggleModal} />
             </ReactModal>
