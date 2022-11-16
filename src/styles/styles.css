@@ -309,6 +309,14 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 480px) {
+  .Navbar {
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 
 .Location {
   display: -webkit-box;
@@ -553,6 +561,7 @@ a {
 @media (max-width: 1100px) {
   .CrimeScenes {
     padding: 10px;
+    padding-top: 30px;
     min-height: 600px;
   }
 }
@@ -563,7 +572,7 @@ a {
   display: flex;
   margin: 0;
   padding: 0;
-  padding-top: 85px;
+  padding-top: 90px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -627,7 +636,7 @@ a {
   position: absolute;
   z-index: 10;
   color: #1a2652;
-  font-size: clamp(0.7rem, 2.5vw, 1.1rem);
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
   background-color: rgba(255, 255, 255, 0.362);
   border-radius: 3px;
 }
@@ -903,26 +912,6 @@ a {
 .Pokemon-hover:hover p {
   color: rgb(0, 0, 0);
   z-index: 10;
-}
-
-.Gamebar {
-  position: relative;
-}
-.Gamebar .Go-back-button2 {
-  width: 70px;
-  width: 70px;
-  border-radius: 25px;
-  position: absolute;
-  left: -5px;
-  top: -20px;
-}
-.Gamebar .Gamebar-title {
-  position: absolute;
-  top: -5px;
-  left: 35%;
-}
-.Gamebar .scoreCounter {
-  color: white;
 }
 
 .Pokemon-image {
@@ -1962,8 +1951,25 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .Gamebar .Gamebar-title {
   color: white;
-  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
+  font-size: clamp(1.2rem, 0.8333rem + 1.1852vw, 2rem);
+}
+.Gamebar .Gamebar-below {
+  position: absolute;
+  top: 120%;
+  width: 100%;
+  text-align: center;
+}
+.Gamebar .Go-back-button2 {
+  width: 70px;
+  border-radius: 25px;
+}
+.Gamebar .scoreCounter {
+  color: white;
 }
