@@ -50,12 +50,22 @@
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-top: 170px;
+    max-width: 900px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    gap: 2vw;
+    margin-top: 15vw;
     flex-wrap: wrap;
     margin-bottom: 15vw;
-    @media (max-width: 1100px) {
-        gap: 20px;
+    @include tablet {
+        margin-top: 10px;
+        gap: 7.5vw;
+    }
+
+    @include mobile {
         margin-top: 0;
+        gap: 6vw;
     }
 }
 
@@ -223,18 +233,20 @@
 .shape-section {
     background: transparent;
     list-style-type: none;
-    width: 25%;
+    width: 30%;
     padding: 3%;
-    max-width: 260px;
+    max-width: 300px;
     min-width: 70px;
-    margin-bottom: -10vw;
+    margin-bottom: clamp(-150px, -13vw, -55px);
     @include tablet{
-        padding: 2%;
-        margin-bottom: -10vw;
+        // padding: 2%;
+        width: 25%;
+        padding: 0;
+        margin-bottom: -14vw;
     }
     @include mobile{
-        padding: 1%;
-        margin-bottom: -10vw;
+        width: 25%;
+        margin-bottom: -50px;
     }
 }
 .Pokemon-diamondShape {
