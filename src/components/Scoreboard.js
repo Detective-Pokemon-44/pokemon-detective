@@ -9,24 +9,20 @@ export default function Scoreboard() {
   const nodeRef = useRef(null);
   // Limit to 10 scores
   const [highScores, setHighScores] = useState([]);
-  const database = getDatabase(firebaseConfig);
-  const dbRef = ref(database, `container`);
   const endScore = useEndScore();
 
   useEffect(() => {
-    onValue(dbRef, (res) => {
-      const data = res.val()
-      let temp = [];
-      for (const item in data) {
-        temp.push(data[item]);
-      }
-      const filteredData = temp
-        .sort((a, b) => b.Score - a.Score)
-        .slice(0, 10)
-      setHighScores(filteredData);
+    function retrieveHighscores() {
+      const database = getDatabase(firebaseConfig);
+      const dbRef = ref(database, "highscores");
+      onValue(dbRef, (res) => {
+        const data = res.val();
+        setHighScores(data);
+      })
+    }
 
-    })
-  }, [dbRef])
+    retrieveHighscores();
+  }, [])
 
   return (
     <CSSTransition

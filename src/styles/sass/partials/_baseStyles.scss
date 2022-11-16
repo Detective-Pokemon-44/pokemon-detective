@@ -2,7 +2,6 @@
 
 .card {
     padding: 30px;
-    // background-color: lavender;
     background-color: $primaryColor;
     border-radius: 15px;
     box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
@@ -17,23 +16,25 @@
 }
 
 a {
-    color: $secondaryColor;
+    color: $white;
     text-decoration: none;
 }
 
 button {
     width: 120px;
     height: 50px;
-    background-color: $primaryDarkColor;
+    background-color: $lightColor;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+    border: none;
     cursor: pointer;
-    box-shadow: 2px 2px 15px $primaryColor;
+    box-shadow: 2px 2px 15px $primaryDarkColor;
     a {
-        color: $lightColor;
+        color: $secondaryDarkColor;
+        font-weight: bold;
     }
     &:hover,
     &:focus {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
@@ -31,21 +31,12 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
         (pokemon) => pokemon.id === pokemonId
       );
       setSelectedPokemon(pokemonFoundById);
+      const trueOrFalse = gameLogic(pokemonFoundById, crimeSelected, updateScore);
+      setCrimeSolved(trueOrFalse);
     } else {
       alert("PICK SOMETHING");
     }
   };
-
-  const calculateGameLogic = () => {
-    return gameLogic(selectedPokemon, crimeSelected, updateScore);
-  }
-  // call game logic on pokemon selection from modal
-  useEffect(() => {
-    if (selectedPokemon) {
-      const trueOrFalse = calculateGameLogic();
-      setCrimeSolved(trueOrFalse);
-    }
-  }, [selectedPokemon]);
 
   return (
     <>
