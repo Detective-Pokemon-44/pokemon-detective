@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactModal from 'react-modal';
-
 import useToggleState from '../hooks/useToggleState';
 import { isNotUnique, randNum } from '../utils/functions';
 import crimeAPICall from '../utils/crimeAPICall';
@@ -21,6 +20,7 @@ export default function CrimeScenes() {
   const [inProp, setInProp] = useState(false);
   const nodeRef = useRef(null);
   const location = useLocation();
+
 
   const handleCrimeClick = (crime) => {
     setCrimeSelected(crime);
