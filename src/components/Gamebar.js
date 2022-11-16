@@ -11,7 +11,7 @@ export default function Gamebar() {
     return (
         <div className="Gamebar">
             <span><Score /></span>
-            <span>{location ? `Welcome to ${location[0]}, ${username}!` : ""}</span>
+            <span className="Gamebar-title">{location ? `Welcome to ${location[0]}, ${username}!` : ""}</span>
             <span>{score > 0 && `Cases Solved: ${score}`}</span>
         </div>
     )
