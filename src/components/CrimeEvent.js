@@ -6,6 +6,10 @@ export default function CrimeEvent({ individual, i }) {
       :before {
         content: "${+individual.id.toString().slice(4, 9)}";
       }
+      height: 50px;
+      @media (max-width: 720px) {
+        height: 30px;
+      }
     `
 
   return (
