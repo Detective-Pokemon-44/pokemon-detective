@@ -17,16 +17,13 @@
     flex-direction: column;
     align-items: center;
     background-color: $lightColor;
-
     @include tablet {
         width: 600px;
     }
-
     @media (max-width:690px) {
         width: 500px;
         left: calc(50% - 250px);
     }
-
     @include mobile {
         width: 300px;
         left: calc(50% - 150px);
@@ -39,7 +36,6 @@
     height: 50px;
     right: 5%;
     filter: invert(20%) sepia(73%) saturate(938%) hue-rotate(200deg) brightness(89%) contrast(96%);
-
     @include mobile {
         width: 30px;
         height: 30px;
@@ -50,13 +46,11 @@
         height: auto;
         display: block;
         transition: 0.3s;
-
         &:hover {
             transform: rotateZ(180deg);
             cursor: pointer;
             transition: 0.3s;
         }
-
         &:focus {
             transform: rotateZ(180deg);
             cursor: pointer;
@@ -72,7 +66,6 @@
     margin: 30px 0;
     border: 2px solid $primaryDarkColor;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
-
     @include mobile {
         padding: 10px 5px;
         flex-direction: column;
@@ -89,19 +82,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
     button {
         background-color: $primaryColor;
         width: 125px;
+        height: 55px;
         font-size: 0.8rem;
+        padding: 5px;
         color: $white;
         border: 2px solid $primaryDarkColor;
         transition: 0.4s ease-in-out;
-
         &:hover,
         &:focus {
             background-color: $primaryDarkColor;
-            border: 2px solid $primaryColor;
+            color: $white;
+            border: 1px solid $lightColor;
         }
     }
 }
@@ -115,27 +109,22 @@
     margin-top: 2%;
     box-shadow: 0 3px 2px 1px rgba(0, 0, 0, .5);
     border-radius: 10px;
-
     @include tablet {
         padding: 1%;
         width: 50%;
     }
-
     @include mobile {
         width: 80%;
     }
-
     h4 {
         font-size: 1.6rem;
         font-weight: 600;
         margin: 3px 0;
         color: $white;
     }
-
     h5 {
         font-size: 1.5rem;
     }
-
     p {
         font-size: 1.2rem;
     }
@@ -152,34 +141,25 @@
     border-radius: 50%;
     align-self: center;
     margin-bottom: 20px;
-
-
     &:checked {
         background-image: url(../assets/images/Pokeball.svg);
         filter: sepia(80%);
     }
-
     &:hover {
         cursor: pointer;
     }
-
     &:focus {
         cursor: pointer;
     }
 }
 
-
-
-
 .CrimeSceneModal-image {
     width: 75px;
     max-height: 6em;
     filter: sepia(20%);
-
     &:hover {
         cursor: pointer;
     }
-
     &:focus {
         cursor: pointer;
     }
@@ -189,8 +169,6 @@
     display: flex;
     align-items: center;
     flex-direction: column-reverse;
-
-
     @include mobile {
         flex-direction: row;
         justify-content: space-around;
@@ -206,9 +184,6 @@
     align-items: center;
     margin-bottom: 30px;
     padding: 10px;
-
-
-
 }
 
 .CrimeSceneModal-resultsContainer button {
@@ -217,5 +192,19 @@
 
 .CrimeSceneModal-miniInfoContainer {
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    button {
+        background-color: $primaryColor;
+        color: $white;
+        transition: 0.3s ease-in-out;
+        &:hover,
+        &:focus {
+            background-color: $primaryDarkColor;
+            color: $white;
+            border: 2px solid $lightColor;
+        }
+    }
+    .Go-back-button2 {
+        width: 110px;
+    }
 }

@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use "mixins" as *;
 
 .Gamebar {
     width: 100%;
@@ -15,10 +16,6 @@
         top: 120%;
         width: 100%;
         text-align: center;
-    }
-    .Go-back-button2{
-        width: 70px;
-        border-radius: 25px; 
     }
     .scoreCounter{
         color: $white;

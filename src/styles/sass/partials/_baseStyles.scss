@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use "mixins" as *;
 
 .wrapper {
     max-width: 1440px;
@@ -34,49 +35,38 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
     color: $primaryDarkColor;
     border: 3px solid $primaryColor;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
     a {
-        color: $secondaryDarkColor;
-        font-weight: bold;
+        color: $primaryDarkColor;
     }
     &:hover,
     &:focus {
-        background-color: $secondaryDarkColor;
+        background-color: $primaryDarkColor;
         color: $white;
-        border: none;
-        box-shadow: inset 2px 0 15px $secondaryColor
+        border: 1px solid $white;
         a {
             color: $white;
         }
     }
 }
 
-// .Go-back-button {
-//     width: 40px;
-//     height: 40px;
-//     color: $primaryColor;
-//     font-weight: bold;
-//     background-color: white;
-//     border-radius: 40px;
-//     box-shadow: none;
-//     border: none;
-// }
-
 .Go-back-button2 {
     color: $primaryColor;
     background-color: white;
-
-    border: none;
-    &:hover {
-        color: $white;
-        padding: 5px 10px;
-    }
+    border: 2px solid $primaryDarkColor;
+    width: 57px;
+    height: 52px;
+    font-size: 1.1rem;
+    border-radius: 15px; 
+    &:hover,
     &:focus {
-        border: 1px solid $white;          
+        background-color: $primaryDarkColor;
+        color: $white;
+        border: 2px solid rgba(255, 255, 255, 0.336);
+        padding: 5px 10px;
     }
 }

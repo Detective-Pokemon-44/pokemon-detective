@@ -213,8 +213,6 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   color: #1a2652;
   border: 3px solid #273878;
   cursor: pointer;
@@ -224,29 +222,31 @@ button {
           box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
 }
 button a {
-  color: #E9990B;
-  font-weight: bold;
+  color: #1a2652;
 }
 button:hover, button:focus {
-  background-color: #E9990B;
+  background-color: #1a2652;
   color: white;
-  border: none;
-  -webkit-box-shadow: inset 2px 0 15px #FFC120 a;
-          box-shadow: inset 2px 0 15px #FFC120 a;
-  box-shadow-color: white;
+  border: 1px solid white;
+}
+button:hover a, button:focus a {
+  color: white;
 }
 
 .Go-back-button2 {
   color: #273878;
   background-color: white;
-  border: none;
+  border: 2px solid #1a2652;
+  width: 57px;
+  height: 52px;
+  font-size: 1.1rem;
+  border-radius: 15px;
 }
-.Go-back-button2:hover {
+.Go-back-button2:hover, .Go-back-button2:focus {
+  background-color: #1a2652;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.336);
   padding: 5px 10px;
-}
-.Go-back-button2:focus {
-  border: 1px solid white;
 }
 
 @font-face {
@@ -1489,7 +1489,9 @@ a {
 .CrimeSceneModal-container-button button {
   background-color: #273878;
   width: 125px;
+  height: 55px;
   font-size: 0.8rem;
+  padding: 5px;
   color: white;
   border: 2px solid #1a2652;
   -webkit-transition: 0.4s ease-in-out;
@@ -1497,7 +1499,8 @@ a {
 }
 .CrimeSceneModal-container-button button:hover, .CrimeSceneModal-container-button button:focus {
   background-color: #1a2652;
-  border: 2px solid #273878;
+  color: white;
+  border: 1px solid #D5C29B;
 }
 
 .CrimeSceneModal-textContainer {
@@ -1627,7 +1630,21 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
+  gap: 10px;
+}
+.CrimeSceneModal-miniInfoContainer button {
+  background-color: #273878;
+  color: white;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.CrimeSceneModal-miniInfoContainer button:hover, .CrimeSceneModal-miniInfoContainer button:focus {
+  background-color: #1a2652;
+  color: white;
+  border: 2px solid #D5C29B;
+}
+.CrimeSceneModal-miniInfoContainer .Go-back-button2 {
+  width: 110px;
 }
 
 .card-exit {
@@ -2022,10 +2039,6 @@ a {
   top: 120%;
   width: 100%;
   text-align: center;
-}
-.Gamebar .Go-back-button2 {
-  width: 70px;
-  border-radius: 25px;
 }
 .Gamebar .scoreCounter {
   color: white;
