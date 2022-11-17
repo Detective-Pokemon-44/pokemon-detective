@@ -46,6 +46,6 @@ export default function Score() {
   }
 
   return (
-    <button className="Go-back-button2" onClick={(e) => handleClick(e)} >Quit game</button>
+    <button className="Go-back-button2" onClick={(e) => handleClick(e)} >Quit</button>
   )
 }
