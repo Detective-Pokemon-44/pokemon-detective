@@ -5,7 +5,6 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { useEndScore } from "./ContextScore";
 
 export default function Scoreboard() {
-  // export default function Scoreboard() {
   // Limit to 10 scores
   const [highScores, setHighScores] = useState([]);
   const endScore = useEndScore();
@@ -44,8 +43,8 @@ export default function Scoreboard() {
             )
           })}
         </ul>
-          <h3 className="Your-score">Your score: {endScore}</h3>
-          <Link to="/"><button className="Go-back Go-back-button">X</button></Link>
+        <h3 className="Your-score">Your score: {endScore}</h3>
+        <Link to="/"><button className="Go-back Go-back-button">X</button></Link>
       </div>
     </div>
   )
