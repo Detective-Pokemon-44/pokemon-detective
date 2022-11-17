@@ -4,9 +4,9 @@ const crimeObject =
     alternate: "Harassment of Pokemon",
     weaknesses: ["psychic", "water", "ice", "fairy"],
     backstory: "A citizen has been harassing pokemon at the pokemon gym",
-    pokemonskill: "harrasment",
+    pokemonskill: "harassment",
     failed: "You saved an innocent pokemon from being harassed!",
-    solved: "These pokemon are free from harassment good job!"
+    solved: "These pokemon are free from harassment, good job!"
   }
   ,
   "bicycle-theft": {
@@ -15,7 +15,7 @@ const crimeObject =
     backstory: "A child's only mode of transportation has been taken away, help them find it!",
     pokemonskill: "missing vehicles",
     failed: "I suppose the child won't be able to get around the city anymore",
-    solved: "The Child will be happy to hear he got their bike back"
+    solved: "The child will be happy to hear they got their bike back"
   },
   "burglary": {
     alternate: "Break and Enter",
@@ -30,7 +30,7 @@ const crimeObject =
     weaknesses: ["ice", "ground", "steel", "water"],
     pokemonskill: "fire",
     backstory: "We got some wild people out there setting fires, I'm throwing some pokemon out there to deal with it",
-    failed: "Hmmm....I guess it's not so bad that people are setting fire right?!",
+    failed: "Hmmm....I guess it's not so bad that people are setting fires right?!",
     solved: "You're on fire today, good job buddy!"
   },
   "drugs": {
@@ -47,7 +47,7 @@ const crimeObject =
     pokemonskill: "missing valuable items",
     backstory: "Uh-oh, one of our most prestigious citizens had their diamond pendant swiped directly from them",
     failed: "I suppose the diamond pendant is gone forever then?",
-    solved: "The diamond pendant as been returned, they send their regards."
+    solved: "The diamond pendant has been returned, they send their regards."
   }
   ,
   "possession-of-weapons": {
@@ -70,7 +70,7 @@ const crimeObject =
     alternate: "Bank Robbery",
     weaknesses: ["ghost", "dark", "flying", "steel"],
     pokemonskill: "pokemon banks",
-    backstory: "TThe pokemon bank has been ransacked, we need your help, a nimble pokemon should do the trick!",
+    backstory: "The pokemon bank has been ransacked, we need your help, a nimble pokemon should do the trick!",
     failed: "Well, this was a tough bank robbery case, to be honest I didn't think you could do it",
     solved: "Looks like these folks have been robbing pokemon banks for awhile, good job rookie!"
   },
@@ -103,15 +103,15 @@ const crimeObject =
     alternate: "Pokemon Kidnapping",
     weaknesses: ["psychic", "fighting", "dragon", "fire"],
     pokemonskill: "missing pokemon",
-    backstory: "Damn, this one's a tough one, a pokemon has been kidnapped, possibly those rocket people. We need a tought pokemon for this.",
-    failed: "Oh, I suppose we'll have to tell the pokemons parents, that you failed.",
-    solved: "The pokemon has been reunited with its family, thank you so much"
+    backstory: "Damn, this one's a tough one, a pokemon has been kidnapped, possibly those rocket people. We need a tough pokemon for this.",
+    failed: "Oh, I suppose we'll have to tell the pokemon's parents that you failed.",
+    solved: "The pokemon has been reunited with their family, thank you so much"
   },
   "other-crime": {
     alternate: "Vandalism",
     weaknesses: ["water", "normal", "grass", "flying"],
     pokemonskill: "defacing property",
-    backstory: "The pokmon gym has been vandalised, help us find who did this so we can stop all this graffiti",
+    backstory: "The pokemon gym has been vandalised, help us find who did this so we can stop all this graffiti",
     failed: "Errr....not a big deal I suppose, it's just some graffiti.",
     solved: "Oh, you solved the vandalism case, good job, now try something harder."
   }
