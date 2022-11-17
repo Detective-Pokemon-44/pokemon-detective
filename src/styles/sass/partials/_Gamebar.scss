@@ -1,5 +1,24 @@
+@use './variables' as *;
+@use "mixins" as *;
+
 .Gamebar {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    align-items: center;
+    .Gamebar-title{
+        color: white;
+        font-size: clamp(1.2rem, 0.8333rem + 1.1852vw, 2rem);
+    }   
+    .Gamebar-below{
+        position: absolute;
+        top: 120%;
+        width: 100%;
+        text-align: center;
+    }
+    .scoreCounter{
+        color: $white;
+    }
 }
+

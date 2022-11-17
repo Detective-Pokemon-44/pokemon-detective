@@ -13,7 +13,7 @@ export default function Game() {
         <div className="main">
             {(!username && !location) && <LandingPage />}
             {(username && !location) && <Location />}
-            {(username && location) && <CrimeScenes />}
+            {(username && location) ? <CrimeScenes /> : ""}
         </div >
     )
 }

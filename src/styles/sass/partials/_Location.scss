@@ -5,6 +5,10 @@
     flex-direction: column;
     align-items: center;
 
+    h2 {
+        font-size: 2rem;
+    }
+
 }
 
 .Location-locationsContainer {
@@ -21,31 +25,14 @@
     flex-direction: column;
     align-items: center;
 
-}
+    label {
+        font-family: $textFont;
+        font-size: clamp(1rem, 0.4368rem + 0.9294vw, 1.25rem);
+        color: $white;
 
-
-
-// .Location-locationImg {
-//     width: 50px;
-// }
-
-.doorEntrance {
-    position: relative;
-    z-index: 0;
-    height: 150px;
-    background-color: black;
-    width: 75px;
-    margin: 20px;
-    padding: 2%;
-    border-radius: 20% 20% 0 0;
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    &:focus {
-        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &:hover .doorFront {
@@ -60,14 +47,79 @@
         transition: all 0.3s ease-in;
     }
 
+
+}
+
+.doorEntrance {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    background-color: black;
+    width: 75px;
+    margin: 20px;
+    padding: 2%;
+    border-radius: 20% 20% 0 0;
+    transition: all 0.5s ease-in-out;
+
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        cursor: pointer;
+    }
+
+
+}
+
+.doorEntrance {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    background-color: black;
+    width: 75px;
+    margin: 20px;
+    padding: 2%;
+    border-radius: 20% 20% 0 0;
+    transition: all 0.5s ease-in-out;
+
+    .coatOfArms {
+        position: absolute;
+        z-index: 10;
+        width: 60px;
+        height: 75px;
+        top: 25%;
+        left: 15%;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        cursor: pointer;
+    }
+
     .doorFront {
         width: 100%;
         height: 100%;
         position: absolute;
-        z-index: 10;
+        z-index: 20;
         border-radius: 20% 20% 0 0;
-        background-color: $secondaryColor ;
+        background-color: $lightColor ;
         transition: all 0.3s ease-in;
+        border: 1px solid black;
+        border-collapse: separate;
+
+        .doorknob {
+            position: absolute;
+            z-index: 30;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            right: 5%;
+        }
 
         &:hover {
             transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);

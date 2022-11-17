@@ -14,39 +14,43 @@
     max-height: 700px;
     top: 10%;
     left: calc(50% - 300px);
-    border: 20px solid #ffe50a;
-    background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
+    border: 20px solid $clientOrange;
+    background-color: $primaryColor;
     overflow: auto;
     outline: none;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
-    @media(max-width: 1100px){
+    padding: 20px 0;    
+    @media(max-width: 1100px) {
         width: 400px;
         left: calc(50% - 200px);
     }
-    @include mobile{
+
+    @include mobile {
         width: 300px;
         left: calc(50% - 150px);
     }
-    p{
-    font-size: clamp(0.8rem, 0.8333rem + 0.9852vw, 1.2rem);
-    color: black;
+
+    p {
+        font-size: clamp(0.8rem, 0.8333rem + 0.9852vw, 1.2rem);
+        color: $white;
     }
-    h2{
+
+    h2 {
         margin: 20px 0;
         font-size: clamp(1.5rem, 0.6667rem + 2.7037vw, 3rem);
     }
 }
 
-.Pokemon-imageContainer{
-    background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+.Pokemon-imageContainer {
+    background-image: linear-gradient(45deg, #C4E39C, #85A45D, #C4E39C, #83A25C, #C4E39C, #93BD5C);
     width: 90%;
-    height: 250px;
-    min-height: 200px;
+    height: fit-content;
+    min-height: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,21 +58,24 @@
 }
 
 .Pokemon-modalImage {
-    width: 40%;
+    width: 35%;
+    @media (max-width: 1100px) {
+        width: 45%;
+    }
 }
 
-.Pokemon-name{
+.Pokemon-name {
     width: 90%;
     text-align: start;
 }
 
-.Pokemon-nameCenter{
+.Pokemon-nameCenter {
     position: absolute;
     margin: 20% auto;
     width: 100%;
 }
 
-.Pokemon-detail{
+.Pokemon-detail {
     position: absolute;
     margin: 43% auto 0 auto;
     width: 100%;
@@ -80,26 +87,27 @@
     gap: 30px;
     align-items: center;
     width: 90%;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $white;
 }
 
-.Pokemon-pokeball{
+.Pokemon-pokeball {
     width: 10%;
-    img{
+
+    img {
         width: 100%;
     }
 }
 
-.Pokemon-typeName{
+.Pokemon-typeName {
     font-weight: bold;
 }
 
-.Pokemon-hint{
+.Pokemon-hint {
     width: 90%;
 }
 
-.Pokemon-info{
-    background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+.Pokemon-info {
+    background-image: linear-gradient(45deg, #C4E39C, #85A45D, #C4E39C, #83A25C, #C4E39C, #93BD5C);
     width: 80%;
     font-size: 13px;
     font-weight: bold;
@@ -108,11 +116,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    p{
+
+    p {
         font-size: clamp(0.6rem, 0.5033rem + 0.6052vw, 0.8rem);
         color: black;
     }
-    @include tablet{
+
+    @include tablet {
         width: 90%;
+    }
+}
+
+.Pokemon-close-button-container {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 5%;
+    filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
+    top: 15px;
+
+
+    @include mobile {
+        width: 30px;
+        height: 30px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            transform: rotateZ(180deg);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        &:focus {
+            transform: rotateZ(180deg);
+            cursor: pointer;
+            transition: 0.3s;
+        }
     }
 }

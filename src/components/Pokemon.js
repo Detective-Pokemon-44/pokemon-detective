@@ -6,14 +6,13 @@ import closeButton from "../assets/images/rectangle-xmark-solid.svg"
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
-  
-  console.log(pokemonInfo)
   let crimeStrengths = []
   pokemonInfo.types.map((individualType) => {
     // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
     for (let key in crimeObject) {
       (crimeObject[key].weaknesses.includes(individualType.type.name) && !isNotUnique(crimeStrengths, key) && crimeStrengths.push(key))
     }
+    return "";
   })
   return (
     <>
@@ -24,9 +23,6 @@ export default function Pokemon({ pokemonInfo }) {
             src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
             alt={pokemonInfo.name}
           />
-          {/* {pokemonInfo.types.map((pokemonPower) => (
-            <p key={pokemonPower.type.name}>{pokemonPower.type.name}</p>
-          ))} */}
           <div className='Pokemon-hover'>
             <p className='Pokemon-nameCenter'>
               <strong>{capitalizeFirstLetter(pokemonInfo.name)}</strong>
@@ -41,8 +37,10 @@ export default function Pokemon({ pokemonInfo }) {
         className='Pokemon-modal'
         onRequestClose={toggleModal}
         appElement={document.getElementById("root")}
+        closeTimeoutMS={500}
+        contentLabel={"Information for the pokemon"}
       >
-        <div className='CrimeSceneModal-close-button-container'>
+        <div className='Pokemon-close-button-container'>
           <img
             src={closeButton}
             alt='Close Modal'
@@ -76,17 +74,17 @@ export default function Pokemon({ pokemonInfo }) {
           ))}
         </div>
         <p className='Pokemon-hint'>
-          {capitalizeFirstLetter(pokemonInfo.name)} is good at solving{" "}
+          {capitalizeFirstLetter(pokemonInfo.name)} is good for crimes related to{" "}
           {crimeStrengths.map((individualType, i, arr) =>
             i + 1 === arr.length
-              ? `and ${crimeObject[individualType].alternate.replaceAll(
-                  "-",
-                  " "
-                )}.`
-              : `${crimeObject[individualType].alternate.replaceAll(
-                  "-",
-                  " "
-                )}, `
+              ? `and ${crimeObject[individualType].pokemonskill.replaceAll(
+                "-",
+                " "
+              )}.`
+              : `${crimeObject[individualType].pokemonskill.replaceAll(
+                "-",
+                " "
+              )}, `
           )}
         </p>
       </ReactModal>
