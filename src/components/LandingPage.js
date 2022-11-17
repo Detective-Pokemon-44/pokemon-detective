@@ -51,6 +51,7 @@ export default function LandingPage() {
               name='username'
               onChange={updateUsername}
               value={username}
+              id="username"
             />
             <div className="LandingPage-formButtonContainer">
               <button type='submit' onClick={handleClick}>

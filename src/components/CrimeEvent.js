@@ -13,7 +13,6 @@ export default function CrimeEvent({ individual, i }) {
     `
 
   return (
-    // <div className='container'>
     <Folder className={i % 2 === 0 ? "CrimeEvent-folder" : "CrimeEvent-belowFolder"}>
       <div className='CrimeEvent-folderInside'></div>
       <span className='CrimeEvent-folderName'>
