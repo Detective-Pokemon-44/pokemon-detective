@@ -958,9 +958,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
 }
