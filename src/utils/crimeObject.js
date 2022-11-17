@@ -1,104 +1,119 @@
 const crimeObject =
 {
   "anti-social-behaviour": {
-    alternate: "Bad vibes",
+    alternate: "Harassment of Pokemon",
     weaknesses: ["psychic", "water", "ice", "fairy"],
-    backstory: "Someone is messing with the vibes",
-    failed: "Looks like you're not good with bad vibes eh?",
-    solved: "Looks like your vibes are spot on partner!"
+    backstory: "A citizen has been harassing pokemon at the pokemon gym",
+    pokemonskill: "harassment",
+    failed: "You saved an innocent pokemon from being harassed!",
+    solved: "These pokemon are free from harassment, good job!"
   }
   ,
   "bicycle-theft": {
     alternate: "Stolen bicycle",
     weaknesses: ["electric", "bug", "normal", "rock"],
-    backstory: "Bloody hell, not another stolen wibbly wobbly, we need  to solve this",
-    failed: "Wow, can't even get you to find a bike? You don't belong here",
-    solved: "Well, ya got the bike! That's a start"
+    backstory: "A child's only mode of transportation has been taken away, help them find it!",
+    pokemonskill: "missing vehicles",
+    failed: "I suppose the child won't be able to get around the city anymore",
+    solved: "The child will be happy to hear they got their bike back"
   },
   "burglary": {
     alternate: "Break and Enter",
     weaknesses: ["dark", "ghost", "rock", "normal"],
-    backstory: "Another one?! What can I say this town is out of control, get to it",
-    failed: "Well I guess those poor people just lost their stuff, oh well!",
-    solved: "Good job! Now they know who stole all their jewlery"
+    backstory: "Someone has broken into a local Pokemon Gym and wreaked havoc. Help us!",
+    pokemonskill: "burglary",
+    failed: "I suppose the the Pokemon Gym will never see justice",
+    solved: "Congratulations, the Pokemon Gym sends their regards"
   },
   "criminal-damage-arson": {
-    alternate: "Fire!",
+    alternate: "Arson",
     weaknesses: ["ice", "ground", "steel", "water"],
+    pokemonskill: "fire",
     backstory: "We got some wild people out there setting fires, I'm throwing some pokemon out there to deal with it",
-    failed: "Hmmm....I guess it's not so bad that people are setting fire right?!",
+    failed: "Hmmm....I guess it's not so bad that people are setting fires right?!",
     solved: "You're on fire today, good job buddy!"
   },
   "drugs": {
-    alternate: "Too many berries",
+    alternate: "Illegal Berries",
     weaknesses: ["ground", "poison", "flying", "fairy"],
-    backstory: "Berry sickness is driving people mad! Send some of those pokemon to keep them grounded...or not",
-    failed: "Honestly, too many berries isn't a big deal anyways, they should legalize it",
-    solved: "Well, we hope they will get the berry treatment they deserve"
+    pokemonskill: "illicit drugs",
+    backstory: "A bad batch of berries is going around, please help us catch them to keep our city safe.",
+    failed: "Uh-oh, we need to get this bad batch of berries off the street, we'll ask someone else",
+    solved: "Thanks to you, the bad berries are off the street!"
   },
   "other-theft": {
-    alternate: "Stole some chocolate",
+    alternate: "Stolen Jewlery",
     weaknesses: ["poison", "electric", "grass", "bug"],
-    backstory: "Wait!? What did they steal? just some chocolate, ah this shouldn't take much",
-    failed: "Good lord, I thought this simple theft would be easy for you, guess not!",
-    solved: "Great you solved the tiny theft, think you can solve something bigger?"
+    pokemonskill: "missing valuable items",
+    backstory: "Uh-oh, one of our most prestigious citizens had their diamond pendant swiped directly from them",
+    failed: "I suppose the diamond pendant is gone forever then?",
+    solved: "The diamond pendant has been returned, they send their regards."
   }
   ,
   "possession-of-weapons": {
-    alternate: "Found a Pokemon stun gun",
+    alternate: "Illegal Weapons",
     weaknesses: ["psychic", "rock", "fighting", "dark"],
+    pokemonskill: "possession of illegal weapons",
     backstory: "Woah a pokemon Stun Gun?!? What the heck is that, get some tough ones out there",
     failed: "Geez, we can't have all these weapons around here! Bad job!",
     solved: "Good job rookie! Another weird pokemon weapon is off the streets",
   },
   "public-order": {
-    alternate: "Throwing pokeballs everywhere",
+    alternate: "Littering",
     weaknesses: ["water", "normal", "bug", "fairy"],
+    pokemonskill: "public order",
     backstory: "Throwing pokeballs everywhere? What the heck? This shouldn't take much",
-    failed: "Wow, you couldn't even solve this simple public order case, yeesh",
+    failed: "Wow, you couldn't even solve this simple littering case, yeesh",
     solved: "Great job, streets are looking in tip top shape!"
   },
   "robbery": {
     alternate: "Bank Robbery",
     weaknesses: ["ghost", "dark", "flying", "steel"],
-    backstory: "Think they can rob the bank eh? We'll show them",
-    failed: "Well, this was a tough robbery case, to be honest I didn't think you could do it",
-    solved: "Looks like these folks have been robbing for awhile, good job rookie!"
+    pokemonskill: "pokemon banks",
+    backstory: "The pokemon bank has been ransacked, we need your help, a nimble pokemon should do the trick!",
+    failed: "Well, this was a tough bank robbery case, to be honest I didn't think you could do it",
+    solved: "Looks like these folks have been robbing pokemon banks for awhile, good job rookie!"
   },
   "shoplifting": {
-    alternate: "Stole something from the pokestop",
+    alternate: "Pokestop Shoplifting",
     weaknesses: ["normal", "steel", "poison", "rock"],
-    backstory: "Hmmmm....pokestops are under attack lately. I can't believe this keeps happening",
-    failed: "Damn, poor pokestop owner won't receive justice",
+    pokemonskill: "pokestops",
+    backstory: "Hmmmm....pokestops are losing alot of inventory due to shoplifters. This shouldn't be too hard should it?",
+    failed: "I supposed it's only a matter of time until these pokestops run out of business",
     solved: "Looks like this pokestop will be saved after all"
   },
   "theft-from-the-person": {
-    alternate: "Good ol' fashioned mugging",
+    alternate: "Mugging",
     weaknesses: ["electric", "bug", "ice", "dragon"],
-    failed: "Yikes, we can't have people handin' out muggings can we now?",
+    pokemonskill: "theft from person",
+    backstory: "A very important citizen has lost all their posessions from a random mugging, please help us",
+    failed: "Yikes, I hope people feel safe enough to walk the streets these days.",
     solved: "Yes, another mugger off the street! Thanks rookie!"
 
   },
   "vehicle-crime": {
-    alternate: "Driving like a madperson",
+    alternate: "Dangerous Driving",
     weaknesses: ["electric", "steel", "fire", "ground"],
-    backstory: "Too many wild drivers out there, what pokemon could take care of them?",
+    pokemonskill: "unsafe driving",
+    backstory: "Someone is driving around out there knocking into all sorts of things, figure out who it is!",
     failed: "These streets are getting too dangerous to drive, and you didn't help at all!",
     solved: "Great, now kids can finally cross the street in peace"
   },
   "violent-crime": {
-    alternate: "Something violent (serena wanted this)",
+    alternate: "Pokemon Kidnapping",
     weaknesses: ["psychic", "fighting", "dragon", "fire"],
-    backstory: "Damn, this one's a tough one, can you believe Lt. Serena is making pokemon solve this?! What's going on with the world?",
-    failed: "Honestly, this one was tough, can't blame ya, I'll tell Serena you failed",
-    solved: "Great Job, Serena will be pleased to hear about this one"
+    pokemonskill: "missing pokemon",
+    backstory: "Damn, this one's a tough one, a pokemon has been kidnapped, possibly those rocket people. We need a tough pokemon for this.",
+    failed: "Oh, I suppose we'll have to tell the pokemon's parents that you failed.",
+    solved: "The pokemon has been reunited with their family, thank you so much"
   },
   "other-crime": {
-    alternate: "Mystery Crime!",
-    weaknesses: ["fire", "normal", "grass", "flying"],
-    backstory: "Who knows what this is?",
-    failed: "Yikes, couldn't even solve the mystery crime, eh?",
-    solved: "What did you solve?! Well, good job anyways"
+    alternate: "Vandalism",
+    weaknesses: ["water", "normal", "grass", "flying"],
+    pokemonskill: "defacing property",
+    backstory: "The pokemon gym has been vandalised, help us find who did this so we can stop all this graffiti",
+    failed: "Errr....not a big deal I suppose, it's just some graffiti.",
+    solved: "Oh, you solved the vandalism case, good job, now try something harder."
   }
 }
 

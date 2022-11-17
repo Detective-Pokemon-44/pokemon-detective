@@ -1,17 +1,85 @@
-.appear {
+.card-exit {
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+
+.card-exit-active {
+    opacity: 1;
+
+}
+
+.card-enter {
     opacity: 0;
 }
 
-.appear-active {
+.card-enter-active {
     opacity: 1;
-    transition: opacity 300ms;
+    transition: opacity 1000ms;
 }
 
-.transitions-exit {
-    opacity: 1;
-}
-
-.transitions-exit-active {
+.card-appear {
     opacity: 0;
-    transition: opacity 300ms;
+}
+
+.card-appear-active {
+    opacity: 1;
+    transition: opacity 1000ms;
+
+}
+
+.card-exit {
+    opacity: 1;
+}
+
+.card-exit-active {
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+
+
+.Scoreboard-appear {
+    opacity: 0;
+}
+
+.Scoreboard-appear-active {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+
+.Scoreboard-enter {
+    opacity: 0;
+}
+
+.Scoreboard-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+
+.Scoreboard-exit {
+    opacity: 1;
+}
+
+.Scoreboard-exit-active {
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 500ms ease-in-out;
+
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 500ms ease-in-out;
+
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+
 }

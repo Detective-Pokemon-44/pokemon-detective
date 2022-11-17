@@ -1,27 +1,51 @@
-import firebaseConfig from "../utils/firebase"
-import { getDatabase, push, ref } from "firebase/database"
-import { useNavigate } from "react-router-dom"
+import firebaseConfig from "../utils/firebase";
+import { get, getDatabase, child, ref, set } from "firebase/database";
+import { useNavigate } from "react-router-dom";
+import { useUsername, useUpdateUsername } from './ContextUsername';
+import { useScore, useResetScore, useEndScoreUpdate } from './ContextScore';
+import { useUpdateLocation } from './ContextLocation';
 
-export default function Score({ username, score }) {
+export default function Score() {
   const navigate = useNavigate();
+  const username = useUsername();
+  const updateUsername = useUpdateUsername();
+  const score = useScore();
+  const resetScore = useResetScore();
+  const updateLocation = useUpdateLocation();
+  const updateEndScore = useEndScoreUpdate();
 
   function saveName(event) {
     event.preventDefault()
-    const database = getDatabase(firebaseConfig)
-    const dbRef = ref(database, `container`)
-    push(dbRef, { Name: username, Score: score })
+    const dbRef = ref(getDatabase(firebaseConfig));
+
+    // gets high score array from db, pushes if score is > lowest, sorts, then rewrites to db
+    get(child(dbRef, "highscores")).then((res) => {
+      const data = res.val();
+      if (data.length < 10) {
+        data.push({ name: username, score: score });
+        const highscores = data.sort((a, b) => b.score - a.score);
+        set((child(dbRef, "highscores")), highscores)
+      } else {
+        if (score > data[9].score) {
+          data.push({ name: username, score: score });
+          const highscores = data.sort((a, b) => b.score - a.score).slice(0, 10);
+          set((child(dbRef, "highscores")), highscores);
+        }
+      }
+    })
+  }
+
+  function handleClick(e) {
+    // only adds score if greater than 0
+    (score > 0 && saveName(e));
+    updateLocation(null);
+    updateUsername(null);
+    updateEndScore(score);
+    resetScore();
+    navigate('/highscores');
   }
 
   return (
-    <>
-      <div className='Score-container'>
-        {/* Button will save user's name and score to firebase to display into High Score page, and quit the game */}
-        <p><b>Name:</b>{" " + username}</p>    <p><b>Score: </b>{" " + score}</p>
-        <button onClick={(e) => {
-          saveName(e);
-          navigate('/highscores')
-        }}>Submit score and quit game</button>
-      </div>
-    </>
+    <button className="Go-back-button2" onClick={(e) => handleClick(e)} >QUIT</button>
   )
 }

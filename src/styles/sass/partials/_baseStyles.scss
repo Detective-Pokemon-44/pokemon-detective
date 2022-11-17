@@ -1,8 +1,14 @@
 @use './variables' as *;
+@use "mixins" as *;
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 90%;
+}
 
 .card {
-    padding: 50px;
-    // background-color: lavender;
+    padding: 30px;
     background-color: $primaryColor;
     border-radius: 15px;
     box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
@@ -10,44 +16,58 @@
 
 .main {
     background-color: $lightColor;
-    height: 80vh;
+    min-height: 83vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 a {
-    color: $secondaryColor;
+    color: $white;
     text-decoration: none;
 }
 
 button {
-    width: 120px;
+    width: 110px;
     height: 50px;
-    background-color: $primaryDarkColor;
+    background-color: $lightColor;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    color: $primaryDarkColor;
+    border: 3px solid $primaryColor;
     cursor: pointer;
-    box-shadow: 2px 2px 15px $primaryColor;
-
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
     a {
-        color: $lightColor;
+        color: $primaryDarkColor;
     }
-
     &:hover,
     &:focus {
-        background-color: $secondaryDarkColor;
-
+        background-color: $primaryDarkColor;
+        color: $white;
+        border: 1px solid $white;
         a {
-            color: $primaryDarkColor
+            color: $white;
         }
     }
 }
 
-.wrapper {
-    max-width: 1440px;
-    margin: 0 auto
+.Go-back-button2 {
+    color: $primaryColor;
+    background-color: white;
+    border: 2px solid $primaryDarkColor;
+    width: 55px;
+    height: 50px;
+    font-size: 1.1rem;
+    border-radius: 15px; 
+    font-weight: bold;
+    &:hover,
+    &:focus {
+        background-color: $primaryDarkColor;
+        color: $white;
+        border: 2px solid rgba(255, 255, 255, 0.336);
+        padding: 5px 10px;
+    }
 }

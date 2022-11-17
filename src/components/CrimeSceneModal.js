@@ -1,21 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import crimeObject from "../utils/crimeObject";
 import gameLogic from "../utils/logic";
+import closeButton from "../assets/images/rectangle-xmark-solid.svg";
+import { useScore, useUpdateScore } from './ContextScore';
+import { useUsername } from './ContextUsername';
+import { useUpdateLocation } from './ContextLocation';
+import swal from 'sweetalert';
+import { capitalizeFirstLetter } from "../utils/functions";
 import Score from "./Score";
 
-
-export default function CrimeSceneModal({
-  pokemon,
-  crimeSelected,
-  handleLocation,
-  username,
-  score,
-  setScore
-}) {
+export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal }) {
   const [pokemonSelectionID, setPokemonSelectionID] = useState(null);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [crimeSolved, setCrimeSolved] = useState(null);
-
+  const score = useScore();
+  const updateScore = useUpdateScore();
+  const username = useUsername();
+  const updateLocation = useUpdateLocation();
 
   const handleButtonSwitch = (e) => {
     setPokemonSelectionID(parseInt(e.target.value));
@@ -27,97 +29,88 @@ export default function CrimeSceneModal({
       const pokemonFoundById = pokemon.find(
         (pokemon) => pokemon.id === pokemonId
       );
-      console.log(pokemonFoundById);
       setSelectedPokemon(pokemonFoundById);
+      const trueOrFalse = gameLogic(pokemonFoundById, crimeSelected, updateScore);
+      setCrimeSolved(trueOrFalse);
     } else {
-      alert("PICK SOMETHING");
+      swal("Choose a Pokemon Detective to solve this mystery!");
     }
   };
-
-  // call game logic on pokemon selection from modal
-  useEffect(() => {
-    if (selectedPokemon !== null) {
-      const trueOrFalse = gameLogic(selectedPokemon, crimeSelected, setScore);
-      setCrimeSolved(trueOrFalse);
-    }
-  }, [selectedPokemon]);
-
 
   return (
     <>
       {!selectedPokemon && !crimeSolved ? (
-        <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
-          <div className="CrimeSceneModal-textContainer">
-            <h4>{crimeObject[crimeSelected.category].alternate}</h4>
-            <h5>The Break Down</h5>
-            <p>{crimeObject[crimeSelected.category].backstory}</p>
-            <p><b>Crime's location:</b>
-              {
-                crimeSelected.location.street.name.length <= 11 ?
-                  ` Sorry got nothing for ya ${username}` :
-                  ' ' + (crimeSelected.location.street.name).substring(11)
-              }
-            </p>
-          </div>
-          <fieldset
-            onChange={handleButtonSwitch}
-            className="CrimeSceneModal-fieldset"
-          >
-            <legend>Which Pokemon Detective can solve this mystery?</legend>
-
-            {pokemon.map((pokemonInfo) => {
-              return (
-                <div
-                  className="CrimeSceneModal-container"
-                  key={pokemonInfo.id}
-                >
-                  <label htmlFor={pokemonInfo.name}>
-                    <img
-                      className="CrimeSceneModal-image"
-                      src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
-                      alt={pokemon.name}
-                    />
-                  </label>
-                  <input
-                    type="radio"
-                    id={pokemonInfo.name}
-                    name="pokemon"
-                    value={pokemonInfo.id}
-                    className="CrimeSceneModal-input"
-                  ></input>
-                </div>
-              );
-            })}
-          </fieldset>
-          <div className="CrimeSceneModal-container-button">
-            <button type="submit">Select Your Pokemon Detective</button>
-          </div>
-        </form>
-      ) : crimeSolved === true ? (
         <>
-          <div className="CrimeSceneModal-resultsContainer">
-            <div className="CrimeSceneModal-textContainer">
-              <h4>You solved the case</h4>
-              <p>{crimeObject[crimeSelected.category].solved}</p>
-            </div>
-            <button onClick={() => handleLocation(null)}> Take me Home</button>
-            <Score username={username} score={score} />
+          <div className="CrimeSceneModal-close-button-container" >
+            <img src={closeButton} alt="Close Modal" onClick={() => toggleModal(false)} />
           </div>
+          <form onSubmit={(e) => handleFormSubmit(e, pokemonSelectionID)}>
+            <div className="CrimeSceneModal-textContainer">
+              <h4>{crimeObject[crimeSelected.category].alternate}</h4>
+              <p>{crimeObject[crimeSelected.category].backstory}</p>
+              <p><b>Crime's location:</b>
+                {
+                  crimeSelected.location.street.name.length <= 11 ?
+                    ` Sorry got nothing for ya ${username}` :
+                    ' ' + (crimeSelected.location.street.name).substring(11)
+                }
+              </p>
+            </div>
+            <fieldset
+              onChange={handleButtonSwitch}
+              className="CrimeSceneModal-fieldset"
+            >
+              <legend>Which Pokemon Detective can solve this mystery?</legend>
+
+              {pokemon.map((pokemonInfo) => {
+                return (
+                  <div
+                    className="CrimeSceneModal-container"
+                    key={pokemonInfo.id}
+                  >
+                    <label htmlFor={pokemonInfo.name}>
+                      <img
+                        className="CrimeSceneModal-image"
+                        src={require(`../assets/svgPokemon/${pokemonInfo.id}.svg`)}
+                        alt={pokemon.name}
+                      />
+                    </label>
+                    <input
+                      type="radio"
+                      id={pokemonInfo.name}
+                      name="pokemon"
+                      value={pokemonInfo.id}
+                      className="CrimeSceneModal-input"
+                    ></input>
+                  </div>
+                );
+              })}
+            </fieldset>
+            <div className="CrimeSceneModal-container-button">
+              <button type="submit">Select Your Pokemon Detective</button>
+            </div>
+          </form>
         </>
       ) : (
         <>
-          <div className="CrimeSceneModal-resultsContainer">
+          < div className="CrimeSceneModal-resultsContainer" >
             <div className="CrimeSceneModal-textContainer">
-              <h4>You failed the case!</h4>
-              <h5>{crimeObject[crimeSelected.category].alternate}</h5>
-              <p>{crimeObject[crimeSelected.category].failed}</p>
+              <div className="CrimeSceneModal-miniInfoContainer">
+                <p><b>Name:</b>{" " + username}</p>
+                <p><b>Score: </b>{" " + score}</p>
+              </div>
+              <h4>{crimeSolved ? `${capitalizeFirstLetter(selectedPokemon.name)} solved the case!` : `${capitalizeFirstLetter(selectedPokemon.name)} failed the case!`}</h4>
+              <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
             </div>
-            <button onClick={() => handleLocation(null)}> Take me Home</button>
-            <Score username={username} score={score} />
+            <div className="CrimeSceneModal-miniInfoContainer">
+              <button onClick={() => updateLocation(null)}><strong>PLAY AGAIN</strong></button>
+              <Score />
+            </div>
           </div>
         </>
-      )}
-
+      )
+      }
     </>
+
   );
 }

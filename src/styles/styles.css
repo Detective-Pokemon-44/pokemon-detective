@@ -166,9 +166,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
 }
 
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 90%;
+}
+
 .card {
-  padding: 50px;
-  background-color: #7D210A;
+  padding: 30px;
+  background-color: #273878;
   border-radius: 15px;
   -webkit-box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
           box-shadow: 15px 15px rgba(0, 0, 0, 0.3);
@@ -176,7 +182,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 .main {
   background-color: #D5C29B;
-  height: 80vh;
+  min-height: 83vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,14 +195,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 a {
-  color: #FFC120;
+  color: white;
   text-decoration: none;
 }
 
 button {
-  width: 120px;
+  width: 110px;
   height: 50px;
-  background-color: #5E1800;
+  background-color: #D5C29B;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,25 +213,41 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  color: #1a2652;
+  border: 3px solid #273878;
   cursor: pointer;
-  -webkit-box-shadow: 2px 2px 15px #7D210A;
-          box-shadow: 2px 2px 15px #7D210A;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
+          box-shadow: 2px 0 15px rgba(255, 255, 255, 0.119);
 }
 button a {
-  color: #D5C29B;
+  color: #1a2652;
 }
 button:hover, button:focus {
-  background-color: #E9990B;
+  background-color: #1a2652;
+  color: white;
+  border: 1px solid white;
 }
 button:hover a, button:focus a {
-  color: #5E1800;
+  color: white;
 }
 
-.wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
+.Go-back-button2 {
+  color: #273878;
+  background-color: white;
+  border: 2px solid #1a2652;
+  width: 55px;
+  height: 50px;
+  font-size: 1.1rem;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.Go-back-button2:hover, .Go-back-button2:focus {
+  background-color: #1a2652;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.336);
+  padding: 5px 10px;
 }
 
 @font-face {
@@ -243,6 +265,7 @@ h2,
 h4,
 h5 {
   font-family: "Iceberg";
+  font-weight: 500;
 }
 
 h1 {
@@ -252,11 +275,12 @@ h1 {
 p {
   font-family: "Lato";
   font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
-  color: #926C57;
+  color: white;
 }
 
 h2 {
   font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+  color: white;
 }
 
 h3 {
@@ -274,7 +298,7 @@ a {
 }
 
 .Navbar {
-  background-color: #5E1800;
+  background-color: #1a2652;
   color: #D5C29B;
   height: 10vh;
   padding-left: 10%;
@@ -285,6 +309,14 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media (max-width: 480px) {
+  .Navbar {
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .Location {
@@ -298,7 +330,23 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
+  margin: auto 1rem;
+  width: 60%;
+  max-width: 700px;
+  min-height: 450px;
+}
+.Location h2 {
+  font-size: 2rem;
+}
+@media (max-width: 810px) {
+  .Location {
+    width: 85%;
+  }
+}
+@media (max-width: 480px) {
+  .Location {
+    width: 90%;
+  }
 }
 
 .Location-locationsContainer {
@@ -306,12 +354,20 @@ a {
   display: -ms-flexbox;
   display: flex;
   min-width: 250px;
-  width: 30vw;
+  width: 80%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+@media (max-width: 480px) {
+  .Location-locationsContainer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 5px;
+  }
 }
 
 .Location-locationCard {
@@ -327,15 +383,113 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+.Location-locationCard label {
+  font-family: "Lato";
+  font-size: clamp(1rem, 0.4368rem + 0.9294vw, 1.25rem);
+  color: white;
+}
+.Location-locationCard label:hover {
+  cursor: pointer;
+}
+.Location-locationCard:hover .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.Location-locationCard:focus .doorFront {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
 
-.Location-locationImg {
-  width: 50px;
+.doorEntrance {
+  position: relative;
+  z-index: 0;
+  height: 150px;
+  background-color: black;
+  width: 75px;
+  margin: 20px;
+  padding: 2%;
+  border-radius: 20% 20% 0 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.doorEntrance:hover {
+  cursor: pointer;
+}
+.doorEntrance:focus {
+  cursor: pointer;
+}
+
+.doorEntrance {
+  position: relative;
+  z-index: 0;
+  height: 150px;
+  background-color: black;
+  width: 75px;
+  margin: 20px;
+  padding: 2%;
+  border-radius: 20% 20% 0 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.doorEntrance .coatOfArms {
+  position: absolute;
+  z-index: 10;
+  width: 60px;
+  height: 75px;
+  top: 25%;
+  left: 15%;
+}
+.doorEntrance:hover {
+  cursor: pointer;
+}
+.doorEntrance:focus {
+  cursor: pointer;
+}
+.doorEntrance .doorFront {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 20;
+  border-radius: 20% 20% 0 0;
+  background-color: #D5C29B;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  border: 1px solid black;
+  border-collapse: separate;
+}
+.doorEntrance .doorFront .doorknob {
+  position: absolute;
+  z-index: 30;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  right: 5%;
+}
+.doorEntrance .doorFront:hover {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.doorEntrance .doorFront:focus {
+  -webkit-transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+          transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .Footer {
-  background-color: #5E1800;
+  background-color: #1a2652;
   color: #D5C29B;
-  height: 10vh;
+  height: 7vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,7 +507,7 @@ a {
 
 .LandingPage {
   color: #D5C29B;
-  background-color: #7D210A;
+  background-color: #273878;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -366,6 +520,7 @@ a {
           align-items: center;
   gap: 50px;
   padding: 20px 0 50px;
+  margin: auto 1rem;
 }
 
 .LandingPage-imgContainer {
@@ -415,52 +570,146 @@ a {
 
 .CrimeScenes {
   margin: 20px;
-  width: 70%;
-  height: 100%;
+  width: 65%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 90%;
+  max-width: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .CrimeScenes h2 {
   margin: 0 0 40px 0;
+}
+@media (max-width: 1100px) {
+  .CrimeScenes {
+    padding: 10px;
+    padding-top: 30px;
+    min-height: 600px;
+    width: 90%;
+  }
 }
 
 .CrimeScenes-category {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
   padding: 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  padding-top: 90px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 1100px) {
+  .CrimeScenes-category {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 0;
+  }
 }
 .CrimeScenes-category li {
   list-style-type: none;
-  width: 20%;
+  width: 18%;
+  max-width: 230px;
+  min-width: 86px;
+}
+@media (max-width: 1100px) {
+  .CrimeScenes-category li {
+    padding: 0;
+    margin-bottom: 90px;
+  }
+}
+@media (max-width: 480px) {
+  .CrimeScenes-category li {
+    width: 33%;
+    margin-bottom: 75px;
+  }
 }
 
 .pokemonList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
-  margin-top: 20%;
+  max-width: 900px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  gap: 2vw;
+  margin-top: 165px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 150px;
+}
+@media (max-width: 1100px) {
+  .pokemonList {
+    margin-top: 50px;
+    max-width: 700px;
+  }
+}
+@media (max-width: 810px) {
+  .pokemonList {
+    margin-top: 25px;
+    padding: 20px;
+    gap: 7.5vw;
+  }
+}
+@media (max-width: 480px) {
+  .pokemonList {
+    margin-top: 0;
+    gap: 6vw;
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 360px) {
+  .pokemonList {
+    gap: 6.5vw;
+  }
 }
 
-.folderName {
-  bottom: -70%;
-  left: 3%;
+.CrimeEvent-folderName {
+  bottom: -85%;
+  left: 5%;
+  right: 5%;
+  padding: 3px 1px;
+  text-align: center;
   position: absolute;
   z-index: 10;
+  color: #1a2652;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  background-color: rgba(255, 255, 255, 0.362);
+  border-radius: 3px;
+  min-height: 52px;
+}
+@media (max-width: 810px) {
+  .CrimeEvent-folderName {
+    bottom: -85%;
+    min-height: 36px;
+  }
 }
 
-.folder, .below-folder {
+.CrimeEvent-folder,
+.CrimeEvent-belowFolder {
   position: relative;
-  width: 200px;
+  width: 90%;
   height: 70px;
   background: #D5C29B;
-  top: 80%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -472,13 +721,37 @@ a {
   display: -ms-flexbox;
   display: flex;
 }
-
-.below-folder {
-  top: 200%;
+@media (max-width: 1100px) {
+  .CrimeEvent-folder,
+.CrimeEvent-belowFolder {
+    height: 65px;
+  }
+}
+@media (max-width: 810px) {
+  .CrimeEvent-folder,
+.CrimeEvent-belowFolder {
+    height: 52px;
+  }
+}
+@media (max-width: 480px) {
+  .CrimeEvent-folder,
+.CrimeEvent-belowFolder {
+    height: 45px;
+  }
 }
 
-.folder::before, .below-folder::before {
-  width: 80px;
+.CrimeEvent-belowFolder {
+  top: 130%;
+}
+@media (max-width: 1100px) {
+  .CrimeEvent-belowFolder {
+    top: 50%;
+  }
+}
+
+.CrimeEvent-folder::before,
+.CrimeEvent-belowFolder::before {
+  width: 60px;
   height: 20px;
   content: "";
   background: #D5C29B;
@@ -488,13 +761,14 @@ a {
   border-top-right-radius: 5px;
 }
 
-.folder::after, .below-folder::after {
-  width: 200px;
-  height: 130px;
+.CrimeEvent-folder::after,
+.CrimeEvent-belowFolder::after {
+  width: 100%;
+  height: 150%;
   position: absolute;
   content: "";
   background: #D5C29B;
-  top: 40px;
+  top: 55%;
   -webkit-box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
   border-top-left-radius: 5px;
@@ -505,13 +779,13 @@ a {
   transition: all 400ms ease;
 }
 
-.folder-inside {
-  width: 180px;
-  height: 130px;
+.CrimeEvent-folderInside {
+  width: 80%;
+  height: 170%;
   position: absolute;
   background: #fff;
-  top: 20px;
-  left: 10px;
+  top: 23%;
+  left: 8%;
   -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
           box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
   -webkit-transform: rotate(-1deg);
@@ -521,14 +795,14 @@ a {
   transition: all 200ms ease;
 }
 
-.folder-inside::before {
+.CrimeEvent-folderInside::before {
   content: "";
   background: repeating-linear-gradient(0deg, #ffffff, #ffffff 10px, #333333 10px, #333333 20px);
   position: absolute;
-  top: -37px;
-  left: 65px;
-  width: 60px;
-  height: 150px;
+  top: -10%;
+  left: 25%;
+  width: 47%;
+  height: 90%;
   color: #343434;
   font-size: 60px;
   line-height: 30px;
@@ -536,20 +810,49 @@ a {
           transform: rotate(-90deg);
   opacity: 0.15;
 }
+@media (max-width: 810px) {
+  .CrimeEvent-folderInside::before {
+    display: none;
+  }
+}
 
-.folder:hover, .below-folder:hover {
+.CrimeEvent-folder:hover,
+.CrimeEvent-belowFolder:hover {
   -webkit-transform: translate(-50%, -52%);
           transform: translate(-50%, -52%);
 }
+@media (max-width: 810px) {
+  .CrimeEvent-folder:hover,
+.CrimeEvent-belowFolder:hover {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
 
-.folder:hover::after, .below-folder:hover::after {
+.CrimeEvent-folder:hover::after,
+.CrimeEvent-belowFolder:hover::after {
   -webkit-transform: rotateX(-15deg);
           transform: rotateX(-15deg);
 }
+@media (max-width: 810px) {
+  .CrimeEvent-folder:hover::after,
+.CrimeEvent-belowFolder:hover::after {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
 
-.folder:hover .folder-inside, .below-folder:hover .folder-inside {
+.CrimeEvent-folder:hover .CrimeEvent-folderInside,
+.CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
   -webkit-transform: rotate(-7deg) translateY(-15%);
           transform: rotate(-7deg) translateY(-15%);
+}
+@media (max-width: 810px) {
+  .CrimeEvent-folder:hover .CrimeEvent-folderInside,
+.CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .CrimeScene-modal {
@@ -599,38 +902,10 @@ a {
   gap: 20px;
 }
 
-.shape-section {
-  background: transparent;
-  margin-top: 30px;
-  padding: 40px 0;
-  list-style-type: none;
-}
-
-.diamond-shape {
-  background: #D5C29B;
-  height: 150px;
-  text-align: center;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  width: 150px;
-  border-radius: 10px;
-  border: 2px solid rgb(104, 71, 71);
-  cursor: pointer;
-}
-.diamond-shape:hover {
-  z-index: 20;
-  background-color: rgba(255, 255, 255, 0.624);
-}
-.diamond-shape:hover .Pokemon-image {
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
-}
-
-.item-count {
+.Pokemon-itemCount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 150px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   -webkit-box-orient: vertical;
@@ -640,73 +915,72 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 150px;
-  position: relative;
-}
-
-.Pokemon-hover {
-  color: rgba(0, 0, 0, 0);
   position: absolute;
-  font-size: 20px;
   width: 100%;
-}
-.Pokemon-hover p {
-  color: rgba(0, 0, 0, 0);
-}
-.Pokemon-hover:hover {
-  color: rgb(0, 0, 0);
-  z-index: 10;
-  display: block;
-}
-.Pokemon-hover:hover p {
-  color: rgb(0, 0, 0);
-  opacity: 500%;
-  z-index: 10;
+  height: 100%;
 }
 
 .shape-section {
   background: transparent;
-  margin-top: 30px;
-  padding: 40px 0;
   list-style-type: none;
+  width: 27%;
+  padding: 3%;
+  max-width: 250px;
+  min-width: 70px;
+  margin-bottom: -115px;
+}
+@media (max-width: 1100px) {
+  .shape-section {
+    max-width: 200px;
+  }
+}
+@media (max-width: 810px) {
+  .shape-section {
+    max-width: 110px;
+    width: 25%;
+    padding: 0;
+    margin-bottom: -12vw;
+  }
+}
+@media (max-width: 480px) {
+  .shape-section {
+    width: 25%;
+    margin-bottom: -50px;
+  }
+}
+@media (max-width: 360px) {
+  .shape-section {
+    min-width: 60px;
+    margin-bottom: -35px;
+  }
 }
 
-.diamond-shape {
+.Pokemon-diamondShape {
   background: #D5C29B;
-  height: 150px;
   text-align: center;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  width: 150px;
+  width: 100%;
   border-radius: 10px;
-  border: 2px solid rgb(104, 71, 71);
+  border: 5px solid #d8ceba;
+  -webkit-box-shadow: 3px 3px 10px rgba(216, 206, 186, 0.4941176471), -3px -3px 10px rgba(216, 206, 186, 0.4941176471), inset 5px 5px 10px rgba(122, 34, 16, 0.4941176471), inset -5px -5px 10px rgba(122, 34, 16, 0.4941176471);
+          box-shadow: 3px 3px 10px rgba(216, 206, 186, 0.4941176471), -3px -3px 10px rgba(216, 206, 186, 0.4941176471), inset 5px 5px 10px rgba(122, 34, 16, 0.4941176471), inset -5px -5px 10px rgba(122, 34, 16, 0.4941176471);
   cursor: pointer;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
 }
-.diamond-shape:hover {
+.Pokemon-diamondShape:hover {
   z-index: 20;
   background-color: rgba(255, 255, 255, 0.624);
 }
-.diamond-shape:hover .Pokemon-image {
+.Pokemon-diamondShape:hover .Pokemon-image {
   -webkit-filter: blur(4px);
           filter: blur(4px);
 }
-
-.item-count {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 150px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 150px;
-  position: relative;
+.Pokemon-diamondShape::after {
+  padding-bottom: 100%;
+  content: "";
+  display: block;
 }
 
 .Pokemon-hover {
@@ -714,9 +988,11 @@ a {
   position: absolute;
   font-size: 20px;
   width: 100%;
+  height: 100%;
 }
 .Pokemon-hover p {
   color: rgba(0, 0, 0, 0);
+  font-size: clamp(0.6rem, 3vw, 1.1rem);
 }
 .Pokemon-hover:hover {
   color: rgb(0, 0, 0);
@@ -725,23 +1001,24 @@ a {
 }
 .Pokemon-hover:hover p {
   color: rgb(0, 0, 0);
-  opacity: 500%;
   z-index: 10;
 }
 
 .Pokemon-image {
   width: 65%;
   height: 90%;
+  position: absolute;
 }
 
 .Pokemon-modal {
   position: absolute;
-  width: 400px;
-  height: 600px;
-  top: calc(50% - 300px);
-  left: calc(50% - 200px);
-  border: 20px solid #ffe50a;
-  background-image: url(https://img00.deviantart.net/0614/i/2012/106/a/e/classic_pkmn_tcg_texture_pack_by_flamingclaw-d4wcj31.png);
+  width: 600px;
+  height: 80%;
+  max-height: 700px;
+  top: 10%;
+  left: calc(50% - 300px);
+  border: 20px solid #FF9D7F;
+  background-color: #273878;
   overflow: auto;
   outline: none;
   border-radius: 15px;
@@ -755,14 +1032,41 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
+}
+@media (max-width: 1100px) {
+  .Pokemon-modal {
+    width: 400px;
+    left: calc(50% - 200px);
+  }
+}
+@media (max-width: 480px) {
+  .Pokemon-modal {
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+}
+.Pokemon-modal p {
+  font-size: clamp(0.8rem, 0.8333rem + 0.9852vw, 1.2rem);
+  color: white;
+}
+.Pokemon-modal h2 {
+  margin: 20px 0;
+  font-size: clamp(1.5rem, 0.6667rem + 2.7037vw, 3rem);
 }
 
 .Pokemon-imageContainer {
-  background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+  background-image: linear-gradient(45deg, #C4E39C, #85A45D, #C4E39C, #83A25C, #C4E39C, #93BD5C);
   width: 90%;
-  height: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -777,12 +1081,29 @@ a {
 }
 
 .Pokemon-modalImage {
-  width: 60%;
+  width: 35%;
+}
+@media (max-width: 1100px) {
+  .Pokemon-modalImage {
+    width: 45%;
+  }
 }
 
 .Pokemon-name {
   width: 90%;
   text-align: start;
+}
+
+.Pokemon-nameCenter {
+  position: absolute;
+  margin: 20% auto;
+  width: 100%;
+}
+
+.Pokemon-detail {
+  position: absolute;
+  margin: 43% auto 0 auto;
+  width: 100%;
 }
 
 .Pokemon-modalTypes {
@@ -797,7 +1118,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
 }
 
 .Pokemon-pokeball {
@@ -816,7 +1137,7 @@ a {
 }
 
 .Pokemon-info {
-  background-image: linear-gradient(45deg, #cf9401, #f9d51e, #ffff7a, #f9d51e, #ffff7a, #cf9401);
+  background-image: linear-gradient(45deg, #C4E39C, #85A45D, #C4E39C, #83A25C, #C4E39C, #93BD5C);
   width: 80%;
   font-size: 13px;
   font-weight: bold;
@@ -832,6 +1153,52 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
+.Pokemon-info p {
+  font-size: clamp(0.6rem, 0.5033rem + 0.6052vw, 0.8rem);
+  color: black;
+}
+@media (max-width: 810px) {
+  .Pokemon-info {
+    width: 90%;
+  }
+}
+
+.Pokemon-close-button-container {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 5%;
+  -webkit-filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
+          filter: invert(86%) sepia(43%) saturate(3534%) hue-rotate(309deg) brightness(106%) contrast(101%);
+  top: 15px;
+}
+@media (max-width: 480px) {
+  .Pokemon-close-button-container {
+    width: 30px;
+    height: 30px;
+  }
+}
+.Pokemon-close-button-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.Pokemon-close-button-container img:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.Pokemon-close-button-container img:focus {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
 
 .Scoreboard {
   display: -webkit-box;
@@ -844,26 +1211,250 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 78vw;
+  min-height: 75vh;
+  max-width: 900px;
+  width: 90vw;
+  position: relative;
+  background-color: #273878;
+  border-radius: 25px;
+  -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+  margin: auto 1.2rem;
+}
+@media (max-width: 1000px) {
+  .Scoreboard {
+    max-width: 730px;
+  }
+}
+@media (max-width: 810px) {
+  .Scoreboard {
+    margin: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .Scoreboard {
+    min-width: 310px;
+  }
+}
+
+.Score-title {
+  font-size: clamp(2.2rem, 1.6753rem + 2.583vw, 4rem);
+}
+@media (max-width: 480px) {
+  .Score-title {
+    padding-top: 20px;
+  }
+}
+
+.Score-list {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  margin-top: 5px;
+  -webkit-column-gap: 1.8rem;
+     -moz-column-gap: 1.8rem;
+          column-gap: 1.8rem;
+  padding-left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 0;
+}
+.Score-list li:nth-child(1) {
+  position: relative;
+}
+.Score-list li:nth-child(1)::before {
+  content: url("../assets/images/crown1.png");
+  z-index: 10;
+  position: absolute;
+  top: -25px;
+  left: -10px;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+}
+@media (max-width: 810px) {
+  .Score-list {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+    -webkit-column-gap: 0px;
+       -moz-column-gap: 0px;
+            column-gap: 0px;
+    min-width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .Score-list {
+    width: 200px;
+    margin-left: -67px;
+  }
 }
 
 .Scoreboard-listItem {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10px;
+  gap: 30px;
+  min-width: 300px;
+  max-width: 470px;
+  background-color: #1a2652;
+  margin-bottom: 15px;
+}
+.Scoreboard-listItem span {
+  font-family: "Lato";
+  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 1.6rem);
+  line-height: 3.5rem;
+  color: #D5C29B;
+}
+@media (max-width: 1000px) {
+  .Scoreboard-listItem {
+    gap: 5px;
+  }
+}
+@media (max-width: 810px) {
+  .Scoreboard-listItem {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .Scoreboard-listItem {
+    min-width: 270px;
+  }
+}
+
+.Score-index {
+  width: 60px;
+  padding-left: 25px;
+}
+.Score-index span {
+  color: #FFC120;
+}
+
+.Score-name {
+  width: 200px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.Score-name .Score-name-span {
+  color: white;
+}
+@media (max-width: 810px) {
+  .Score-name {
+    width: 170px;
+  }
+}
+@media (max-width: 480px) {
+  .Score-name {
+    width: 160px;
+  }
+}
+
+.Score-score {
+  width: 60px;
+  padding-right: 0;
+  text-align: center;
+  background: rgb(233, 153, 11);
+  background: radial-gradient(circle, rgb(233, 153, 11) 0%, rgb(255, 193, 32) 86%);
+}
+.Score-score span {
+  color: #1a2652;
+}
+@media (max-width: 480px) {
+  .Score-score {
+    width: 50px;
+  }
+}
+
+.Your-score {
+  width: 350px;
+  height: 60px;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #FFC120;
+  border: 5px solid #E9990B;
+  color: #1a2652;
+  font-size: 2rem;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-animation: pulse 2s 2;
+          animation: pulse 2s 2;
+}
+@media (max-width: 810px) {
+  .Your-score {
+    width: 280px;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0.7);
+  }
+  80% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 10px rgba(255, 193, 32, 0);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+            box-shadow: 0 0 0 0 rgba(255, 193, 32, 0);
+  }
+}
+.Go-back-button {
+  width: 40px;
+  height: 40px;
+  color: #273878;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+.Go-back {
+  position: absolute;
+  top: 10px;
+  right: 12px;
 }
 
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  height: 90%;
-  top: calc(50% - 300px);
+  height: 60%;
+  top: 20%;
   left: calc(50% - 300px);
-  border: 1px solid #ccc;
-  background: #7D210A;
+  border: 1px solid #1a2652;
+  background: #273878;
   overflow: auto;
   outline: none;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -877,6 +1468,59 @@ a {
           align-items: center;
   background-color: #D5C29B;
 }
+@media (max-width: 810px) {
+  .CrimeSceneModal-modal {
+    width: 600px;
+  }
+}
+@media (max-width: 690px) {
+  .CrimeSceneModal-modal {
+    width: 500px;
+    left: calc(50% - 250px);
+  }
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-modal {
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+}
+
+.CrimeSceneModal-close-button-container {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 5%;
+  -webkit-filter: invert(20%) sepia(73%) saturate(938%) hue-rotate(200deg) brightness(89%) contrast(96%);
+          filter: invert(20%) sepia(73%) saturate(938%) hue-rotate(200deg) brightness(89%) contrast(96%);
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-close-button-container {
+    width: 30px;
+    height: 30px;
+  }
+}
+.CrimeSceneModal-close-button-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CrimeSceneModal-close-button-container img:hover {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CrimeSceneModal-close-button-container img:focus {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
 
 .CrimeSceneModal-fieldset {
   display: -webkit-box;
@@ -887,6 +1531,20 @@ a {
           justify-content: space-between;
   padding: 20px 5px;
   margin: 30px 0;
+  border: 2px solid #1a2652;
+  -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-fieldset {
+    padding: 10px 5px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
 }
 
 .CrimeSceneModal-container {
@@ -908,9 +1566,25 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.CrimeSceneModal-container-button button {
+  background-color: #273878;
+  width: 125px;
+  height: 55px;
+  font-size: 0.8rem;
+  padding: 5px;
+  color: white;
+  border: 2px solid #1a2652;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.CrimeSceneModal-container-button button:hover, .CrimeSceneModal-container-button button:focus {
+  background-color: #1a2652;
+  color: white;
+  border: 1px solid #D5C29B;
+}
 
 .CrimeSceneModal-textContainer {
-  background-color: #E9990B;
+  background-color: #273878;
   padding: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -923,6 +1597,30 @@ a {
   margin-top: 2%;
   -webkit-box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+@media (max-width: 810px) {
+  .CrimeSceneModal-textContainer {
+    padding: 1%;
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .CrimeSceneModal-textContainer {
+    width: 90%;
+    padding: 10% 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.CrimeSceneModal-textContainer h4 {
+  font-size: clamp(1.3rem, 0.6747rem + 0.3717vw, 3rem);
+  font-weight: 600;
+  margin: 3px 0;
+  color: white;
+}
+.CrimeSceneModal-textContainer p {
+  font-size: clamp(0.875rem, 0.668rem + 1.0223vw, 1.5625rem);
 }
 
 .CrimeSceneModal-input {
@@ -975,6 +1673,19 @@ a {
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
 }
+@media (max-width: 480px) {
+  .CrimeSceneModal-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    border: 2px solid #1a2652;
+    margin: 2px auto;
+    padding: 3%;
+  }
+}
 
 .CrimeSceneModal-resultsContainer {
   display: -webkit-box;
@@ -987,7 +1698,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   padding: 10px;
 }
 
@@ -995,42 +1706,133 @@ a {
   margin: 15px;
 }
 
-.appear {
+.CrimeSceneModal-miniInfoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.CrimeSceneModal-miniInfoContainer button {
+  background-color: #273878;
+  color: white;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.CrimeSceneModal-miniInfoContainer button:hover, .CrimeSceneModal-miniInfoContainer button:focus {
+  background-color: #1a2652;
+  color: white;
+  border: 2px solid #D5C29B;
+}
+.CrimeSceneModal-miniInfoContainer .Go-back-button2 {
+  width: 110px;
+}
+
+.card-exit {
+  opacity: 0;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.card-exit-active {
+  opacity: 1;
+}
+
+.card-enter {
   opacity: 0;
 }
 
-.appear-active {
+.card-enter-active {
   opacity: 1;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
 }
 
-.transitions-exit {
-  opacity: 1;
-}
-
-.transitions-exit-active {
+.card-appear {
   opacity: 0;
-  -webkit-transition: opacity 300ms;
-  transition: opacity 300ms;
+}
+
+.card-appear-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.card-exit {
+  opacity: 1;
+}
+
+.card-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-appear {
+  opacity: 0;
+}
+
+.Scoreboard-appear-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-enter {
+  opacity: 0;
+}
+
+.Scoreboard-enter-active {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.Scoreboard-exit {
+  opacity: 1;
+}
+
+.Scoreboard-exit-active {
+  opacity: 0;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
 }
 
 .About-page {
   margin: 0 auto;
   background-color: #D5C29B;
-  min-height: 85vh;
   padding-bottom: 4rem;
 }
 .About-page h2 {
-  font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+  font-size: clamp(2.4rem, 0.6667rem + 3.7037vw, 3.5rem);
+  color: #1a2652;
 }
 .About-page p {
-  font-size: clamp(1.2rem, 0.9333rem + 1.1852vw, 2rem);
-  color: #926C57;
+  color: #1a2652;
+  font-size: clamp(1.1rem, 0.6667rem + 3.7037vw, 1.5rem);
 }
 
 .About-header {
-  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .About-description {
@@ -1038,12 +1840,77 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 5rem;
-  padding: 10px 25px;
+  padding: 10px 0;
+}
+@media (max-width: 1100px) {
+  .About-description {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 810px) {
+  .About-description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px 0;
+    min-width: 350px;
+  }
 }
 
-.pikachu-detective {
+.description-container {
+  min-width: 350px;
+}
+@media (max-width: 810px) {
+  .description-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+  }
+}
+
+.pikachu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.pikachu-container .pikachu-detective {
   width: 300px;
   border-radius: 15px;
+}
+@media (max-width: 1100px) {
+  .pikachu-container .pikachu-detective {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 1100px) and (max-width: 810px) {
+  .pikachu-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: absolute;
+    top: 100px;
+    right: 5%;
+  }
+  .pikachu-container .pikachu-detective {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .Creators-container {
@@ -1055,24 +1922,56 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: calc(100% - 20px);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 1100px) {
+  .Creators-container {
+    gap: 0rem;
+  }
 }
 
 .creator1,
 .creator2,
 .creator3,
 .creator4 {
-  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+@media (max-width: 1100px) {
+  .creator1,
+.creator2,
+.creator3,
+.creator4 {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+@media (max-width: 810px) {
+  .creator1,
+.creator2,
+.creator3,
+.creator4 {
+    height: 400px;
+  }
 }
 
 .badge-container {
   background-image: url("../assets/images/badge.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1083,25 +1982,21 @@ a {
   border-radius: 20px;
   width: 480px;
   height: 600px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
-
-.badge-photo {
-  width: 300px;
-  height: 300px;
-  position: relative;
-}
-
-.detective-photo {
-  border-radius: 5px;
-  width: 190px;
-  position: absolute;
-  top: 115px;
-  left: 65px;
-  z-index: 5;
+@media (max-width: 1000px) {
+  .badge-container {
+    width: 350px;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+    height: 450px;
+  }
 }
 
 .badge-description {
-  width: 450px;
+  width: 400px;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1112,26 +2007,121 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 25px;
+  padding-top: 30px;
+  padding-left: 50px;
 }
 .badge-description p {
-  color: aliceblue;
-  line-height: 0rem;
+  color: white;
+  line-height: 0.5rem;
+}
+@media (max-width: 1000px) {
+  .badge-description {
+    width: 320px;
+    height: 200px;
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+}
+@media (max-width: 810px) {
+  .badge-description {
+    padding-top: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .badge-description {
+    padding-top: 25px;
+  }
+}
+
+.badge-photo {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+@media (max-width: 1000px) {
+  .badge-photo {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.detective-photo {
+  border-radius: 5px;
+  width: 190px;
+  height: 185px;
+  position: absolute;
+  top: 54px;
+  left: 65px;
+}
+@media (max-width: 1000px) {
+  .detective-photo {
+    width: 140px;
+    height: 138px;
+    left: 45px;
+    top: 58px;
+  }
 }
 
 .detective-name {
   font-style: italic;
+  color: white;
+  font-size: clamp(1.2rem, 0.65rem + 1.8333vw, 2.3rem);
 }
 
 .medias {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 
 .Button-about {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  margin-top: 2px;
+  margin-top: 10px;
+  width: 110px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(37, 33, 32, 0.6431372549);
+  border-radius: 15px;
+}
+.Button-about:hover {
+  background-color: #E9990B;
+}
+.Button-about:hover a {
+  color: #1a2652;
+  padding: 25px;
+}
+
+.Gamebar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Gamebar .Gamebar-title {
+  color: white;
+  font-size: clamp(1.2rem, 0.8333rem + 1.1852vw, 2rem);
+}
+.Gamebar .Gamebar-below {
+  position: absolute;
+  top: 120%;
+  width: 100%;
+  text-align: center;
+}
+.Gamebar .scoreCounter {
+  color: white;
 }

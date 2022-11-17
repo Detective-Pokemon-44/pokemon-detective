@@ -1,21 +1,16 @@
-import crimeObject from "./crimeObject"
+import crimeObject from "./crimeObject";
 
-function gameLogic(pokemon, crime, setScore) {
-
+export default function gameLogic(pokemon, crime, updateScore) {
     const types = pokemon.types.map(({ type }) => type.name);
     const crimeValues = Object.getOwnPropertyDescriptor(crimeObject, crime.category);
-    console.log(crimeValues);
     const solved = types.filter(type => {
         return crimeValues.value.weaknesses.includes(type)
     })
     if (solved.length > 0) {
-        setScore((prevScore) => prevScore + 1)
+        updateScore(1);
         return true
-
     }
     else {
         return false
     }
-
 }
-export default gameLogic;

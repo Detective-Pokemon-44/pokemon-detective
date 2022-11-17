@@ -1,16 +1,35 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 .Location {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    margin: auto 1rem;
+    width: 60%;
+    max-width: 700px;
+    min-height: 450px;
+    h2 {
+        font-size: 2rem;
+    }
+    @include tablet {
+        width: 85%;
+    }
+    @include mobile {
+        width: 90%;
+    }
 }
 
 .Location-locationsContainer {
     display: flex;
     min-width: 250px;
-    width: 30vw;
+    width: 80%;
     align-items: center;
     justify-content: space-around;
+    @include mobile {
+        justify-content: space-between;
+        padding: 0 5px;
+    }
 }
 
 .Location-locationCard {
@@ -18,8 +37,113 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    label {
+        font-family: $textFont;
+        font-size: clamp(1rem, 0.4368rem + 0.9294vw, 1.25rem);
+        color: $white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &:hover .doorFront {
+        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    &:focus .doorFront {
+        transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+
 }
 
-.Location-locationImg {
-    width: 50px;
+.doorEntrance {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    background-color: black;
+    width: 75px;
+    margin: 20px;
+    padding: 2%;
+    border-radius: 20% 20% 0 0;
+    transition: all 0.5s ease-in-out;
+
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        cursor: pointer;
+    }
+
+
+}
+
+.doorEntrance {
+    position: relative;
+    z-index: 0;
+    height: 150px;
+    background-color: black;
+    width: 75px;
+    margin: 20px;
+    padding: 2%;
+    border-radius: 20% 20% 0 0;
+    transition: all 0.5s ease-in-out;
+
+    .coatOfArms {
+        position: absolute;
+        z-index: 10;
+        width: 60px;
+        height: 75px;
+        top: 25%;
+        left: 15%;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:focus {
+        cursor: pointer;
+    }
+
+    .doorFront {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 20;
+        border-radius: 20% 20% 0 0;
+        background-color: $lightColor ;
+        transition: all 0.3s ease-in;
+        border: 1px solid black;
+        border-collapse: separate;
+
+        .doorknob {
+            position: absolute;
+            z-index: 30;
+            width: 10px;
+            height: 10px;
+            top: 50%;
+            right: 5%;
+        }
+
+        &:hover {
+            transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+
+        &:focus {
+            transform: perspective(200px) translateZ(10px) translateX(-50px) translateY(5px) rotateY(-105deg);
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+    }
 }
