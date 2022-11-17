@@ -12,7 +12,7 @@ const crimeObject =
   "bicycle-theft": {
     alternate: "Stolen bicycle",
     weaknesses: ["electric", "bug", "normal", "rock"],
-    backstory: "A child's only mode of transportation has been taken away/",
+    backstory: "A child's only mode of transportation has been taken away, help them find it!",
     pokemonskill: "missing vehicles",
     failed: "I suppose the child won't be able to get around the city anymore",
     solved: "The Child will be happy to hear he got their bike back"

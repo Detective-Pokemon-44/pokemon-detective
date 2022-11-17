@@ -5,11 +5,16 @@
   margin: 0 auto;
   background-color: $lightColor;
   padding-bottom: 4rem;
+
   h2 {
-    font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+    font-size: clamp(2.4rem, 0.6667rem + 3.7037vw, 3.5rem);
+    color: $primaryDarkColor
   }
+
   p {
     color: $primaryDarkColor;
+    font-size: clamp(1.1rem, 0.6667rem + 3.7037vw, 1.5rem);
+
   }
 }
 
@@ -20,48 +25,55 @@
 .About-description {
   display: flex;
   gap: 5rem;
-  padding: 10px 25px;
+  padding: 10px 0;
+
   @media (max-width: 1100px) {
     gap: 0.5rem;
   }
+
   @include tablet {
     flex-direction: column;
-    padding: 50px 25px;
+    padding: 50px 0;
     min-width: 350px;
   }
 }
 
 .description-container {
   min-width: 350px;
-    @include tablet {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
-    }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
 }
 
 .pikachu-container {
   display: flex;
   align-items: center;
+
   .pikachu-detective {
     width: 300px;
     border-radius: 15px;
   }
+
   @media (max-width: 1100px) {
     .pikachu-detective {
-      width: 270px;
-      height: 270px;
+      width: 200px;
+      height: 200px;
     }
+
     @include tablet {
       justify-content: flex-end;
       position: absolute;
-      top: 110px;
-      right: 65px;
+      top: 100px;
+      right: 5%;
+
       .pikachu-detective {
         display: flex;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
       }
     }
   }
@@ -74,6 +86,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+
   @media (max-width: 1100px) {
     gap: 0rem;
   }
@@ -86,10 +99,12 @@
   display: flex;
   justify-content: center;
   padding: 0;
+
   @media (max-width: 1100px) {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   @include tablet {
     height: 400px;
   }
@@ -105,6 +120,7 @@
   width: 480px;
   height: 600px;
   transform: scale(0.95);
+
   @media (max-width: 1000px) {
     width: 350px;
     transform: scale(0.85);
@@ -120,19 +136,23 @@
   align-items: center;
   padding-top: 30px;
   padding-left: 50px;
+
   p {
     color: white;
     line-height: 0.5rem;
   }
+
   @media (max-width: 1000px) {
     width: 320px;
     height: 200px;
     padding-top: 10px;
     padding-left: 15px;
   }
+
   @include tablet {
     padding-top: 15px;
   }
+
   @include mobile {
     padding-top: 25px;
   }
@@ -142,6 +162,7 @@
   width: 300px;
   height: 300px;
   position: relative;
+
   @media (max-width: 1000px) {
     width: 200px;
     height: 200px;
@@ -184,8 +205,10 @@
   align-items: center;
   background-color: #252120a4;
   border-radius: 15px;
+
   &:hover {
     background-color: $secondaryDarkColor;
+
     a {
       color: $primaryDarkColor;
       padding: 25px;

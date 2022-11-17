@@ -1367,14 +1367,14 @@ a {
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  max-height: 800px;
-  top: 2%;
+  max-height: 600px;
+  top: 30px;
   left: calc(50% - 300px);
   border: 1px solid #1a2652;
   background: #273878;
   overflow: auto;
   outline: none;
-  padding: 15px;
+  padding: 10px;
   border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1531,16 +1531,13 @@ a {
   }
 }
 .CrimeSceneModal-textContainer h4 {
-  font-size: 1.6rem;
+  font-size: clamp(1.3rem, 0.6747rem + 0.3717vw, 3rem);
   font-weight: 600;
   margin: 3px 0;
   color: white;
 }
-.CrimeSceneModal-textContainer h5 {
-  font-size: 1.5rem;
-}
 .CrimeSceneModal-textContainer p {
-  font-size: 1.2rem;
+  font-size: clamp(0.875rem, 0.668rem + 1.0223vw, 1.5625rem);
 }
 
 .CrimeSceneModal-input {
@@ -1743,10 +1740,12 @@ a {
   padding-bottom: 4rem;
 }
 .About-page h2 {
-  font-size: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+  font-size: clamp(2.4rem, 0.6667rem + 3.7037vw, 3.5rem);
+  color: #1a2652;
 }
 .About-page p {
   color: #1a2652;
+  font-size: clamp(1.1rem, 0.6667rem + 3.7037vw, 1.5rem);
 }
 
 .About-header {
@@ -1758,7 +1757,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   gap: 5rem;
-  padding: 10px 25px;
+  padding: 10px 0;
 }
 @media (max-width: 1100px) {
   .About-description {
@@ -1771,7 +1770,7 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 50px 25px;
+    padding: 50px 0;
     min-width: 350px;
   }
 }
@@ -1809,8 +1808,8 @@ a {
 }
 @media (max-width: 1100px) {
   .pikachu-container .pikachu-detective {
-    width: 270px;
-    height: 270px;
+    width: 200px;
+    height: 200px;
   }
 }
 @media (max-width: 1100px) and (max-width: 810px) {
@@ -1819,15 +1818,15 @@ a {
         -ms-flex-pack: end;
             justify-content: flex-end;
     position: absolute;
-    top: 110px;
-    right: 65px;
+    top: 100px;
+    right: 5%;
   }
   .pikachu-container .pikachu-detective {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
   }
 }
 
