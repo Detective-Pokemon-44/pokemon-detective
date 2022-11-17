@@ -3,43 +3,53 @@
 
 .CrimeScenes {
     margin: 20px;
-    width: 90%;
+    width: 65%;
+    min-width: fit-content;
     height: 90%;
     max-width: 2000px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    h2{
+
+    h2 {
         margin: 0 0 40px 0;
     }
+
     @media (max-width: 1100px) {
         padding: 10px;
         padding-top: 30px;
         min-height: 600px;
+        width: 90%;
     }
 }
 
 .CrimeScenes-category {
     display: flex;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
     padding: 0;
     padding-top: 90px;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+
     @media (max-width: 1100px) {
         flex-wrap: wrap;
         gap: 0;
     }
-    li{
+
+    li {
         list-style-type: none;
         width: 18%;
         max-width: 230px;
         min-width: 86px;
+
         @media (max-width: 1100px) {
             padding: 0;
             margin-bottom: 90px;
         }
-        @include mobile{
+
+        @include mobile {
             width: 33%;
             margin-bottom: 75px;
         }
@@ -55,22 +65,34 @@
     margin-right: auto;
     margin-left: auto;
     gap: 2vw;
-    margin-top: 15vw;
+    margin-top: 165px;
     flex-wrap: wrap;
-    margin-bottom: 15vw;
+    margin-bottom: 150px;
+
+    @media (max-width: 1100px) {
+        margin-top: 50px;
+        max-width: 700px;
+    }
+
     @include tablet {
-        margin-top: 10px;
+        margin-top: 25px;
+        padding: 20px;
         gap: 7.5vw;
     }
 
     @include mobile {
         margin-top: 0;
         gap: 6vw;
+        margin-bottom: 100px;
+    }
+
+    @media (max-width: 360px) {
+        gap: 6.5vw;
     }
 }
 
-.CrimeEvent-folderName{
-    bottom: -70%;
+.CrimeEvent-folderName {
+    bottom: -85%;
     left: 5%;
     right: 5%;
     padding: 3px 1px;
@@ -81,109 +103,130 @@
     font-size: clamp(0.7rem, 2vw, 1.1rem);
     background-color: rgba(255, 255, 255, 0.362);
     border-radius: 3px;
+    min-height: 52px;
+    @include tablet {
+        bottom: -85%;
+        min-height: 36px;
+    }
 }
 
-.CrimeEvent-folder, .CrimeEvent-belowFolder{
+.CrimeEvent-folder,
+.CrimeEvent-belowFolder {
     position: relative;
-	width: 80%;
-	height: 70px;
-	background: #D5C29B;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-top-right-radius: 5px;
-	cursor: pointer;
-	transition: all 300ms ease;
+    width: 90%;
+    height: 70px;
+    background: #D5C29B;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease;
     display: flex;
+
     @media (max-width: 1100px) {
         height: 65px;
     }
-    @include tablet{
+
+    @include tablet {
         height: 52px;
     }
-    @include mobile{
+
+    @include mobile {
         height: 45px;
     }
 }
 
-.CrimeEvent-belowFolder{
+.CrimeEvent-belowFolder {
     top: 130%;
+
     @media (max-width: 1100px) {
         top: 50%;
     }
 }
 
-.CrimeEvent-folder::before, .CrimeEvent-belowFolder::before{
-	width: 60px;
-	height: 20px;
-	content: "";
-	background: #D5C29B;
-	position: absolute;
-	top: -20px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+.CrimeEvent-folder::before,
+.CrimeEvent-belowFolder::before {
+    width: 60px;
+    height: 20px;
+    content: "";
+    background: #D5C29B;
+    position: absolute;
+    top: -20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.CrimeEvent-folder::after, .CrimeEvent-belowFolder::after{
-	width: 100%;
-	height: 150%;
-	position: absolute;
-	content: '';
-	background: #D5C29B;
-	top: 55%;
-	box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	transform: rotateX(-10deg);
-	transition: all 400ms ease;
+.CrimeEvent-folder::after,
+.CrimeEvent-belowFolder::after {
+    width: 100%;
+    height: 150%;
+    position: absolute;
+    content: '';
+    background: #D5C29B;
+    top: 55%;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: rotateX(-10deg);
+    transition: all 400ms ease;
 }
 
-.CrimeEvent-folderInside{
-	width: 80%;
-	height: 170%;
-	position: absolute;
-	background: #fff;
-	top: 23%;
-	left: 8%;
-	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
-	transform: rotate(-1deg);
-	border: 1px solid #ddd;
-	transition: all 200ms ease;
+.CrimeEvent-folderInside {
+    width: 80%;
+    height: 170%;
+    position: absolute;
+    background: #fff;
+    top: 23%;
+    left: 8%;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
+    transform: rotate(-1deg);
+    border: 1px solid #ddd;
+    transition: all 200ms ease;
 }
 
-.CrimeEvent-folderInside::before{
-	content: '';
-	background: repeating-linear-gradient(0deg, #ffffff, #ffffff 10px, #333333 10px, #333333 20px);
-	position: absolute;
-	top: -10%;
-	left: 25%;
-	width: 47%;
-	height: 90%;
-	color: #343434;
-	font-size: 60px;
-	line-height: 30px;
-	transform: rotate(-90deg);
-	opacity: 0.15;
-    @include tablet{
+.CrimeEvent-folderInside::before {
+    content: '';
+    background: repeating-linear-gradient(0deg, #ffffff, #ffffff 10px, #333333 10px, #333333 20px);
+    position: absolute;
+    top: -10%;
+    left: 25%;
+    width: 47%;
+    height: 90%;
+    color: #343434;
+    font-size: 60px;
+    line-height: 30px;
+    transform: rotate(-90deg);
+    opacity: 0.15;
+
+    @include tablet {
         display: none;
     }
 }
 
-.CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover{
-	transform: translate(-50%, -52%);
-    @include tablet{
+.CrimeEvent-folder:hover,
+.CrimeEvent-belowFolder:hover {
+    transform: translate(-50%, -52%);
+
+    @include tablet {
         transform: translate(-50%, -50%);
     }
 }
-.CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after{
-	transform: rotateX(-15deg);
-    @include tablet{
+
+.CrimeEvent-folder:hover::after,
+.CrimeEvent-belowFolder:hover::after {
+    transform: rotateX(-15deg);
+
+    @include tablet {
         transform: none;
     }
 }
-.CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside{
-	transform: rotate(-7deg) translateY(-15%);
-    @include tablet{
+
+.CrimeEvent-folder:hover .CrimeEvent-folderInside,
+.CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
+    transform: rotate(-7deg) translateY(-15%);
+
+    @include tablet {
         transform: none;
     }
 }
@@ -233,67 +276,83 @@
 .shape-section {
     background: transparent;
     list-style-type: none;
-    width: 30%;
+    width: 27%;
     padding: 3%;
-    max-width: 300px;
+    max-width: 250px;
     min-width: 70px;
-    margin-bottom: clamp(-150px, -13vw, -55px);
-    @include tablet{
-        // padding: 2%;
+    margin-bottom: -115px;
+    @media (max-width: 1100px) {
+        max-width: 200px;
+    }
+    @include tablet {
+        max-width: 110px;
         width: 25%;
         padding: 0;
-        margin-bottom: -14vw;
+        margin-bottom: -12vw;
     }
-    @include mobile{
+
+    @include mobile {
         width: 25%;
         margin-bottom: -50px;
     }
+
+    @media (max-width: 360px) {
+        min-width: 60px;
+        margin-bottom: -35px;
+    }
 }
+
 .Pokemon-diamondShape {
     background: #D5C29B;
     text-align: center;
-    transform:rotate(45deg);
-    width:100%;
+    transform: rotate(45deg);
+    width: 100%;
     border-radius: 10px;
     border: 5px solid #d8ceba;
-    box-shadow: 
-    3px 3px 10px #d8ceba7e, 
-    -3px -3px 10px #d8ceba7e, 
-    inset 5px 5px 10px #7a22107e,
-    inset -5px -5px 10px #7a22107e;
+    box-shadow:
+        3px 3px 10px #d8ceba7e,
+        -3px -3px 10px #d8ceba7e,
+        inset 5px 5px 10px #7a22107e,
+        inset -5px -5px 10px #7a22107e;
     cursor: pointer;
     transition: 0.3s ease-in;
-    &:hover{
+
+    &:hover {
         z-index: 20;
         background-color: rgba(255, 255, 255, 0.624);
-        .Pokemon-image{
+
+        .Pokemon-image {
             filter: blur(4px);
         }
     }
-    &::after{
+
+    &::after {
         padding-bottom: 100%;
         content: "";
         display: block;
     }
 }
 
-.Pokemon-hover{
-    color: rgba(0,0,0,0);
+.Pokemon-hover {
+    color: rgba(0, 0, 0, 0);
     position: absolute;
     font-size: 20px;
     width: 100%;
     height: 100%;
-    p{
-        color: rgba(0,0,0,0);
+
+    p {
+        color: rgba(0, 0, 0, 0);
         font-size: clamp(0.6rem, 3vw, 1.1rem);
-        
+
     }
-    &:hover{
-        p{
-            color: rgba(0,0,0,1);
+
+    &:hover {
+        p {
+            color: rgba(0, 0, 0, 1);
             z-index: 10;
         }
-        color: rgba(0,0,0,1);
+
+        color: rgba(0, 0, 0, 1);
         z-index: 10;
         display: block;
     }

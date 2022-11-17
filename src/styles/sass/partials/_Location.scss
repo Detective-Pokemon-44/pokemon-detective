@@ -1,22 +1,35 @@
 @use "variables" as *;
+@use "mixins" as *;
 
 .Location {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin: auto 1rem;
+    width: 60%;
+    max-width: 700px;
+    min-height: 450px;
     h2 {
         font-size: 2rem;
     }
-
+    @include tablet {
+        width: 85%;
+    }
+    @include mobile {
+        width: 90%;
+    }
 }
 
 .Location-locationsContainer {
     display: flex;
     min-width: 250px;
-    width: 30vw;
+    width: 80%;
     align-items: center;
     justify-content: space-around;
+    @include mobile {
+        justify-content: space-between;
+        padding: 0 5px;
+    }
 }
 
 .Location-locationCard {

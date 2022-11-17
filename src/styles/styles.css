@@ -237,10 +237,11 @@ button:hover a, button:focus a {
   color: #273878;
   background-color: white;
   border: 2px solid #1a2652;
-  width: 57px;
-  height: 52px;
+  width: 55px;
+  height: 50px;
   font-size: 1.1rem;
   border-radius: 15px;
+  font-weight: bold;
 }
 .Go-back-button2:hover, .Go-back-button2:focus {
   background-color: #1a2652;
@@ -329,9 +330,23 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto 1rem;
+  width: 60%;
+  max-width: 700px;
+  min-height: 450px;
 }
 .Location h2 {
   font-size: 2rem;
+}
+@media (max-width: 810px) {
+  .Location {
+    width: 85%;
+  }
+}
+@media (max-width: 480px) {
+  .Location {
+    width: 90%;
+  }
 }
 
 .Location-locationsContainer {
@@ -339,12 +354,20 @@ a {
   display: -ms-flexbox;
   display: flex;
   min-width: 250px;
-  width: 30vw;
+  width: 80%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+@media (max-width: 480px) {
+  .Location-locationsContainer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 5px;
+  }
 }
 
 .Location-locationCard {
@@ -497,6 +520,7 @@ a {
           align-items: center;
   gap: 50px;
   padding: 20px 0 50px;
+  margin: auto 1rem;
 }
 
 .LandingPage-imgContainer {
@@ -546,7 +570,10 @@ a {
 
 .CrimeScenes {
   margin: 20px;
-  width: 90%;
+  width: 65%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   height: 90%;
   max-width: 2000px;
   display: -webkit-box;
@@ -567,6 +594,7 @@ a {
     padding: 10px;
     padding-top: 30px;
     min-height: 600px;
+    width: 90%;
   }
 }
 
@@ -574,13 +602,15 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  width: 100%;
   padding: 0;
   padding-top: 90px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 @media (max-width: 1100px) {
   .CrimeScenes-category {
@@ -621,14 +651,21 @@ a {
   margin-right: auto;
   margin-left: auto;
   gap: 2vw;
-  margin-top: 15vw;
+  margin-top: 165px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 15vw;
+  margin-bottom: 150px;
+}
+@media (max-width: 1100px) {
+  .pokemonList {
+    margin-top: 50px;
+    max-width: 700px;
+  }
 }
 @media (max-width: 810px) {
   .pokemonList {
-    margin-top: 10px;
+    margin-top: 25px;
+    padding: 20px;
     gap: 7.5vw;
   }
 }
@@ -636,11 +673,17 @@ a {
   .pokemonList {
     margin-top: 0;
     gap: 6vw;
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 360px) {
+  .pokemonList {
+    gap: 6.5vw;
   }
 }
 
 .CrimeEvent-folderName {
-  bottom: -70%;
+  bottom: -85%;
   left: 5%;
   right: 5%;
   padding: 3px 1px;
@@ -651,11 +694,19 @@ a {
   font-size: clamp(0.7rem, 2vw, 1.1rem);
   background-color: rgba(255, 255, 255, 0.362);
   border-radius: 3px;
+  min-height: 52px;
+}
+@media (max-width: 810px) {
+  .CrimeEvent-folderName {
+    bottom: -85%;
+    min-height: 36px;
+  }
 }
 
-.CrimeEvent-folder, .CrimeEvent-belowFolder {
+.CrimeEvent-folder,
+.CrimeEvent-belowFolder {
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 70px;
   background: #D5C29B;
   top: 50%;
@@ -671,17 +722,20 @@ a {
   display: flex;
 }
 @media (max-width: 1100px) {
-  .CrimeEvent-folder, .CrimeEvent-belowFolder {
+  .CrimeEvent-folder,
+.CrimeEvent-belowFolder {
     height: 65px;
   }
 }
 @media (max-width: 810px) {
-  .CrimeEvent-folder, .CrimeEvent-belowFolder {
+  .CrimeEvent-folder,
+.CrimeEvent-belowFolder {
     height: 52px;
   }
 }
 @media (max-width: 480px) {
-  .CrimeEvent-folder, .CrimeEvent-belowFolder {
+  .CrimeEvent-folder,
+.CrimeEvent-belowFolder {
     height: 45px;
   }
 }
@@ -695,7 +749,8 @@ a {
   }
 }
 
-.CrimeEvent-folder::before, .CrimeEvent-belowFolder::before {
+.CrimeEvent-folder::before,
+.CrimeEvent-belowFolder::before {
   width: 60px;
   height: 20px;
   content: "";
@@ -706,7 +761,8 @@ a {
   border-top-right-radius: 5px;
 }
 
-.CrimeEvent-folder::after, .CrimeEvent-belowFolder::after {
+.CrimeEvent-folder::after,
+.CrimeEvent-belowFolder::after {
   width: 100%;
   height: 150%;
   position: absolute;
@@ -760,34 +816,40 @@ a {
   }
 }
 
-.CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover {
+.CrimeEvent-folder:hover,
+.CrimeEvent-belowFolder:hover {
   -webkit-transform: translate(-50%, -52%);
           transform: translate(-50%, -52%);
 }
 @media (max-width: 810px) {
-  .CrimeEvent-folder:hover, .CrimeEvent-belowFolder:hover {
+  .CrimeEvent-folder:hover,
+.CrimeEvent-belowFolder:hover {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
   }
 }
 
-.CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after {
+.CrimeEvent-folder:hover::after,
+.CrimeEvent-belowFolder:hover::after {
   -webkit-transform: rotateX(-15deg);
           transform: rotateX(-15deg);
 }
 @media (max-width: 810px) {
-  .CrimeEvent-folder:hover::after, .CrimeEvent-belowFolder:hover::after {
+  .CrimeEvent-folder:hover::after,
+.CrimeEvent-belowFolder:hover::after {
     -webkit-transform: none;
             transform: none;
   }
 }
 
-.CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
+.CrimeEvent-folder:hover .CrimeEvent-folderInside,
+.CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
   -webkit-transform: rotate(-7deg) translateY(-15%);
           transform: rotate(-7deg) translateY(-15%);
 }
 @media (max-width: 810px) {
-  .CrimeEvent-folder:hover .CrimeEvent-folderInside, .CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
+  .CrimeEvent-folder:hover .CrimeEvent-folderInside,
+.CrimeEvent-belowFolder:hover .CrimeEvent-folderInside {
     -webkit-transform: none;
             transform: none;
   }
@@ -861,23 +923,35 @@ a {
 .shape-section {
   background: transparent;
   list-style-type: none;
-  width: 30%;
+  width: 27%;
   padding: 3%;
-  max-width: 300px;
+  max-width: 250px;
   min-width: 70px;
-  margin-bottom: clamp(-150px, -13vw, -55px);
+  margin-bottom: -115px;
+}
+@media (max-width: 1100px) {
+  .shape-section {
+    max-width: 200px;
+  }
 }
 @media (max-width: 810px) {
   .shape-section {
+    max-width: 110px;
     width: 25%;
     padding: 0;
-    margin-bottom: -14vw;
+    margin-bottom: -12vw;
   }
 }
 @media (max-width: 480px) {
   .shape-section {
     width: 25%;
     margin-bottom: -50px;
+  }
+}
+@media (max-width: 360px) {
+  .shape-section {
+    min-width: 60px;
+    margin-bottom: -35px;
   }
 }
 
@@ -1137,7 +1211,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80vw;
+  width: 78vw;
   min-height: 75vh;
   max-width: 900px;
   width: 90vw;
@@ -1146,6 +1220,7 @@ a {
   border-radius: 25px;
   -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+  margin: auto 1.2rem;
 }
 @media (max-width: 1000px) {
   .Scoreboard {
@@ -1159,19 +1234,24 @@ a {
 }
 @media (max-width: 480px) {
   .Scoreboard {
-    min-width: 320px;
+    min-width: 310px;
   }
 }
 
 .Score-title {
   font-size: clamp(2.2rem, 1.6753rem + 2.583vw, 4rem);
 }
+@media (max-width: 480px) {
+  .Score-title {
+    padding-top: 20px;
+  }
+}
 
 .Score-list {
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
-  margin-top: 25px;
+  margin-top: 5px;
   -webkit-column-gap: 1.8rem;
      -moz-column-gap: 1.8rem;
           column-gap: 1.8rem;
@@ -1367,8 +1447,8 @@ a {
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  max-height: 600px;
-  top: 30px;
+  height: 60%;
+  top: 20%;
   left: calc(50% - 300px);
   border: 1px solid #1a2652;
   background: #273878;
@@ -1527,7 +1607,10 @@ a {
 }
 @media (max-width: 480px) {
   .CrimeSceneModal-textContainer {
-    width: 80%;
+    width: 90%;
+    padding: 10% 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 .CrimeSceneModal-textContainer h4 {
@@ -1615,7 +1698,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   padding: 10px;
 }
 
