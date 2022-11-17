@@ -10,7 +10,7 @@ export default function About() {
                 <div className="About-description wrapper">
                     <div className="description-container">
                         <p>Detective Pokemon is a game in which the user will be invited to solve different types of crime in three cities in the UK and will count on smart and fearless Pokemons to help them to solve the mysteries. </p>
-                        <p>This project was created by graduates at Juno College of Technology - Cohort 44. </p>
+                        <p>You will be presented with three locations, head to one of the locations to see a list of crimes. There will be pokemon below to help you solve the crime, once you've read all about the pokemon. Select a crime and pick a pokemon to solve it! See if you can make the high scores! </p>
                     </div>
                     <div className="pikachu-container">
                         <img className='pikachu-detective' src={require(`../assets/images/pokemonDetective.jpg`)} alt="Pikachu detective" />
