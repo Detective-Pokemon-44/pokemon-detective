@@ -4,7 +4,6 @@
 .CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
-    // max-height: 800px;
     height: 60%;
     top: 20%;
     left: calc(50% - 300px);
@@ -12,7 +11,7 @@
     background: $primaryColor;
     overflow: auto;
     outline: none;
-    padding: 15px;
+    padding: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -121,7 +120,7 @@
         margin-bottom: 2rem;
     }
     h4 {
-        font-size: 1.6rem;
+        font-size: clamp(1.3rem, 0.6747rem + 0.3717vw, 3rem);
         font-weight: 600;
         margin: 3px 0;
         color: $white;
@@ -130,7 +129,7 @@
         font-size: 1.5rem;
     }
     p {
-        font-size: 1.2rem;
+        font-size: clamp(0.875rem, 0.668rem + 1.0223vw, 1.5625rem);
     }
 }
 

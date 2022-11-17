@@ -5,14 +5,14 @@ const crimeObject =
     weaknesses: ["psychic", "water", "ice", "fairy"],
     backstory: "A citizen has been harassing pokemon at the pokemon gym",
     pokemonskill: "harrasment",
-    failed: "Looks like you're not good with bad vibes eh?",
-    solved: "Looks like your vibes are spot on partner!"
+    failed: "You saved an innocent pokemon from being harassed!",
+    solved: "These pokemon are free from harassment good job!"
   }
   ,
   "bicycle-theft": {
     alternate: "Stolen bicycle",
     weaknesses: ["electric", "bug", "normal", "rock"],
-    backstory: "A child's only mode of transportation has been taken away/",
+    backstory: "A child's only mode of transportation has been taken away, help them find it!",
     pokemonskill: "missing vehicles",
     failed: "I suppose the child won't be able to get around the city anymore",
     solved: "The Child will be happy to hear he got their bike back"
