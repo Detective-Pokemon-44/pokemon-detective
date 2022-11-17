@@ -4,8 +4,9 @@
 .CrimeSceneModal-modal {
     position: absolute;
     width: 600px;
-    max-height: 800px;
-    top: 2%;
+    // max-height: 800px;
+    height: 60%;
+    top: 20%;
     left: calc(50% - 300px);
     border: 1px solid $primaryDarkColor;
     background: $primaryColor;
@@ -114,7 +115,10 @@
         width: 50%;
     }
     @include mobile {
-        width: 80%;
+        width: 90%;
+        padding: 10% 5%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
     }
     h4 {
         font-size: 1.6rem;
@@ -129,7 +133,6 @@
         font-size: 1.2rem;
     }
 }
-
 
 .CrimeSceneModal-input {
     -webkit-appearance: none;
@@ -182,7 +185,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     padding: 10px;
 }
 

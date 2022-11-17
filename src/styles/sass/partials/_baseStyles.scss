@@ -58,10 +58,11 @@ button {
     color: $primaryColor;
     background-color: white;
     border: 2px solid $primaryDarkColor;
-    width: 57px;
-    height: 52px;
+    width: 55px;
+    height: 50px;
     font-size: 1.1rem;
     border-radius: 15px; 
+    font-weight: bold;
     &:hover,
     &:focus {
         background-color: $primaryDarkColor;

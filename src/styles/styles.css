@@ -237,10 +237,11 @@ button:hover a, button:focus a {
   color: #273878;
   background-color: white;
   border: 2px solid #1a2652;
-  width: 57px;
-  height: 52px;
+  width: 55px;
+  height: 50px;
   font-size: 1.1rem;
   border-radius: 15px;
+  font-weight: bold;
 }
 .Go-back-button2:hover, .Go-back-button2:focus {
   background-color: #1a2652;
@@ -329,9 +330,23 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto 1rem;
+  width: 60%;
+  max-width: 700px;
+  min-height: 450px;
 }
 .Location h2 {
   font-size: 2rem;
+}
+@media (max-width: 810px) {
+  .Location {
+    width: 85%;
+  }
+}
+@media (max-width: 480px) {
+  .Location {
+    width: 90%;
+  }
 }
 
 .Location-locationsContainer {
@@ -339,12 +354,20 @@ a {
   display: -ms-flexbox;
   display: flex;
   min-width: 250px;
-  width: 30vw;
+  width: 80%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+@media (max-width: 480px) {
+  .Location-locationsContainer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 5px;
+  }
 }
 
 .Location-locationCard {
@@ -497,6 +520,7 @@ a {
           align-items: center;
   gap: 50px;
   padding: 20px 0 50px;
+  margin: auto 1rem;
 }
 
 .LandingPage-imgContainer {
@@ -1187,7 +1211,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 80vw;
+  width: 78vw;
   min-height: 75vh;
   max-width: 900px;
   width: 90vw;
@@ -1196,6 +1220,7 @@ a {
   border-radius: 25px;
   -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+  margin: auto 1.2rem;
 }
 @media (max-width: 1000px) {
   .Scoreboard {
@@ -1209,19 +1234,24 @@ a {
 }
 @media (max-width: 480px) {
   .Scoreboard {
-    min-width: 320px;
+    min-width: 310px;
   }
 }
 
 .Score-title {
   font-size: clamp(2.2rem, 1.6753rem + 2.583vw, 4rem);
 }
+@media (max-width: 480px) {
+  .Score-title {
+    padding-top: 20px;
+  }
+}
 
 .Score-list {
   -webkit-column-count: 2;
      -moz-column-count: 2;
           column-count: 2;
-  margin-top: 25px;
+  margin-top: 5px;
   -webkit-column-gap: 1.8rem;
      -moz-column-gap: 1.8rem;
           column-gap: 1.8rem;
@@ -1417,8 +1447,8 @@ a {
 .CrimeSceneModal-modal {
   position: absolute;
   width: 600px;
-  max-height: 800px;
-  top: 2%;
+  height: 60%;
+  top: 20%;
   left: calc(50% - 300px);
   border: 1px solid #1a2652;
   background: #273878;
@@ -1577,7 +1607,10 @@ a {
 }
 @media (max-width: 480px) {
   .CrimeSceneModal-textContainer {
-    width: 80%;
+    width: 90%;
+    padding: 10% 5%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 .CrimeSceneModal-textContainer h4 {
@@ -1668,7 +1701,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   padding: 10px;
 }
 
