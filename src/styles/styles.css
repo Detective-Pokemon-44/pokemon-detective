@@ -963,6 +963,7 @@ a {
           justify-content: space-between;
   -webkit-box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
+  padding: 20px 0;
 }
 @media (max-width: 1100px) {
   .Pokemon-modal {

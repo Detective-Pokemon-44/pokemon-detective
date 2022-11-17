@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 2.5px 2.5px rgba(0, 0, 0, 0.5);
-
+    padding: 20px 0;    
     @media(max-width: 1100px) {
         width: 400px;
         left: calc(50% - 200px);
