@@ -103,7 +103,7 @@ export default function CrimeSceneModal({ pokemon, crimeSelected, toggleModal })
               <p>{crimeSolved ? crimeObject[crimeSelected.category].solved : crimeObject[crimeSelected.category].failed}</p>
             </div>
             <div className="CrimeSceneModal-miniInfoContainer">
-              <button onClick={() => updateLocation(null)}>Play Again</button>
+              <button onClick={() => updateLocation(null)}><strong>PLAY AGAIN</strong></button>
               <Score />
             </div>
           </div>
