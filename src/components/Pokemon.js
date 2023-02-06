@@ -1,18 +1,20 @@
-import ReactModal from 'react-modal';
-import useToggleState from '../hooks/useToggleState';
-import crimeObject from "../utils/crimeObject";
-import { capitalizeFirstLetter, isNotUnique } from '../utils/functions';
+import ReactModal from "react-modal"
+import useToggleState from "../hooks/useToggleState"
+import crimeObject from "../utils/crimeObject"
+import { capitalizeFirstLetter, isNotUnique } from "../utils/functions"
 import closeButton from "../assets/images/rectangle-xmark-solid.svg"
 
 export default function Pokemon({ pokemonInfo }) {
   const [modalState, toggleModal] = useToggleState()
-  let crimeStrengths = []
+  let crimeWeakness = []
   pokemonInfo.types.map((individualType) => {
-    // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeStrengths array to display
+    // for loop helps to find crimeType value matching with pokemon type, and pushing into crimeWeakness array to display
     for (let key in crimeObject) {
-      (crimeObject[key].weaknesses.includes(individualType.type.name) && !isNotUnique(crimeStrengths, key) && crimeStrengths.push(key))
+      crimeObject[key].weaknesses.includes(individualType.type.name) &&
+        !isNotUnique(crimeWeakness, key) &&
+        crimeWeakness.push(key)
     }
-    return "";
+    return ""
   })
   return (
     <>
@@ -64,8 +66,12 @@ export default function Pokemon({ pokemonInfo }) {
           </p>
         </div>
         <div className='Pokemon-modalTypes'>
-          <div className="Pokemon-pokeball">
-            <img src={require(`../assets/svgPokemon/pokemonball.png`)} alt="Pokemon-ball" srcSet="" />
+          <div className='Pokemon-pokeball'>
+            <img
+              src={require(`../assets/svgPokemon/pokemonball.png`)}
+              alt='Pokemon-ball'
+              srcSet=''
+            />
           </div>
           {pokemonInfo.types.map((pokemonPower) => (
             <p key={pokemonPower.type.name} className='Pokemon-typeName'>
@@ -74,17 +80,18 @@ export default function Pokemon({ pokemonInfo }) {
           ))}
         </div>
         <p className='Pokemon-hint'>
-          {capitalizeFirstLetter(pokemonInfo.name)} is good for crimes related to{" "}
-          {crimeStrengths.map((individualType, i, arr) =>
+          {capitalizeFirstLetter(pokemonInfo.name)} is good for crimes related
+          to{" "}
+          {crimeWeakness.map((individualType, i, arr) =>
             i + 1 === arr.length
               ? `and ${crimeObject[individualType].pokemonskill.replaceAll(
-                "-",
-                " "
-              )}.`
+                  "-",
+                  " "
+                )}.`
               : `${crimeObject[individualType].pokemonskill.replaceAll(
-                "-",
-                " "
-              )}, `
+                  "-",
+                  " "
+                )}, `
           )}
         </p>
       </ReactModal>

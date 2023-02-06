@@ -1,4 +1,5 @@
 export const detectives = [
+
     {
         name: "Karl Lu",
         github: "https://github.com/klukreativ",
